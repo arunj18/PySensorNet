@@ -1,4 +1,6 @@
 from base import Client
+import logging
+
 
 if __name__ == "__main__":
     client = Client()
