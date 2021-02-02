@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "SocketProg:d:/SocketProg/PyTorrent/utils.file_generator (python3.8)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "\\SocketProg\\PyTorrent",
+                "lambdaHandler": "d:/SocketProg/PyTorrent/utils.file_generator"
+            },
+            "lambda": {
+                "runtime": "python3.8",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}
