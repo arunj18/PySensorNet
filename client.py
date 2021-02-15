@@ -39,7 +39,7 @@ class Client(object):
                     sock.settimeout(10.0)
                     data_ack, address =  sock.recvfrom(4096)
                     # print(data_ack[0]==0, data_ack[1]==1)
-                    if (data_ack[0]==0, data_ack[1]==1): #got ack for the message we sent
+                    if (data_ack[0]==0 and data_ack[1]==1): #got ack for the message we sent
                         break
                 except socket.timeout:
                     pass
