@@ -1,4 +1,5 @@
 from pathlib import Path
+from filehash import FileHash
 import logging
 
 logger = logging.getLogger(__name__)
@@ -21,3 +22,14 @@ def file_size(path):
     
     logger.debug("Size of file {path} = {size}")
     return size
+
+def file_hash(path):
+    '''
+    Function to return sha1 hash of a file
+    path: string or Path object of the path of the file
+    '''
+    logger.info(f"Get hash of {path}")
+    hash = ''
+    sha1hasher = FileHash('sha1')
+    hash = sha1hasher.hash_file(path)
+    return hash

@@ -3,6 +3,7 @@ import string
 from pathlib import Path
 import logging
 import yaml
+from shutil import copy
 
 
 from utils import file_size
@@ -22,17 +23,19 @@ def create_dirs(path_hier):
     logger.info("Created directories if they didn't exist at {0}".format(path_hier))
     return parent
 
-def client_config_generator():
+def client_config_generator(files_location):
     '''
     Function to generate client configs
     '''
-    parent = create_dirs("../configs/clients/")
+    parent = create_dirs("./configs/clients/")
 
     for file_idx in range(100): #create 100 client configs
-        name = file_idx + 1
-        fn = str(name) + ".yaml"
-        new_file = parent / fn
-        
+        name = str(file_idx + 1)
+        fn = name + ".yaml"
+        # new_file = parent / fn
+        new_parent = create_dirs(str(parent / name))
+        new_file = new_parent / fn
+        # print(new_file)
         client_dict = {}
 
         client_dict['CLIENTID'] = str(name) 
@@ -47,14 +50,25 @@ def client_config_generator():
             client_dict['FILE_VECTOR'][random.choice(range(50))] = '1'
             client_dict['FILE_VECTOR'] = ''.join(client_dict['FILE_VECTOR'])
 
+        file_folder_path = Path(files_location)
+
+        for idx in range(len(client_dict['FILE_VECTOR'])):
+            if client_dict['FILE_VECTOR'][idx] == '1':
+                filename =str(idx) + '.txt'
+                file_1 = file_folder_path / filename
+                # print(file_1, new_parent/filename)
+                copy(file_1, new_parent/filename)
+
+
         with new_file.open('w') as f:
             yaml.dump(client_dict,f)
-            
+    
             logger.info(f"Client created with CLIENTID: {client_dict['CLIENTID']}")
             logger.info(f"Client SERVERPORT: {client_dict['SERVERPORT']}")
             logger.info(f"Client MYPORT: {client_dict['MYPORT']}")
             logger.info(f"Client FILE_VECTOR: {client_dict['FILE_VECTOR']}")
             logger.info("Dumped client config as yaml data")
+        
 
 def file_generator(folder):
     '''
@@ -62,7 +76,7 @@ def file_generator(folder):
     folder : string path of folder
     '''
     parent = create_dirs(folder)
-    letters = string.ascii_letters + string.digits + string.punctuation
+    letters = string.ascii_letters + string.digits
 
     for file_idx in range(50):
         fn = str(file_idx) + ".txt"
@@ -78,5 +92,5 @@ def file_generator(folder):
 
 if __name__ == '__main__':
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = "./logs/utils.log" )
-    file_generator("../files/")
-    client_config_generator()
+    file_generator("./files/")
+    client_config_generator("./files")

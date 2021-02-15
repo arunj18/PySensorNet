@@ -49,7 +49,7 @@ def test_client_config():
     by default stored in ./configs/clients
     '''
     folder = "./configs/clients"
-    client_config_generator()
+    client_config_generator('./files')
     
     folder_path = Path(folder)
 
@@ -62,13 +62,13 @@ def test_client_config():
     for i in file_list:
         hash_map[i] = False
 
-    for i in folder_path.iterdir():
+    for i in folder_path.rglob('*'):
         if i.is_file() and i.name.endswith('.yaml'):
             check = i.name[:-5]
             try:
                 check = int(check)
 
-                hash_map[check] = True #file is created
+                 #file is created
 
                 if check in file_list:
                     assert file_size(i) > 0 #check if file is empty
@@ -82,10 +82,12 @@ def test_client_config():
                     assert client_dict.get("FILE_VECTOR",None)
 
                     assert client_dict['FILE_VECTOR'] != "0"*50
-                
+                print(f"Check done {check}")
+                hash_map[check] = True
             except ValueError: #not the file we're looking for
                 pass
     for i in hash_map.keys():
+        print(i)
         assert hash_map[i] # file i is missing
 
 if __name__ == "__main__":
