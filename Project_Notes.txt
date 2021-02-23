@@ -1,0 +1,74 @@
+Project Notes
+
+100 clients, each has a subset of 50 text files 
+Server is like a controller + data dump
+Contains a list of clients that are active/inactive
+	oAssumes the power is unlimited
+	oOnly a subset of the sensor nodes is active at the time
+1.Maintain a list of active nodes
+	a.Queue
+2.For each active node, it maintains a list of files it has 
+Clients and server will communicate over UDP
+	Packets can be dropped off
+They are identified by an IP address/host name 
+	Always start with 192…
+How to implement: Have this information in the config
+	Server.config 
+		Hostname: Server
+		IP: 192.1.1.1
+		Port number:
+	Client.config
+		Text files: 
+		Hostname: 
+		IP: 
+		Port number:
+Clients and server will communicate on a certain port
+Client will send a request to the server
+	“I want file [filename]”
+	Server will look for file; if it can’t find it, it will tell the client that it can’t find the file
+	If one client has the file, the server will tell the client which client has the file; also gives the client the IP and port number of the client with the file
+	If there are multiple clients that has the file, the server should send the information of the client that has been up for longest
+	1. Finds all active clients with file “i”
+	2. Looks at the clients in the order in which they were started
+	3. Picks the client that was started the earliest
+	4. Server gives information of the client from which to get the file to the client that requested the file
+		A direct connection is created between the two clients 
+		After connection setup, the file transfer happens 
+			File transfer will happen over UDP in increments of 1 byte
+			Use a sliding window protocol 
+Shutdown
+	The user inputs a command (like “q” or “quit”) on the client 
+		Wait for any current file transfers to complete
+		Close the connection with the server
+Setup file
+Client Start file
+
+
+Simple Server Design
+
+1. Server starts and listens for client requests
+2. Client contacts server to be added to list and gives its config file
+	If client is not already in queue
+		Connect and start a new client thread
+		Add client to the queue
+3. Client contacts server to find a file
+	Search queue for file 
+		If the client already has the file 
+			Return that the client already has the file
+		If there are no clients with the file
+			Return that there are no clients with the file
+		If there is one client with the file
+			Return the client information 
+		If there are multiple clients with the file
+			Return the client information from the client that was added earliest to the queue
+4. Client responds that the transfer was successful 
+	Server logs the successful transfer
+5. Client contacts server for the connection to be closed
+	If there is a file transfer in progress
+		Complete the transfer
+		Close the connection
+		Remove client from queue
+	If there is no transfer in progress 
+		Close the connection
+		Remove client from queue
+
