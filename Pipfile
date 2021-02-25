@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pyyaml = "*"
 filehash = "*"
+readerwriterlock = "*"
 
 [dev-packages]
 pytest = "*"
