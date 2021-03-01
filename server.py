@@ -54,7 +54,7 @@ class Server:
 
     def handle(self, conn, address):
         """
-        Handles the connection request
+        Handles the connection request; will add the logic from the handle_client function here
         :param conn: The connection
         :param address: The IP address of the client that is connecting
         :return: N/A
@@ -68,12 +68,18 @@ class Server:
                 break
             log.info(f"Received message from {address}")
 
-    def process_input(self, input_str):
-        print("Processing the input received from client")
-        return "Hello " + str(input_str).upper()
+            client_input = self.receive_input(conn)
+            if "--QUIT--" in client_input:
+                print("Client is requesting to quit")
+                conn.close()
+                print("Connection " + self.IP + ":" + self.port + " closed")
+                is_active = False
+            else:
+                print("Processed result: {}".format(client_input))
+                conn.sendall("-".encode("utf8"))
 
-    def receive_input(self, connection, max_buffer_size):
-        client_input = connection.recv(max_buffer_size)
+    def receive_input(self, conn, max_buffer_size=4096):
+        client_input = conn.recv(max_buffer_size)
         client_input_size = sys.getsizeof(client_input)
         if client_input_size > max_buffer_size:
             print("The input size is greater than expected {}".format(client_input_size))
@@ -81,18 +87,8 @@ class Server:
         result = self.process_input(decoded_input)
         return result
 
-    def clientThread(self, connection, ip, port, max_buffer_size=5120):
-        is_active = True
-        while is_active:
-            client_input = self.receive_input(connection, max_buffer_size)
-            if "--QUIT--" in client_input:
-                print("Client is requesting to quit")
-                connection.close()
-                print("Connection " + ip + ":" + port + " closed")
-                is_active = False
-            else:
-                print("Processed result: {}".format(client_input))
-                connection.sendall("-".encode("utf8"))
+    def process_input(self, connection, address, input_str):
+        print(f"Processing the input received from {address}")
 
     def server_config(self):
         """
