@@ -18,19 +18,20 @@ class Server:
         :return: N/A
         """
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.port = port
-        self.hostname = "Server"
         self.s.bind((socket.gethostname(), port))
-        self.IP = "192.1.1.1"
         log.debug("Created server socket at localhost with port:" + str(port))
+        self.port = port
+        self.hostname = socket.gethostname()
+        self.IP = socket.gethostbyname(self.hostname)
         self.threads = []
         self.clients = {}
+        # Set up the config file with the information
+        self.server_config()
 
-    def listen(self, queue_size=5):
+    def listen(self):
         """
         Function to listen on the socket for clients to add or requests to process
         :param self: The server instance
-        :param queue_size: How long the queue will be
         :return: N/A
         """
         log.debug("Server socket at port " + str(self.port) + " is now listening")
@@ -58,17 +59,16 @@ class Server:
                 break
             log.info(f"Received message from {address}")
 
-    def serverconfig(self):
+    def server_config(self):
         """
         Sets up the server config file
         :return: N/A
         """
-        serverconfig = open("../configs/server.txt", "w+")
-        serverconfig.write(self, "Hostname: " + self.hostname + "\n")
-        serverconfig.write(self, "IP: " + self.IP + "\n")
-        serverconfig.write(self, "Port_number: " + self.port + "\n")
-        serverconfig.close()
-
+        server_config = open("../configs/server.txt", "w+")
+        server_config.write("Hostname: " + self.hostname + "\n")
+        server_config.write("IP: " + self.IP + "\n")
+        server_config.write("Port_number: " + self.port + "\n")
+        server_config.close()
 
     def __del__(self):
         """
