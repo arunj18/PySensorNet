@@ -1,4 +1,6 @@
 import socket
+import sys
+import traceback
 import logging
 import threading
 
@@ -8,6 +10,7 @@ log = logging.getLogger(__name__)
 class Server:
     """
     The server class
+    Some socket code comes from https://www.tutorialspoint.com/socket-programming-with-multi-threading-in-python
     """
 
     def __init__(self, port):
@@ -18,7 +21,13 @@ class Server:
         :return: N/A
         """
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.s.bind((socket.gethostname(), port))
+        try:
+            self.s.bind((self.s.gethostname(), port))
+        except:
+            print("Bind failed. Error : " + str(sys.exc_info()))
+            log.debug("Bind failed. Error : " + str(sys.exc_info()))
+            sys.exit()
+
         log.debug("Created server socket at localhost with port:" + str(port))
         self.port = port
         self.hostname = socket.gethostname()
@@ -58,6 +67,32 @@ class Server:
             if not data:
                 break
             log.info(f"Received message from {address}")
+
+    def process_input(self, input_str):
+        print("Processing the input received from client")
+        return "Hello " + str(input_str).upper()
+
+    def receive_input(self, connection, max_buffer_size):
+        client_input = connection.recv(max_buffer_size)
+        client_input_size = sys.getsizeof(client_input)
+        if client_input_size > max_buffer_size:
+            print("The input size is greater than expected {}".format(client_input_size))
+        decoded_input = client_input.decode("utf8").rstrip()
+        result = self.process_input(decoded_input)
+        return result
+
+    def clientThread(self, connection, ip, port, max_buffer_size=5120):
+        is_active = True
+        while is_active:
+            client_input = self.receive_input(connection, max_buffer_size)
+            if "--QUIT--" in client_input:
+                print("Client is requesting to quit")
+                connection.close()
+                print("Connection " + ip + ":" + port + " closed")
+                is_active = False
+            else:
+                print("Processed result: {}".format(client_input))
+                connection.sendall("-".encode("utf8"))
 
     def server_config(self):
         """
