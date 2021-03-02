@@ -9,6 +9,9 @@ from readerwriterlock import rwlock
 from pathlib import Path
 from utils import file_hash
 
+logger = logging.getLogger(__name__)
+
+logger.setLevel(logging.INFO)
 
 class Client():
     def __init__(self, config_file_path):
@@ -45,7 +48,8 @@ class Client():
 
         # then start listening on port
         self.my_server = myUDPServer(self.my_port, self.client_file_mgr)
-        
+        if (not self.my_server.check_success()):
+            return 
         x = threading.Thread(target = self.my_server.listen)
         x.start()
 
@@ -57,18 +61,40 @@ class Client():
 
         data = (0).to_bytes(1, 'big') + (0).to_bytes(1, 'big') + int(filename).to_bytes(1, 'big')
         client_sock.send(data)
-        try:
-            data = client_sock.recv()
-            print(data[2:].decode(encoding='utf-8'))
-            client_sock.send(((data[0]+1)%3).to_bytes(1, "big") +(1).to_bytes(1, 'big'))
-        except ConnectionError:
-            print("Connection failed")
+        retries = 10
+        begin_seq = 0
+        next_seq = 0
+        connEnd = False
+
+        while retries:
+            try:
+                data = client_sock.recv()
+                if (data[1] == 2): #connection ended
+                    client_sock.send_ack(data[0], True)
+
+                if (data[0] == next_seq): #if sequence number is as expected
+                    hash = (data[2:].decode(encoding='utf-8'))
+                    print(hash)
+                    # next_seq = (next_seq + 1)%4
+                    # client_sock.send(((data[0]+1)%3).to_bytes(1, "big") +(1).to_bytes(1, 'big'))
+                    client_sock.send_ack(1)
+                break
+            except ConnectionError:
+                retries -= 1
+        if retries == 0:
+            logger.error(f"Failed P2P connection to {addr}")
+            print(f"Failed P2P connection to {addr}")
+        else: #start up client sliding window
+            pass
+        
+
+    
 
     def user_input(self):
         while(True):
             file_name, port = input().split(' ')
-            self.request_file(file_name, (socket.gethostname(), int(port)), self.client_file_mgr.newWrite(self.down_loca/file_name))
-    
+            self.request_file(file_name, (socket.gethostbyname(socket.gethostname()), int(port)), self.client_file_mgr.newWrite(self.down_loca/file_name))
+
     def __del__(self):
         pass
 
@@ -79,6 +105,14 @@ class myUDPClient():
 
     def send(self, message):
         self.clnt_socket.sendto(message, self.addr)
+        logger.info(f"Sent data: {message} to {self.addr}")
+
+    def send_ack(self, seq_no, end = False):
+        data_type = 1
+        if (end):
+            data_type = 3
+        data = int(seq_no).to_bytes(1, "big") + int(data_type).to_bytes(1, "big")
+        self.send(data)
 
     def recv(self):
         self.clnt_socket.settimeout(0.4)
@@ -97,75 +131,128 @@ class myUDPClient():
 class myUDPServer():
     def __init__(self, port, file_mgr):
         self.clients = {}
+        self.clients_lock = threading.Lock()
         self.serv_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.serv_socket.bind((socket.gethostname(), port))
+        self.serv_success = False
+        try:
+            self.serv_socket.bind((socket.gethostbyname(socket.gethostname()), port))
+            logger.info(f"Started server successfully at address: {(socket.gethostbyname(socket.gethostname()),port)}")
+        except OSError as e:
+            logger.error(f"Failed P2P init: Address {port} already in use :{e}")
+            print(f"Failed P2P init: Port {port} is already in use")
+            return
         self.init_close = False
         self.file_mgr = file_mgr
+        self.serv_success = True
+
+    def check_success(self):
+        return self.serv_success
+
+    def set_close(self):
+        self.init_close = True
 
     def listen(self):
         while True:
             data, addr = self.serv_socket.recvfrom(4096)
-            if (data[1] == 3): # end request
-                if not self.clients.get(addr, None):
-                    del self.clients[addr]
-            elif (data[0] == 0 and data[1] == 0): # new client
-                reader = self.file_mgr.newRead(int(data[2]))
-                self.clients[addr] = { 'requested_file' : data[2], 'reader' : reader, 'window' : [], 
-                                             'retries' : 10, 'top': 0, 'last_ack': 0}
-                self.load_window(addr)
-                self.send_window(addr)
-                self.clients[addr]['timer'] = threading.Timer(10.0, self.resend, addr)
-            elif (data[1] == 1): # this is an ack
-                self.clients[addr]['timer'].cancel()
+            with self.clients_lock:
+                if (data[1] == 3): # end request
+                    if not self.clients.get(addr, None):
+                        del self.clients[addr]
+                elif (data[0] == 0 and data[1] == 0): # new client
+                    reader = self.file_mgr.newRead(int(data[2]))
+                    self.clients[addr] = { 'requested_file' : data[2], 'reader' : reader, 'window' : {}, 'retries' : 10, 'lock': threading.Lock()}
+                    self.load_window(addr, -1) #initialize
+                    self.send_window(addr)
+                    self.clients[addr]['timer'] = threading.Timer(10.0, self.resend, addr)
+                    self.clients[addr]['timer'].start()
+                    # print(self.clients[addr]['window'])
 
-                self.clients[addr]['last_ack'] = data[0]
-                self.send_window(addr)
-                self.clients[addr]['top'] = data[0]
-                self.clients[addr]['timer'] = threading.Timer(10.0, self.resend, addr)
+                elif (data[1] == 1): # this is an ack
+                    logger.info(f"Received ACK from {addr} for seq_no: {data[0]}")
+                    with self.clients[addr]['lock']:
+                        self.clients[addr]['retries'] = 10
+                        self.clients[addr]['window'][data[0]][2] = 1
+                        self.clients[addr]['timer'].cancel()
+                        self.send_window(addr)
+                        self.clients[addr]['top'] = data[0]
+                        self.clients[addr]['timer'] = threading.Timer(10.0, self.resend, addr)
+                        self.clients[addr]['timer'].start()
+                        # print(self.clients[addr]['window'])
+                    
 
-                print(self.clients[addr])
+                    # print(self.clients[addr])
 
 
     def _send_window(self, addr):
-        j = 0
         # print(self.clients[addr]['window'])
-        for i in range(len(self.clients[addr]['window'])):
-            seq_no = ((self.clients[addr]['last_ack'] + j)%3).to_bytes(1, "big")
-            data_type = (self.clients[addr]['window'][i][1]).to_bytes(1, "big")
-            data = self.clients[addr]['window'][i][0]
-            # print(data)
-            payload = seq_no + data_type + data
-            self.serv_socket.sendto(payload, addr)
-            time.sleep(0.2)
-            i += 1
+        print(self.clients[addr]['window'].keys())
+        for i in self.clients[addr]['window'].keys():
+            # print(self.clients[addr]['window'][i])
+            if self.clients[addr]['window'][i][2] == 0:
+                seq_no = int(i).to_bytes(1, "big")
+                data_type = (self.clients[addr]['window'][i][1]).to_bytes(1, "big")
+                data = self.clients[addr]['window'][i][0]
+                # print(data)
+                payload = seq_no + data_type + data
+                self.serv_socket.sendto(payload, addr)
+                time.sleep(0.1)
 
     def send_window(self, addr):
-        print(self.clients[addr]['last_ack']-self.clients[addr]['top'])
-        if(self.clients[addr]['last_ack']-self.clients[addr]['top']==0): #dont add anything to the window, resend window
-            self._send_window(addr)
-        else:
-            print('deleting')
-            i = self.clients[addr]['top']
-            while i!=self.clients[addr]['last_ack']:
-                if self.clients[addr]['window'][1] == 2:
-                    self._send_window(addr)
-                    return
-                self.clients[addr]['window'].pop(0)
-                i = (i+1)%3
-            self.load_window(addr)
-            self._send_window(addr)
+        # print(self.clients[addr]['last_ack']-self.clients[addr]['top'])
+        # if(self.clients[addr]['last_ack']-self.clients[addr]['top']==0): #dont add anything to the window, resend window
+        #     self._send_window(addr)
+        # else:
+        delFlag = True
+        endFlag = False
+        seq_no = list(self.clients[addr]['window'].keys())[-1]
+        for i in list(self.clients[addr]['window'].keys()):
+            if self.clients[addr]['window'][i][1] == 2:
+                endFlag = True
+            if self.clients[addr]['window'][i][2] == 1 and delFlag:
+                print('deleting')
+                del self.clients[addr]['window'][i]
+            else:
+                delFlag = False
+            
+        if not endFlag:
+            self.load_window(addr, seq_no)
+        self._send_window(addr)
 
-    def load_window(self, addr):
-        while len(self.clients[addr]['window']) <2:
+    def load_window(self, addr, seq_no):
+        seq_no = (seq_no + 1)%4
+        while len(self.clients[addr]['window']) < 2:
+
             try:
-                self.clients[addr]['window'].append((next(self.clients[addr]['reader']),0))
+                self.clients[addr]['window'][seq_no] = [next(self.clients[addr]['reader']),0,0]
+                # print(self.clients[addr]['window'])
+                # self.clients[addr]['window'].append((next(self.clients[addr]['reader']),0,0))
             except StopIteration as e:
-                self.clients['window'].append((e,2))
+                # self.clients['window'].append((e,2,0))
+                self.clients[addr]['window'][seq_no] = [e,2,0]
+            seq_no = (seq_no + 1)%4
+            
 
-
-    def resend(self, addr):
-        pass
-
+    def resend(self, *args):
+        addr = (args[0],args[1])
+        if self.clients[addr]['lock'].acquire(False): # if it is not able to acquire this lock immediately, then it must be locked by receiving thread
+            print('resend called')
+            logger.warning(f"Resend called for {addr} as no ack received. Retry count: {self.clients[addr]['retries']}")
+            lock = self.clients[addr]['lock']
+            try:
+                if self.clients[addr]['retries'] == 0: #declare client dead
+                    with self.clients_lock:
+                        logger.warning(f"Client with address {addr} declared dead.")
+                        del self.clients[addr]
+                else:
+                    self.clients[addr]['retries'] -= 1
+                    self.send_window(addr)
+                    self.clients[addr]['timer'] = threading.Timer(10.0, self.resend, (addr))
+                    self.clients[addr]['timer'].start()
+            finally:
+                lock.release()
+        else:
+            logger.debug("Cancelled timer called.")
+        # if the lock is being used by server receive thread then do nothing
 
     def __del__(self):
         # self.serv_socket.shutdown(1)
@@ -203,7 +290,7 @@ class ReadObj():
 
 
     def read(self):
-        print(self.file_hash)
+        # print(self.file_hash)
         yield self.file_hash
         while (block:=self.file_obj.read(4094)):
             if len(block) < 4094:
@@ -229,5 +316,5 @@ class WriteObj():
 if __name__ == "__main__":
     # parser = argparse.ArgumentParser(description= "Client ")
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = "./logs/client.log" )
-    client = Client('./configs/clients/1/1.yaml')
+    client = Client('./configs/clients/2/2.yaml')
     # client.send_msg("Hello from Client 1", socket.socket(socket.AF_INET, socket.SOCK_DGRAM), (socket.gethostname(),5000))
