@@ -54,7 +54,7 @@ def client_config_generator(files_location):
 
         for idx in range(len(client_dict['FILE_VECTOR'])):
             if client_dict['FILE_VECTOR'][idx] == '1':
-                filename =str(idx) + '.txt'
+                filename = str(idx) + '.txt'
                 file_1 = file_folder_path / filename
                 # print(file_1, new_parent/filename)
                 copy(file_1, new_parent/filename)
