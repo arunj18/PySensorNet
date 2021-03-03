@@ -51,10 +51,11 @@ class Server:
             x = threading.Thread(target=self.handle, args=(conn, address,))
             x.start()
             self.threads.append(x)
+            # TODO: need to get the name and config location from (x?) Should I use x.getName()?
 
     def handle(self, conn, address):
         """
-        Handles the connection request; will add the logic from the handle_client function here
+        Handles the connection request
         :param conn: The connection
         :param address: The IP address of the client that is connecting
         :return: N/A
