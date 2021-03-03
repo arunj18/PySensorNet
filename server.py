@@ -3,6 +3,7 @@ import sys
 import traceback
 import logging
 import threading
+from readerwriterlock import rwlock
 
 log = logging.getLogger(__name__)
 
@@ -21,26 +22,22 @@ class Server:
         :return: N/A
         """
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        try:
-            self.s.bind((self.s.gethostname(), port))
-        except:
-            print("Bind failed. Error : " + str(sys.exc_info()))
-            log.debug("Bind failed. Error : " + str(sys.exc_info()))
-            sys.exit()
-
-        log.debug("Created server socket at localhost with port:" + str(port))
         self.port = port
-        self.hostname = socket.gethostname()
-        self.IP = socket.gethostbyname(self.hostname)
+        self.hostname = "Server"
+        self.s.bind((socket.gethostname(), port))
+        self.IP = "192.1.1.1"
+        log.debug("Created server socket at localhost with port:" + str(port))
         self.threads = []
         self.clients = {}
         # Set up the config file with the information
         self.server_config()
+        self.rwlock = rwlock.RWLockRead()
 
-    def listen(self):
+    def listen(self, queue_size=5):
         """
         Function to listen on the socket for clients to add or requests to process
         :param self: The server instance
+        :param queue_size: How long the queue will be
         :return: N/A
         """
         log.debug("Server socket at port " + str(self.port) + " is now listening")
@@ -51,7 +48,6 @@ class Server:
             x = threading.Thread(target=self.handle, args=(conn, address,))
             x.start()
             self.threads.append(x)
-            # TODO: need to get the name and config location from (x?) Should I use x.getName()?
 
     def handle(self, conn, address):
         """
@@ -62,45 +58,31 @@ class Server:
         """
         while True:
             conn.settimeout(60)
-            data = conn.recv(4096)
+            data = conn.recv(4096) #4096 is the size of the buffer
+            print('Server received', repr(data))
             data = data.decode('utf-8')
-            print(data)
-            if not data:
-                break
+
             log.info(f"Received message from {address}")
 
-            client_input = self.receive_input(conn)
-            if "--QUIT--" in client_input:
+            if "--QUIT--" in data:
                 print("Client is requesting to quit")
                 conn.close()
                 print("Connection " + self.IP + ":" + self.port + " closed")
                 is_active = False
             else:
-                print("Processed result: {}".format(client_input))
+                print("Processed result: {}".format(data))
                 conn.sendall("-".encode("utf8"))
-
-    def receive_input(self, conn, max_buffer_size=4096):
-        client_input = conn.recv(max_buffer_size)
-        client_input_size = sys.getsizeof(client_input)
-        if client_input_size > max_buffer_size:
-            print("The input size is greater than expected {}".format(client_input_size))
-        decoded_input = client_input.decode("utf8").rstrip()
-        result = self.process_input(decoded_input)
-        return result
-
-    def process_input(self, connection, address, input_str):
-        print(f"Processing the input received from {address}")
 
     def server_config(self):
         """
         Sets up the server config file
         :return: N/A
         """
-        server_config = open("../configs/server.txt", "w+")
-        server_config.write("Hostname: " + self.hostname + "\n")
-        server_config.write("IP: " + self.IP + "\n")
-        server_config.write("Port_number: " + self.port + "\n")
-        server_config.close()
+        s_config_file = open("configs/server.txt", "w+")
+        s_config_file.write("Hostname: " + self.hostname + "\n")
+        s_config_file.write("IP: " + self.IP + "\n")
+        s_config_file.write("Port_number: " + str(self.port) + "\n")
+        s_config_file.close()
 
     def __del__(self):
         """
