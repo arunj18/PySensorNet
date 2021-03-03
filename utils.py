@@ -33,3 +33,17 @@ def file_hash(path):
     sha1hasher = FileHash('sha1')
     hash = sha1hasher.hash_file(path)
     return hash
+
+def verify_hash(hash, path):
+    '''
+    Function to verify hash of the file
+    path: string or Path object of the path of the file
+    '''
+    logger.info(f"Verify hash of file {path}")
+    print(hash==file_hash(path))
+    print(hash)
+    print(file_hash(path))
+    # input()
+    if (hash==file_hash(path)):
+        return True
+    return False
