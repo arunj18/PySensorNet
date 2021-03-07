@@ -57,25 +57,22 @@ class Server:
         :param address: The IP address of the client that is connecting
         :return: N/A
         """
-        while True:
+        first = True
+        # If this is the first time getting data from a client, add it to the clients dict
+        if first:
             conn.settimeout(60)
             data = conn.recv(4096)  # 4096 is the size of the buffer
             print('Server received', repr(data))
-            data = data.decode('utf-8')
-
             log.info(f"Received message from {address}")
 
-            with self.writer_lock:
-                if "--QUIT--" in data:
-                    print("Client is requesting to quit")
-                    conn.close()
-                    print("Connection " + self.IP + ":" + self.port + " closed")
-                    is_active = False
-                else:
+            data = data.decode('utf-8')
+            # Split the received data and place into an array
+            data_array = data.split()
+
+            if len(data_array) == 8:
+                with self.writer_lock:
                     print("Processed result: {}".format(data))
                     conn.sendall("-".encode("utf8"))
-                    # Split the received data and place into an array
-                    data_array = data.split()
                     # Remove single quotes from the second and fourth elements
                     data_array[2].replace("'", "")
                     data_array[4].replace("'", "")
@@ -83,6 +80,18 @@ class Server:
                     client_id = data_array[2]
                     # Add the new client's information into the clients dictionary
                     self.clients.update({client_id: data_array})
+
+        while True:
+            conn.settimeout(60)
+            data = conn.recv(4096)  # 4096 is the size of the buffer
+            print('Server received', repr(data))
+            log.info(f"Received message from {address}")
+
+            if "--QUIT--" in data:
+                print("Client is requesting to quit")
+                conn.close()
+                print("Connection " + self.IP + ":" + self.port + " closed")
+            # TODO: Add other conditions for requests here
 
     def server_config(self):
         """
