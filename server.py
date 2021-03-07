@@ -1,6 +1,4 @@
 import socket
-import sys
-import traceback
 import logging
 import threading
 from readerwriterlock import rwlock
@@ -31,7 +29,10 @@ class Server:
         self.clients = {}
         # Set up the config file with the information
         self.server_config()
-        self.rwlock = rwlock.RWLockRead()
+        # Set up the locks with reader priority
+        a = rwlock.RWLockRead()
+        self.reader_lock = a.gen_rlock()
+        self.writer_lock = a.gen_wlock()
 
     def listen(self, queue_size=5):
         """
@@ -58,20 +59,30 @@ class Server:
         """
         while True:
             conn.settimeout(60)
-            data = conn.recv(4096) #4096 is the size of the buffer
+            data = conn.recv(4096)  # 4096 is the size of the buffer
             print('Server received', repr(data))
             data = data.decode('utf-8')
 
             log.info(f"Received message from {address}")
 
-            if "--QUIT--" in data:
-                print("Client is requesting to quit")
-                conn.close()
-                print("Connection " + self.IP + ":" + self.port + " closed")
-                is_active = False
-            else:
-                print("Processed result: {}".format(data))
-                conn.sendall("-".encode("utf8"))
+            with self.writer_lock:
+                if "--QUIT--" in data:
+                    print("Client is requesting to quit")
+                    conn.close()
+                    print("Connection " + self.IP + ":" + self.port + " closed")
+                    is_active = False
+                else:
+                    print("Processed result: {}".format(data))
+                    conn.sendall("-".encode("utf8"))
+                    # Split the received data and place into an array
+                    data_array = data.split()
+                    # Remove single quotes from the second and fourth elements
+                    data_array[2].replace("'", "")
+                    data_array[4].replace("'", "")
+                    # Single out the client ID
+                    client_id = data_array[2]
+                    # Add the new client's information into the clients dictionary
+                    self.clients.update({client_id: data_array})
 
     def server_config(self):
         """
@@ -100,5 +111,5 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s",
                         filename="./logs/server.log")
-    server = Server(5000)
+    server = Server(6400)
     server.listen()
