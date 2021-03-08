@@ -74,7 +74,7 @@ class Server:
                 # Activate the writer lock
                 with self.writer_lock:
                     print("Processed result: {}".format(data))
-                    conn.sendall("-".encode("utf8"))
+                    # conn.sendall("-".encode("utf8"))
                     # Remove single quotes from the second and fourth elements
                     data_array[1] = data_array[1].replace("'", "")
                     data_array[3] = data_array[3].replace("'", "")
@@ -108,14 +108,14 @@ class Server:
                     # Check if there are any clients with the number the client is looking for
                     for client in self.clients:
                         file_vector = self.clients[client][3]
-                        list(map(int, file_vector))
-                        if file_vector[i] == 1:
-                            clients_with_file.append(client)
+                        if str(file_vector[i]) == str(1):
+                            my_client_id = self.clients[client][1]
+                            clients_with_file.append(my_client_id)
                     # Make sure there are clients with the file
                     if len(clients_with_file) != 0:
                         # Activate the reader lock
                         with self.reader_lock:
-                            my_client = bytes([client])
+                            my_client = bytes([clients_with_file[0]])
                             # Not sure if this is how you should send it...
                             # Send the number of the client that has
                             s = socket.socket()  # Create a socket object
@@ -129,11 +129,11 @@ class Server:
                             data = conn.recv(4096)  # 4096 is the size of the buffer
                             print('Server received', repr(data))
                             log.info(f"Received message from {address}")
+                    # Send that there are no clients with the file
                     else:
-                        conn.settimeout(60)
-                        data = conn.recv(4096)  # 4096 is the size of the buffer
-                        print('Server received', repr(data))
-                        log.info(f"Received message from {address}")
+                        s = socket.socket()  # Create a socket object
+                        s.connect((conn, address))  # connect with the server
+                        s.send(b'0')  # communicate with the server
                 except ValueError:
                     print("Did not receive a correct request. Try again.")
 
