@@ -57,30 +57,32 @@ class Server:
         :param address: The IP address of the client that is connecting
         :return: N/A
         """
-
+        first = True
         # If this is the first time getting data from a client, add it to the clients dict
-        conn.settimeout(60)
-        data = conn.recv(4096)  # 4096 is the size of the buffer
-        print('Server received', repr(data))
-        log.info(f"Received message from {address}")
+        while first:
+            conn.settimeout(60)
+            data = conn.recv(4096)  # 4096 is the size of the buffer
+            print('Server received', repr(data))
+            log.info(f"Received message from {address}")
 
-        data = data.decode('utf-8')
-        # Split the received data and place into an array
-        data_array = data.split()
+            data = data.decode('utf-8')
+            # Split the received data and place into an array
+            data_array = data.split()
 
-        # Extra check to make sure the information is the correct size
-        if len(data_array) == 8:
-            # Activate the writer lock
-            with self.writer_lock:
-                print("Processed result: {}".format(data))
-                conn.sendall("-".encode("utf8"))
-                # Remove single quotes from the second and fourth elements
-                data_array[2].replace("'", "")
-                data_array[4].replace("'", "")
-                # Single out the client ID
-                client_id = data_array[2]
-                # Add the new client's information into the clients dictionary
-                self.clients.update({client_id: data_array})
+            # Extra check to make sure the information is the correct size
+            if len(data_array) == 8:
+                # Activate the writer lock
+                with self.writer_lock:
+                    print("Processed result: {}".format(data))
+                    conn.sendall("-".encode("utf8"))
+                    # Remove single quotes from the second and fourth elements
+                    data_array[2].replace("'", "")
+                    data_array[4].replace("'", "")
+                    # Single out the client ID
+                    client_id = data_array[2]
+                    # Add the new client's information into the clients dictionary
+                    self.clients.update({client_id: data_array})
+                    first = False
 
         # Go into a loop to listen for other requests
         while True:
@@ -102,12 +104,36 @@ class Server:
                 # Make sure the second element is an integer
                 try:
                     i = int(data_array[2])
-                    # Activate the reader lock
-                    with self.reader_lock:
-                        for client in self.clients:
-                            file_vector = self.clients[client][4]
-                            list(map(int, file_vector))
+                    clients_with_file = []
+                    # Check if there are any clients with the number the client is looking for
+                    for client in self.clients:
+                        file_vector = self.clients[client][4]
+                        list(map(int, file_vector))
+                        if file_vector[i] == 1:
+                            clients_with_file.append(client)
+                    # Make sure there are clients with the file
+                    if len(clients_with_file) != 0:
+                        # Activate the reader lock
+                        with self.reader_lock:
+                            my_client = bytes([client])
+                            # Not sure if this is how you should send it...
+                            # Send the number of the client that has
+                            s = socket.socket()  # Create a socket object
+                            s.connect((conn, address))  # connect with the server
+                            s.send(my_client)  # communicate with the server
 
+                        # Listen for the confirmation that the transfer is complete
+                        complete = False
+                        while not complete:
+                            conn.settimeout(60)
+                            data = conn.recv(4096)  # 4096 is the size of the buffer
+                            print('Server received', repr(data))
+                            log.info(f"Received message from {address}")
+                    else:
+                        conn.settimeout(60)
+                        data = conn.recv(4096)  # 4096 is the size of the buffer
+                        print('Server received', repr(data))
+                        log.info(f"Received message from {address}")
                 except ValueError:
                     print("Did not receive a correct request. Try again.")
 
