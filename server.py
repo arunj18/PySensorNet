@@ -57,9 +57,33 @@ class Server:
         :param address: The IP address of the client that is connecting
         :return: N/A
         """
-        first = True
+
         # If this is the first time getting data from a client, add it to the clients dict
-        if first:
+        conn.settimeout(60)
+        data = conn.recv(4096)  # 4096 is the size of the buffer
+        print('Server received', repr(data))
+        log.info(f"Received message from {address}")
+
+        data = data.decode('utf-8')
+        # Split the received data and place into an array
+        data_array = data.split()
+
+        # Extra check to make sure the information is the correct size
+        if len(data_array) == 8:
+            # Activate the writer lock
+            with self.writer_lock:
+                print("Processed result: {}".format(data))
+                conn.sendall("-".encode("utf8"))
+                # Remove single quotes from the second and fourth elements
+                data_array[2].replace("'", "")
+                data_array[4].replace("'", "")
+                # Single out the client ID
+                client_id = data_array[2]
+                # Add the new client's information into the clients dictionary
+                self.clients.update({client_id: data_array})
+
+        # Go into a loop to listen for other requests
+        while True:
             conn.settimeout(60)
             data = conn.recv(4096)  # 4096 is the size of the buffer
             print('Server received', repr(data))
@@ -69,29 +93,24 @@ class Server:
             # Split the received data and place into an array
             data_array = data.split()
 
-            if len(data_array) == 8:
-                with self.writer_lock:
-                    print("Processed result: {}".format(data))
-                    conn.sendall("-".encode("utf8"))
-                    # Remove single quotes from the second and fourth elements
-                    data_array[2].replace("'", "")
-                    data_array[4].replace("'", "")
-                    # Single out the client ID
-                    client_id = data_array[2]
-                    # Add the new client's information into the clients dictionary
-                    self.clients.update({client_id: data_array})
-
-        while True:
-            conn.settimeout(60)
-            data = conn.recv(4096)  # 4096 is the size of the buffer
-            print('Server received', repr(data))
-            log.info(f"Received message from {address}")
-
-            if "--QUIT--" in data:
+            if "QUIT" in data:
                 print("Client is requesting to quit")
                 conn.close()
                 print("Connection " + self.IP + ":" + self.port + " closed")
-            # TODO: Add other conditions for requests here
+            # Client is trying to find a file
+            else:
+                # Make sure the second element is an integer
+                try:
+                    i = int(data_array[2])
+                    # Activate the reader lock
+                    with self.reader_lock:
+                        for client in self.clients:
+                            file_vector = self.clients[client][4]
+                            list(map(int, file_vector))
+
+                except ValueError:
+                    print("Did not receive a correct request. Try again.")
+
 
     def server_config(self):
         """
