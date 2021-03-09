@@ -31,6 +31,8 @@ CLIENT_REQUEST_RETRIES = 2
 CLIENT_RECV_TIMEOUT = 0.4
 CLIENT_BUFFER_SIZE = 4096
 
+CLIENT_MAIN_SERV_TIMEOUT = 5.0
+CLIENT_MAIN_SERV_RETRIES = 10
 
 DATA_PAYLOAD_SIZE = CLIENT_BUFFER_SIZE - 2
 DATA_PACKET = 0
@@ -61,25 +63,57 @@ class Client():
         self.serv_conn_status = True
         self.client_shutdown = False
 
+        # send init message to server 
+        print("Do INIT")
+        self.main_serv_init()
+        print("INIT DONE")
+
+
 
         # then start listening on port
-        self.my_server = myUDPServer(self.my_port, self.client_file_mgr)
-        if (not self.my_server.check_success()):
-            return 
-        self.server = threading.Thread(target = self.my_server.listen)
-        self.server.start()
+        # my_server = myUDPServer(self.my_port, self.client_file_mgr)
+        # if (not my_server.check_success()):
+            # return 
+        # server = threading.Thread(target = self.my_server.listen)
+        # server.start()
 
         # open user input
-        self.input_thread = threading.Thread(target = self.user_input)
-        self.input_thread.start()
+        input_thread = threading.Thread(target = self.user_input)
+        input_thread.start()
 
         while (not self.client_shutdown):
             # do nothing
             pass
         print("Client shutting down...")
-        self.input_thread.join()
-        self.server.join()
+        input_thread.join()
+        # server.join()
+    def main_serv_init(self):
+        self.main_serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            self.main_serv.connect((socket.gethostbyname(socket.gethostname()),self.serv_port))
+            self.main_serv.sendall(bytes("INIT:"+str(self.client_id)+":"+str(self.file_vector)+":"+str(self.my_port), encoding ='utf-8'))
+            retries = CLIENT_MAIN_SERV_RETRIES
+            flag = False
+            while(retries):
+                try:
+                    self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
+                    success = self.main_serv.recv(4096)
+                    flag = True
+                    if not success:
+                        break
+                    print(success.decode('utf-8'))
+                    input()
+                except socket.timeout:
+                    retries -= 1
+            print("Got success")
 
+        except Exception as e:
+            print("Socket connection failed ", e)
+            self.main_serv.close()
+            return False
+
+    def main_serv_hold(self):
+        pass
 
     def move_window(self, seq_nos):
         '''
@@ -800,6 +834,6 @@ class WriteObj():
 if __name__ == "__main__":
     # parser = argparse.ArgumentParser(description= "Client ")
     client_no = int(input())
-    logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./client/log_{client_no}.log" )
+    logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./client_logs/log_{client_no}.log" )
     client = Client(f'./configs/clients/{client_no}/{client_no}.yaml')
     # client.send_msg("Hello from Client 1", socket.socket(socket.AF_INET, socket.SOCK_DGRAM), (socket.gethostname(),5000))

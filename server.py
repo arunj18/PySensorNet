@@ -25,6 +25,9 @@ class Server:
         self.s.bind((socket.gethostname(), port))
         self.IP = "192.1.1.1"
         log.debug("Created server socket at localhost with port:" + str(port))
+        
+        self.files = [[] for _ in range(50)] # TODO #1 keep client ids by time of insertion into list
+
         self.threads = []
         self.clients = {}
         # Set up the config file with the information
@@ -59,6 +62,7 @@ class Server:
         """
         first = True
         # If this is the first time getting data from a client, add it to the clients dict
+        # !!! CHANGES MADE HERE !!!
         while first:
             conn.settimeout(60)
             data = conn.recv(4096)  # 4096 is the size of the buffer
@@ -67,21 +71,37 @@ class Server:
 
             data = data.decode('utf-8')
             # Split the received data and place into an array
-            data_array = data.split()
-
+            data_array = data.split(':')
+            print(data_array)
             # Extra check to make sure the information is the correct size
-            if len(data_array) == 8:
+            if len(data_array) == 4:
                 # Activate the writer lock
                 with self.writer_lock:
+                    print(data_array)
+                    input()
                     print("Processed result: {}".format(data))
                     # conn.sendall("-".encode("utf8"))
-                    # Remove single quotes from the second and fourth elements
+                    # Remove single quotes frteom the second and fourth elements
                     data_array[1] = data_array[1].replace("'", "")
                     data_array[3] = data_array[3].replace("'", "")
                     # Single out the client ID
                     client_id = data_array[1]
+                    client_info = { "id" : data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3] }
                     # Add the new client's information into the clients dictionary
-                    self.clients.update({client_id: data_array})
+                    self.clients.update({client_id: client_info})
+
+                    # TODO some sort of queue for each file 
+                    for i in range(len(self.files)):
+                        if data_array[2][i] == '1':
+                            self.files[i].append(data_array[1])
+                    print(self.files)
+                    conn.sendall(b"Success!")
+                    input()
+
+        # !!! CHANGES MADE HERE!!!
+
+
+
                     first = False
 
         # Go into a loop to listen for other requests
@@ -165,5 +185,5 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s",
                         filename="./logs/server.log")
-    server = Server(6400)
+    server = Server(5000)
     server.listen()
