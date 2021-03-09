@@ -26,17 +26,15 @@ class Server:
         self.IP = "192.1.1.1"
         log.debug("Created server socket at localhost with port:" + str(port))
         
-        self.files = [[] for _ in range(50)] # TODO #1 keep client ids by time of insertion into list
+        self.files = [[] for _ in range(50)] # TODO #1 keep client ids by time of insertion into list # CHANGE
 
         self.threads = []
         self.clients = {}
         # Set up the config file with the information
         self.server_config()
         # Set up the locks with reader priority
-        a = rwlock.RWLockRead()
-        self.reader_lock = a.gen_rlock()
-        self.writer_lock = a.gen_wlock()
-
+        self.lock = rwlock.RWLockRead() # CHANGE
+        
     def listen(self, queue_size=5):
         """
         Function to listen on the socket for clients to add or requests to process
@@ -60,43 +58,44 @@ class Server:
         :param address: The IP address of the client that is connecting
         :return: N/A
         """
-        first = True
-        # If this is the first time getting data from a client, add it to the clients dict
-        # !!! CHANGES MADE HERE !!!
-        while first:
-            conn.settimeout(60)
-            data = conn.recv(4096)  # 4096 is the size of the buffer
-            print('Server received', repr(data))
-            log.info(f"Received message from {address}")
+        with self.lock.gen_wlock(): # get a write lock  # CHANGE
+            first = True
+            # If this is the first time getting data from a client, add it to the clients dict
+            # !!! CHANGES MADE HERE !!!
+            while first:
+                conn.settimeout(60)
+                data = conn.recv(4096)  # 4096 is the size of the buffer
+                print('Server received', repr(data))
+                log.info(f"Received message from {address}")
 
-            data = data.decode('utf-8')
-            # Split the received data and place into an array
-            data_array = data.split(':')
-            print(data_array)
-            # Extra check to make sure the information is the correct size
-            if len(data_array) == 4:
-                # Activate the writer lock
-                with self.writer_lock:
-                    print(data_array)
-                    input()
-                    print("Processed result: {}".format(data))
-                    # conn.sendall("-".encode("utf8"))
-                    # Remove single quotes frteom the second and fourth elements
-                    data_array[1] = data_array[1].replace("'", "")
-                    data_array[3] = data_array[3].replace("'", "")
-                    # Single out the client ID
-                    client_id = data_array[1]
-                    client_info = { "id" : data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3] }
-                    # Add the new client's information into the clients dictionary
-                    self.clients.update({client_id: client_info})
+                data = data.decode('utf-8')
+                # Split the received data and place into an array
+                data_array = data.split(':')
+                print(data_array)
+                # Extra check to make sure the information is the correct size
+                if len(data_array) == 4:
+                    # Activate the writer lock
+                    with self.writer_lock:
+                        print(data_array)
+                        input()
+                        print("Processed result: {}".format(data))
+                        # conn.sendall("-".encode("utf8"))
+                        # Remove single quotes frteom the second and fourth elements
+                        data_array[1] = data_array[1].replace("'", "")
+                        data_array[3] = data_array[3].replace("'", "")
+                        # Single out the client ID
+                        client_id = data_array[1]
+                        client_info = { "id" : data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3] }
+                        # Add the new client's information into the clients dictionary
+                        self.clients.update({client_id: client_info})
 
-                    # TODO some sort of queue for each file 
-                    for i in range(len(self.files)):
-                        if data_array[2][i] == '1':
-                            self.files[i].append(data_array[1])
-                    print(self.files)
-                    conn.sendall(b"Success!")
-                    input()
+                        # TODO some sort of queue for each file 
+                        for i in range(len(self.files)):
+                            if data_array[2][i] == '1':
+                                self.files[i].append(data_array[1])
+                        print(self.files)
+                        conn.sendall(b"Success!")
+                        input()
 
         # !!! CHANGES MADE HERE!!!
 
