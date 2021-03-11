@@ -25,17 +25,17 @@ class Server:
         self.s.bind((socket.gethostname(), port))
         self.IP = "192.1.1.1"
         log.debug("Created server socket at localhost with port:" + str(port))
-        
-        self.files = [[] for _ in range(50)] # TODO #1 keep client ids by time of insertion into list # CHANGE
+
+        self.files = [[] for _ in range(50)]  # TODO #1 keep client ids by time of insertion into list # CHANGE
 
         self.threads = []
         self.clients = {}
         # Set up the config file with the information
         self.server_config()
         # Set up the locks with reader priority
-        self.lock = rwlock.RWLockWrite() # CHANGE
+        self.lock = rwlock.RWLockWrite()  # CHANGE
         self.thread_lock = threading.Lock()
-        
+
     def listen(self, queue_size=5):
         """
         Function to listen on the socket for clients to add or requests to process
@@ -49,11 +49,11 @@ class Server:
         while True:
             conn, address = self.s.accept()
             log.info(f"Connected to {address}")
+            print(f"Server connected to {address}")
             x = threading.Thread(target=self.handle, args=(conn, address,))
             x.start()
             with self.thread_lock:
                 self.threads.append(x)
-
 
     def thread_killer(self):
         with self.thread_lock:
@@ -64,9 +64,9 @@ class Server:
                 if not (self.threads[i].is_alive()):
                     to_del.append(i)
                 print(self.threads[i].is_alive())
-            print (to_del)
-            if (len(self.threads)>0):
-                for i in range(len(self.threads)-1,-1,-1):
+            print(to_del)
+            if len(self.threads) > 0:
+                for i in range(len(self.threads) - 1, -1, -1):
                     if i in to_del:
                         del self.threads[i]
                         print(f"Thread {i} killed")
@@ -88,7 +88,7 @@ class Server:
         # !!! CHANGES MADE HERE !!!
         conn_estd = False
         retries = 10
-        while (retries):
+        while retries:
             conn.settimeout(10)
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
@@ -112,7 +112,7 @@ class Server:
                         data_array[3] = data_array[3].replace("'", "")
                         # Single out the client ID
                         client_id = data_array[1]
-                        client_info = { "id" : data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3] }
+                        client_info = {"id": data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3]}
                         file_vector = data_array[2]
                         # Add the new client's information into the clients dictionary
                         self.clients.update({client_id: client_info})
@@ -128,7 +128,7 @@ class Server:
                         break
             except socket.timeout:
                 retries -= 1
-        if (not conn_estd):
+        if not conn_estd:
             print(f"Connection to {address} failed")
             return
 
@@ -154,6 +154,7 @@ class Server:
                     print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
                         for i in range(len(self.files)):
+                            # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
@@ -173,7 +174,7 @@ class Server:
                         # Make sure there are clients with the file
                         if len(clients_with_file) != 0:
                             # Activate the reader lock
-                            with self.reader_lock:
+                            with self.lock.gen_rlock():
                                 my_client = bytes([clients_with_file[0]])
                                 # Not sure if this is how you should send it...
                                 # Send the number of the client that has
@@ -229,3 +230,5 @@ if __name__ == "__main__":
                         filename="./logs/server.log")
     server = Server(5000)
     server.listen()
+
+    print("Hello! The server is starting up...\n")
