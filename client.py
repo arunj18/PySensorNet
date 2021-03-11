@@ -9,6 +9,7 @@ import yaml
 from readerwriterlock import rwlock
 from pathlib import Path
 from utils import file_hash, verify_hash
+from inputimeout import inputimeout, TimeoutOccurred
 
 logger = logging.getLogger(__name__)
 
@@ -45,41 +46,96 @@ class MainServerConn():
         self.serv_port = server_port
         self.main_serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.set_conn_status(False)
-        try:
-            self.main_serv.connect((socket.gethostbyname(socket.gethostname()),self.serv_port))
-        except ConnectionRefusedError:
+        self.conn_estd = False
+        retries = 10
+        while(retries):
+            try:
+                self.main_serv.connect((socket.gethostbyname(socket.gethostname()),self.serv_port))
+                self.conn_estd = True
+                break
+            except ConnectionRefusedError:
+                print('retry')
+                retries -= 1
+                time.sleep(1)
+        if not self.conn_estd:
             return
         self.send_init_to_serv(config)
-        self.HB_timer = threading.Timer
+        self.HB_timer = threading.Timer(10.0, self.send_HB)
+        self.HB_timer.start()
+        self.wait_HB = threading.Lock() # waiting for HB packet response?
 
 
     def send_init_to_serv(self, config):
         self.main_serv.sendall(bytes("INIT:"+str(config['CLIENTID'])+":"+str(config['FILE_VECTOR'])+":"+str(config['MYPORT']), encoding ='utf-8'))
         retries = CLIENT_MAIN_SERV_RETRIES
-        flag = False
+        conn_estd = False
         chunks = []
-        while(True):
+        while(retries):
             try:
                 self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
                 success = self.main_serv.recv(4096)
-                flag = True
                 chunks.append(success)
                 print(success.decode('utf-8'))
                 if success.decode('utf-8') == "Success!":
                     self.set_conn_status(True)
+                    conn_estd = True
                     break 
             except socket.timeout as e:
                 print(e)
-        print("Got success")
-        print(chunks)
-        # if ((''.join(chunks)) == "Success!")
-        #     self.set_conn_status(True)
-        input()
+                retries-=1
+        if (conn_estd):
+            self.set_conn_status(True)
+            print("Got success")
+            return
+
+    def request_file(self, file_no):
+        with self.wait_HB: #make sure we are not waiting for a HB reply
+            if (not self.get_conn_status()): #connection is dead
+                return 0, 0
+            self.HB_timer.cancel() #cancel HB timer
+            self.main_serv.sendall(bytes(f"FILE:{file_no}", encoding = "utf-8"))
+            retries = 10
+            while retries:
+                try:
+                    self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
+                    resp = self.main_serv.recv(4096)
+                    resp = resp.decode('utf-8')
+                    try:
+                        _, port = resp.split(':')
+                        self.HB_timer = threading.Timer(10.0, self.send_HB)
+                        self.HB_timer.start()
+                        return port
+                    except ValueError:
+                        print(resp)
+                except socket.timeout:
+                    retries -= 1
+            self.set_close()
+            self.set_conn_status(False)
+            return -2
+
+
 
     def send_HB(self):
-        pass
+        with self.wait_HB:
+            self.main_serv.sendall(bytes("HB", encoding = 'utf-8'))
+            self.recv_HB()
+
     def recv_HB(self):
-        pass
+        retries = 2
+        while retries:
+            try:
+                self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
+                HB_resp = self.main_serv.recv(4096)
+                if HB_resp.decode('utf-8') == 'HB+':
+                    self.HB_timer = threading.Timer(10.0, self.send_HB)
+                    self.HB_timer.start()
+                    return
+            except socket.timeout:
+                retries -= 1
+        logger.error("No replies to HB message, connection dead to main server")
+        self.set_conn_status(False)
+
+
 
     def get_conn_status(self):
         return self.conn_status
@@ -89,10 +145,12 @@ class MainServerConn():
 
     def set_close(self):
         self.main_serv.sendall(b'QUIT')
+        self.set_conn_status(False)
+        self.HB_timer.cancel()
 
     def __del__(self):
-        print (self.main_serv)
-        if (self.conn_status):
+        # print (self.main_serv)
+        if (self.conn_estd):
             self.main_serv.shutdown(1)
             self.main_serv.close()
 
@@ -115,7 +173,6 @@ class Client():
         self.client_file_mgr = ClientFile(self.file_vector, self.file_loca)
         logging.info("Done with config initialization")
 
-        self.serv_conn_status = True
         self.client_shutdown = False
 
         # send init message to server 
@@ -127,26 +184,35 @@ class Client():
 
 
         # then start listening on port
-        # my_server = myUDPServer(self.my_port, self.client_file_mgr)
-        # if (not my_server.check_success()):
-            # return 
-        # server = threading.Thread(target = self.my_server.listen)
-        # server.start()
+        my_server = myUDPServer(self.my_port, self.client_file_mgr)
+        if (not my_server.check_success()):
+            return 
+        server = threading.Thread(target = my_server.listen)
+        server.start()
 
         # open user input
         input_thread = threading.Thread(target = self.user_input)
         input_thread.start()
 
-        while (not self.client_shutdown):
+        while (not self.client_shutdown and self.serv_conn.get_conn_status()):
             # do nothing
             pass
+        if (not self.serv_conn.get_conn_status()):
+            logger.error("Connection to server lost, client exiting..")
+            self.serv_conn.set_close()
+            my_server.set_close()
+        if (self.client_shutdown):
+            logger.info("Client shutdown called, client exiting")
+            if (self.serv_conn.get_conn_status()):
+                self.serv_conn.set_close()
+                my_server.set_close()
         print("Client shutting down...")
         input_thread.join()
-        # server.join()
+        logger.info("input thread joined")
+        server.join()
+        logger.info("my server joined")
         del self.serv_conn
 
-    def change_serv_conn_status(self, status):
-        self.serv_conn_status = status
 
     def move_window(self, seq_nos):
         '''
@@ -175,7 +241,7 @@ class Client():
         '''
         file_loc = writer.get_filepath()
         del writer
-        if (self.serv_conn_status):
+        if (self.serv_conn.get_conn_status()):
             if (abnormal): # connection ended abnormally
                 if os.path.exists(file_loc): #remove file
                     logger.info(f"File deleted: {file_loc} due to server connection lost")
@@ -234,7 +300,7 @@ class Client():
         second_end = False # if buffer has the ending packet
         hash = None # hash of the incoming file
 
-        while retries>=0 and self.serv_conn_status and (not connEnd):
+        while retries>=0 and self.serv_conn.get_conn_status() and (not connEnd):
             try:
                 data = client_sock.recv() # try to get data from socket
                 if (data[0] in seq_nos):
@@ -277,7 +343,7 @@ class Client():
                 break
             except ConnectionError:
                 retries -= 1
-        if (not self.serv_conn_status):
+        if (not self.serv_conn.get_conn_status()):
             logger.error(f"Request file failed due to server connection lost")
             self.request_cleanup(hash, writer)
             del client_sock
@@ -295,7 +361,7 @@ class Client():
             return False
 
         retries = CLIENT_MAX_RETRIES
-        while retries>=0 and self.serv_conn_status and (not connEnd):
+        while retries>=0 and self.serv_conn.get_conn_status() and (not connEnd):
             try:
 
                 data = client_sock.recv()
@@ -341,7 +407,7 @@ class Client():
             except ConnectionError:
                 retries -= 1
 
-        if (not self.serv_conn_status): # connection to main server lost
+        if (not self.serv_conn.get_conn_status()): # connection to main server lost
             self.request_cleanup(hash, writer)
             del client_sock
             return False
@@ -360,27 +426,36 @@ class Client():
         '''
         Function to get user input
         '''
-        while(not self.client_shutdown): # keep looping to get user input
+        while(not self.client_shutdown and self.serv_conn.get_conn_status()): # keep looping to get user input
+            os.system('cls' if os.name == 'nt' else 'clear')
             try:
-                file_name, port = input().split(' ')
-            except:
+                file_name = inputimeout(prompt = ">>", timeout = 30.0)
+            except TimeoutOccurred:
                 continue
-            if (int(port) == -1):
+            if (int(file_name[:-4]) == -1):
                 self.serv_conn.set_close()
                 self.client_shutdown = True
                 return
-            if (int(port)==self.my_port):
-                print("Requesting from myself...")
-                continue
-            retries = CLIENT_REQUEST_RETRIES
-            while (retries > 0):
-                if (not self.request_file(file_name, (socket.gethostbyname(socket.gethostname()), int(port)), self.client_file_mgr.newWrite(self.down_loca/(file_name+'.txt')))):
+            if self.serv_conn.get_conn_status():
+                port = self.serv_conn.request_file(int(file_name[:-4]))
+                if (port == -2):
+                    continue
+                if (int(port)==self.my_port):
+                    print("Requesting from myself...")
+                    continue
+                if (int(port)==-1):
+                    print("No peers have file")
+                    # time.sleep(5)
+                    continue
+                retries = CLIENT_REQUEST_RETRIES
+                while (retries > 0):
+                    if (not self.request_file(file_name[:-4], (socket.gethostbyname(socket.gethostname()), int(port)), self.client_file_mgr.newWrite(self.down_loca/(file_name+'.txt')))):
+                        retries -= 1
+                        logger.error(f"Request for {file_name} from {port} failed, retrying...")
+                    else:
+                        logger.info(f"Request for {file_name} from {port} completed successfully.")
+                        break
                     retries -= 1
-                    logger.error(f"Request for {file_name} from {port} failed, retrying...")
-                else:
-                    logger.info(f"Request for {file_name} from {port} completed successfully.")
-                    break
-                retries -= 1
 
 
     def __del__(self):
@@ -689,7 +764,6 @@ class myUDPServer():
         addr = (args[0],args[1])
         if addr not in self.clients.keys(): # do nothing if client is not in the shared dictionary anymore
             return
-        
 
         if self.clients[addr]['lock'].acquire(False): # if it is not able to acquire this lock immediately, then it must be locked by receiving thread
             logger.warning(f"Resend called for {addr} as no ack received. Retry count: {self.clients[addr]['retries']}")

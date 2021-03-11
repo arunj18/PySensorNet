@@ -58,13 +58,13 @@ class Server:
     def thread_killer(self):
         with self.thread_lock:
             to_del = []
-            print(self.threads)
+            # print(self.threads)
             for i in range(len(self.threads)):
                 self.threads[i].join(0.0)
                 if not (self.threads[i].is_alive()):
                     to_del.append(i)
-                print(self.threads[i].is_alive())
-            print(to_del)
+                # print(self.threads[i].is_alive())
+            # print(to_del)
             if len(self.threads) > 0:
                 for i in range(len(self.threads) - 1, -1, -1):
                     if i in to_del:
@@ -135,7 +135,7 @@ class Server:
         # !!! CHANGES MADE HERE!!!
         # Go into a loop to listen for other requests
         while True:
-            conn.settimeout(10)
+            conn.settimeout(20.0)
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 # print('Server received', repr(data))
@@ -146,7 +146,7 @@ class Server:
                     print(data)
                 # input()
                 # Split the received data and place into an array
-                data_array = data.split()
+                data_array = data.split(':')
                 # input()
                 if "QUIT" in data:
                     print("Client is requesting to quit")
@@ -163,7 +163,19 @@ class Server:
                 else:
                     # Make sure the second element is an integer
                     try:
+                        print (data_array)
+                        if (len(data_array) == 1):
+                            if (data_array[0] == "HB"):
+                                conn.sendall(b'HB+')
+                                continue
                         i = int(data_array[1])
+                        if len(self.files[i]) == 0:
+                            conn.sendall(b"PORT:-1")
+                            continue
+                        else:
+                            port = self.clients[self.files[i][0]]["PORT"]
+                            conn.sendall(bytes(f"PORT: {port}", encoding = "utf-8"))
+                            continue
                         clients_with_file = []
                         # Check if there are any clients with the number the client is looking for
                         for client in self.clients:
