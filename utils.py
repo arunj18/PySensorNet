@@ -43,7 +43,7 @@ def verify_hash(hash, path):
     print(hash==file_hash(path))
     print(hash)
     print(file_hash(path))
-    # input()
+    input()
     if (hash==file_hash(path)):
         return True
     return False
