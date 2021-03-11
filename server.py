@@ -195,7 +195,7 @@ class Server:
                             s.send(b'0')  # communicate with the server
                     except ValueError:
                         print("Did not receive a correct request. Try again.")
-                time.sleep(2)
+                # time.sleep(2)
             except socket.timeout:
                 print('timedout')
 
