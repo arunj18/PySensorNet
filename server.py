@@ -168,14 +168,16 @@ class Server:
                             if (data_array[0] == "HB"):
                                 conn.sendall(b'HB+')
                                 continue
-                        i = int(data_array[1])
-                        if len(self.files[i]) == 0:
-                            conn.sendall(b"PORT:-1")
-                            continue
-                        else:
-                            port = self.clients[self.files[i][0]]["PORT"]
-                            conn.sendall(bytes(f"PORT: {port}", encoding = "utf-8"))
-                            continue
+                        if len(data_array)==2:
+                            with self.lock.gen_rlock():
+                                i = int(data_array[1])
+                                if len(self.files[i]) == 0:
+                                    conn.sendall(b"PORT:-1")
+                                    continue
+                                else:
+                                    port = self.clients[self.files[i][0]]["PORT"]
+                                    conn.sendall(bytes(f"PORT: {port}", encoding = "utf-8"))
+                                    continue
                         clients_with_file = []
                         # Check if there are any clients with the number the client is looking for
                         for client in self.clients:
