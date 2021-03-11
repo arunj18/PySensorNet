@@ -33,7 +33,8 @@ class Server:
         # Set up the config file with the information
         self.server_config()
         # Set up the locks with reader priority
-        self.lock = rwlock.RWLockRead() # CHANGE
+        self.lock = rwlock.RWLockWrite() # CHANGE
+        self.thread_lock = threading.Lock()
         
     def listen(self, queue_size=5):
         """
@@ -44,12 +45,36 @@ class Server:
         """
         log.debug("Server socket at port " + str(self.port) + " is now listening")
         self.s.listen()
+        self.timed_thread_killer()
         while True:
             conn, address = self.s.accept()
             log.info(f"Connected to {address}")
             x = threading.Thread(target=self.handle, args=(conn, address,))
             x.start()
-            self.threads.append(x)
+            with self.thread_lock:
+                self.threads.append(x)
+
+
+    def thread_killer(self):
+        with self.thread_lock:
+            to_del = []
+            print(self.threads)
+            for i in range(len(self.threads)):
+                self.threads[i].join(0.0)
+                if not (self.threads[i].is_alive()):
+                    to_del.append(i)
+                print(self.threads[i].is_alive())
+            print (to_del)
+            if (len(self.threads)>0):
+                for i in range(len(self.threads)-1,-1,-1):
+                    if i in to_del:
+                        del self.threads[i]
+                        print(f"Thread {i} killed")
+        self.timed_thread_killer()
+
+    def timed_thread_killer(self):
+        self.timed_killer = threading.Timer(10.0, self.thread_killer)
+        self.timed_killer.start()
 
     def handle(self, conn, address):
         """
@@ -58,12 +83,14 @@ class Server:
         :param address: The IP address of the client that is connecting
         :return: N/A
         """
-        with self.lock.gen_wlock(): # get a write lock  # CHANGE
-            first = True
-            # If this is the first time getting data from a client, add it to the clients dict
-            # !!! CHANGES MADE HERE !!!
-            while first:
-                conn.settimeout(60)
+        # with self.lock.gen_wlock(): # get a write lock  # CHANGE
+        # If this is the first time getting data from a client, add it to the clients dict
+        # !!! CHANGES MADE HERE !!!
+        conn_estd = False
+        retries = 10
+        while (retries):
+            conn.settimeout(10)
+            try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 print('Server received', repr(data))
                 log.info(f"Received message from {address}")
@@ -75,9 +102,9 @@ class Server:
                 # Extra check to make sure the information is the correct size
                 if len(data_array) == 4:
                     # Activate the writer lock
-                    with self.writer_lock:
+                    with self.lock.gen_wlock():
                         print(data_array)
-                        input()
+                        # input()
                         print("Processed result: {}".format(data))
                         # conn.sendall("-".encode("utf8"))
                         # Remove single quotes frteom the second and fourth elements
@@ -86,6 +113,7 @@ class Server:
                         # Single out the client ID
                         client_id = data_array[1]
                         client_info = { "id" : data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3] }
+                        file_vector = data_array[2]
                         # Add the new client's information into the clients dictionary
                         self.clients.update({client_id: client_info})
 
@@ -95,67 +123,81 @@ class Server:
                                 self.files[i].append(data_array[1])
                         print(self.files)
                         conn.sendall(b"Success!")
-                        input()
+                        conn_estd = True
+                        # input()
+                        break
+            except socket.timeout:
+                retries -= 1
+        if (not conn_estd):
+            print(f"Connection to {address} failed")
+            return
 
         # !!! CHANGES MADE HERE!!!
-
-
-
-                    first = False
-
         # Go into a loop to listen for other requests
         while True:
-            conn.settimeout(60)
-            data = conn.recv(4096)  # 4096 is the size of the buffer
-            print('Server received', repr(data))
-            log.info(f"Received message from {address}")
+            conn.settimeout(10)
+            try:
+                data = conn.recv(4096)  # 4096 is the size of the buffer
+                # print('Server received', repr(data))
+                log.info(f"Received message from {address}")
 
-            data = data.decode('utf-8')
-            # Split the received data and place into an array
-            data_array = data.split()
+                data = data.decode('utf-8')
+                if not data:
+                    print(data)
+                # input()
+                # Split the received data and place into an array
+                data_array = data.split()
+                # input()
+                if "QUIT" in data:
+                    print("Client is requesting to quit")
+                    conn.close()
+                    print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                    with self.lock.gen_wlock():
+                        for i in range(len(self.files)):
+                            if file_vector[i] == '1':
+                                self.files[i].remove(client_id)
+                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        return
+                # Client is trying to find a file
+                else:
+                    # Make sure the second element is an integer
+                    try:
+                        i = int(data_array[1])
+                        clients_with_file = []
+                        # Check if there are any clients with the number the client is looking for
+                        for client in self.clients:
+                            file_vector = self.clients[client][3]
+                            if str(file_vector[i]) == str(1):
+                                my_client_id = self.clients[client][1]
+                                clients_with_file.append(my_client_id)
+                        # Make sure there are clients with the file
+                        if len(clients_with_file) != 0:
+                            # Activate the reader lock
+                            with self.reader_lock:
+                                my_client = bytes([clients_with_file[0]])
+                                # Not sure if this is how you should send it...
+                                # Send the number of the client that has
+                                s = socket.socket()  # Create a socket object
+                                s.connect((conn, address))  # connect with the server
+                                s.send(my_client)  # communicate with the server
 
-            if "QUIT" in data:
-                print("Client is requesting to quit")
-                conn.close()
-                print("Connection " + self.IP + ":" + self.port + " closed")
-            # Client is trying to find a file
-            else:
-                # Make sure the second element is an integer
-                try:
-                    i = int(data_array[1])
-                    clients_with_file = []
-                    # Check if there are any clients with the number the client is looking for
-                    for client in self.clients:
-                        file_vector = self.clients[client][3]
-                        if str(file_vector[i]) == str(1):
-                            my_client_id = self.clients[client][1]
-                            clients_with_file.append(my_client_id)
-                    # Make sure there are clients with the file
-                    if len(clients_with_file) != 0:
-                        # Activate the reader lock
-                        with self.reader_lock:
-                            my_client = bytes([clients_with_file[0]])
-                            # Not sure if this is how you should send it...
-                            # Send the number of the client that has
+                            # Listen for the confirmation that the transfer is complete
+                            complete = False
+                            while not complete:
+                                conn.settimeout(60)
+                                data = conn.recv(4096)  # 4096 is the size of the buffer
+                                print('Server received', repr(data))
+                                log.info(f"Received message from {address}")
+                        # Send that there are no clients with the file
+                        else:
                             s = socket.socket()  # Create a socket object
                             s.connect((conn, address))  # connect with the server
-                            s.send(my_client)  # communicate with the server
-
-                        # Listen for the confirmation that the transfer is complete
-                        complete = False
-                        while not complete:
-                            conn.settimeout(60)
-                            data = conn.recv(4096)  # 4096 is the size of the buffer
-                            print('Server received', repr(data))
-                            log.info(f"Received message from {address}")
-                    # Send that there are no clients with the file
-                    else:
-                        s = socket.socket()  # Create a socket object
-                        s.connect((conn, address))  # connect with the server
-                        s.send(b'0')  # communicate with the server
-                except ValueError:
-                    print("Did not receive a correct request. Try again.")
-
+                            s.send(b'0')  # communicate with the server
+                    except ValueError:
+                        print("Did not receive a correct request. Try again.")
+                time.sleep(2)
+            except socket.timeout:
+                print('timedout')
 
     def server_config(self):
         """
@@ -176,6 +218,7 @@ class Server:
         # log.debug(f"Client socket closed to {self.clientaddress}")
         # self.s.shutdown(1)
         self.s.close()
+        self.timed_killer.cancel()
         for thread in self.threads:
             thread.join()
 

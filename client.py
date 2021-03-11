@@ -40,6 +40,61 @@ DATA_ACK = 1
 
 END_CONNECTION_ACK = 4
 
+class MainServerConn():
+    def __init__(self, config, server_port = 5000):
+        self.serv_port = server_port
+        self.main_serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.set_conn_status(False)
+        try:
+            self.main_serv.connect((socket.gethostbyname(socket.gethostname()),self.serv_port))
+        except ConnectionRefusedError:
+            return
+        self.send_init_to_serv(config)
+        self.HB_timer = threading.Timer
+
+
+    def send_init_to_serv(self, config):
+        self.main_serv.sendall(bytes("INIT:"+str(config['CLIENTID'])+":"+str(config['FILE_VECTOR'])+":"+str(config['MYPORT']), encoding ='utf-8'))
+        retries = CLIENT_MAIN_SERV_RETRIES
+        flag = False
+        chunks = []
+        while(True):
+            try:
+                self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
+                success = self.main_serv.recv(4096)
+                flag = True
+                chunks.append(success)
+                print(success.decode('utf-8'))
+                if success.decode('utf-8') == "Success!":
+                    self.set_conn_status(True)
+                    break 
+            except socket.timeout as e:
+                print(e)
+        print("Got success")
+        print(chunks)
+        # if ((''.join(chunks)) == "Success!")
+        #     self.set_conn_status(True)
+        input()
+
+    def send_HB(self):
+        pass
+    def recv_HB(self):
+        pass
+
+    def get_conn_status(self):
+        return self.conn_status
+
+    def set_conn_status(self, status):
+        self.conn_status = status
+
+    def set_close(self):
+        self.main_serv.sendall(b'QUIT')
+
+    def __del__(self):
+        print (self.main_serv)
+        if (self.conn_status):
+            self.main_serv.shutdown(1)
+            self.main_serv.close()
 
 
 
@@ -65,9 +120,10 @@ class Client():
 
         # send init message to server 
         print("Do INIT")
-        self.main_serv_init()
+        self.serv_conn = MainServerConn(config, self.serv_port)
         print("INIT DONE")
-
+        if (not self.serv_conn.get_conn_status()):
+            return
 
 
         # then start listening on port
@@ -87,33 +143,10 @@ class Client():
         print("Client shutting down...")
         input_thread.join()
         # server.join()
-    def main_serv_init(self):
-        self.main_serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        try:
-            self.main_serv.connect((socket.gethostbyname(socket.gethostname()),self.serv_port))
-            self.main_serv.sendall(bytes("INIT:"+str(self.client_id)+":"+str(self.file_vector)+":"+str(self.my_port), encoding ='utf-8'))
-            retries = CLIENT_MAIN_SERV_RETRIES
-            flag = False
-            while(retries):
-                try:
-                    self.main_serv.settimeout(CLIENT_MAIN_SERV_TIMEOUT)
-                    success = self.main_serv.recv(4096)
-                    flag = True
-                    if not success:
-                        break
-                    print(success.decode('utf-8'))
-                    input()
-                except socket.timeout:
-                    retries -= 1
-            print("Got success")
+        del self.serv_conn
 
-        except Exception as e:
-            print("Socket connection failed ", e)
-            self.main_serv.close()
-            return False
-
-    def main_serv_hold(self):
-        pass
+    def change_serv_conn_status(self, status):
+        self.serv_conn_status = status
 
     def move_window(self, seq_nos):
         '''
@@ -328,9 +361,12 @@ class Client():
         Function to get user input
         '''
         while(not self.client_shutdown): # keep looping to get user input
-            file_name, port = input().split(' ')
+            try:
+                file_name, port = input().split(' ')
+            except:
+                continue
             if (int(port) == -1):
-                self.my_server.set_close()
+                self.serv_conn.set_close()
                 self.client_shutdown = True
                 return
             if (int(port)==self.my_port):
