@@ -333,7 +333,7 @@ if __name__ == "__main__":
     parser.add_argument('client_no', metavar = 'C', type = int)
     args = parser.parse_args()
     # print(args.client_no)
-    # input()
+    input()
     client_no = args.client_no
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./client_logs/log_{client_no}.log" )
     client = Client(f'./configs/clients/{client_no}/{client_no}.yaml')

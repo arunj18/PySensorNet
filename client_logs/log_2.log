@@ -135,3 +135,157 @@
 2021-03-04 19:23:16,766 :: client.py:552 :: INFO :: Sent data with seq 2
 2021-03-04 19:23:16,829 :: client.py:460 :: INFO :: Received ACK from ('127.0.0.1', 57100) for seq_no: 2
 2021-03-04 19:23:16,909 :: client.py:575 :: INFO :: deleting 2
+2021-03-11 16:00:43,499 :: ./client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 16:06:00,570 :: ./client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 16:06:00,572 :: /home/arun/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 21770)
+2021-03-11 16:11:22,223 :: ./client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 16:11:22,225 :: /home/arun/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 21770)
+2021-03-11 16:11:37,937 :: /home/arun/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 43738) for file 3
+2021-03-11 16:11:37,957 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/3.txt
+2021-03-11 16:11:38,100 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:38,220 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:38,356 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 0
+2021-03-11 16:11:38,361 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:38,392 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 1
+2021-03-11 16:11:38,397 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:39,422 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 43738) as no ack received. Retry count: 10
+2021-03-11 16:11:39,438 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:39,463 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 2
+2021-03-11 16:11:39,558 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:11:39,694 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:11:39,740 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 3
+2021-03-11 16:11:39,745 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:11:40,761 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 43738) as no ack received. Retry count: 10
+2021-03-11 16:11:40,776 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:40,801 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 0
+2021-03-11 16:11:40,897 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:41,038 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:41,073 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 1
+2021-03-11 16:11:41,079 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:42,109 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 43738) as no ack received. Retry count: 10
+2021-03-11 16:11:42,119 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:42,145 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 2
+2021-03-11 16:11:42,240 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:11:42,376 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:11:42,416 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 3
+2021-03-11 16:11:42,422 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:11:43,442 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 43738) as no ack received. Retry count: 10
+2021-03-11 16:11:43,457 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:43,483 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 0
+2021-03-11 16:11:43,573 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:43,709 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:43,749 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 1
+2021-03-11 16:11:43,755 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:44,775 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 43738) as no ack received. Retry count: 10
+2021-03-11 16:11:44,790 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:44,811 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 43738) for seq_no: 2
+2021-03-11 16:11:44,931 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:11:51,314 :: /home/arun/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 36188) for file 10
+2021-03-11 16:11:51,339 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/10.txt
+2021-03-11 16:11:51,486 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:51,607 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:51,748 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 0
+2021-03-11 16:11:51,753 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:51,789 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 1
+2021-03-11 16:11:51,794 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:52,819 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 36188) as no ack received. Retry count: 10
+2021-03-11 16:11:52,830 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:52,850 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 2
+2021-03-11 16:11:52,945 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:11:53,081 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:11:53,127 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 3
+2021-03-11 16:11:53,132 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:11:54,147 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 36188) as no ack received. Retry count: 10
+2021-03-11 16:11:54,157 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:54,178 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 0
+2021-03-11 16:11:54,278 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:54,419 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:54,459 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 1
+2021-03-11 16:11:54,465 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:55,480 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 36188) as no ack received. Retry count: 10
+2021-03-11 16:11:55,495 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:55,521 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 2
+2021-03-11 16:11:55,616 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:11:55,757 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:11:55,793 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 3
+2021-03-11 16:11:55,799 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:11:56,829 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 36188) as no ack received. Retry count: 10
+2021-03-11 16:11:56,840 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:11:56,865 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 0
+2021-03-11 16:11:56,950 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:11:57,091 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:11:57,132 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 1
+2021-03-11 16:11:57,137 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:11:58,152 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 36188) as no ack received. Retry count: 10
+2021-03-11 16:11:58,162 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:11:58,188 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 36188) for seq_no: 2
+2021-03-11 16:11:58,298 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:12:04,549 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x00\x00' to ('127.0.1.1', 28970)
+2021-03-11 16:12:04,727 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 16:12:04,743 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:04,848 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 16:12:04,863 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:06,065 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 16:12:06,081 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:06,186 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 3
+2021-03-11 16:12:06,201 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:07,399 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 16:12:07,409 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:07,514 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 16:12:07,529 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:09,090 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 16:12:09,106 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:09,211 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 3
+2021-03-11 16:12:09,226 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:10,490 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 16:12:10,505 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:10,605 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 16:12:10,621 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:10,923 :: /home/arun/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 35157) for file 10
+2021-03-11 16:12:10,938 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/10.txt
+2021-03-11 16:12:11,070 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:12:11,180 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:12:11,326 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 0
+2021-03-11 16:12:11,332 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:12:11,357 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 1
+2021-03-11 16:12:11,362 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:12:11,869 :: /home/arun/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 16:12:11,884 :: /home/arun/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 28970)
+2021-03-11 16:12:11,895 :: /home/arun/PyTorrent/utils/utils.py:42 :: INFO :: Verify hash of file configs/clients/2/downloads/0.txt.txt
+2021-03-11 16:12:11,900 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/0.txt.txt
+2021-03-11 16:12:12,037 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/0.txt.txt
+2021-03-11 16:12:12,164 :: /home/arun/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/0.txt.txt
+2021-03-11 16:12:12,286 :: ./client/client.py:127 :: INFO :: File deleted: configs/clients/2/downloads/0.txt.txt due to failed hash check
+2021-03-11 16:12:12,312 :: ./client/client.py:322 :: INFO :: Request for 0.txt from  28970 completed successfully.
+2021-03-11 16:12:12,393 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 35157) as no ack received. Retry count: 10
+2021-03-11 16:12:12,408 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:12:12,434 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 2
+2021-03-11 16:12:12,524 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:12:12,659 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:12:12,705 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 3
+2021-03-11 16:12:12,710 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:12:13,741 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 35157) as no ack received. Retry count: 10
+2021-03-11 16:12:13,766 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:12:13,782 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 0
+2021-03-11 16:12:13,882 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:12:14,017 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:12:14,063 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 1
+2021-03-11 16:12:14,068 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:12:15,094 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 35157) as no ack received. Retry count: 10
+2021-03-11 16:12:15,109 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:12:15,130 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 2
+2021-03-11 16:12:15,225 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 16:12:15,360 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 16:12:15,401 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 3
+2021-03-11 16:12:15,406 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 16:12:16,427 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 35157) as no ack received. Retry count: 10
+2021-03-11 16:12:16,442 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 16:12:16,468 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 0
+2021-03-11 16:12:16,563 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 16:12:16,698 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 16:12:16,749 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 1
+2021-03-11 16:12:16,754 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 16:12:17,775 :: /home/arun/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 35157) as no ack received. Retry count: 10
+2021-03-11 16:12:17,790 :: /home/arun/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 16:12:17,816 :: /home/arun/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 35157) for seq_no: 2
+2021-03-11 16:12:17,931 :: /home/arun/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2

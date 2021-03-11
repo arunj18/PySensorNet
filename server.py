@@ -148,11 +148,12 @@ class Server:
                 # Split the received data and place into an array
                 data_array = data.split(':')
                 # input()
-                if "QUIT" in data:
+                if "QUIT" in data or len(data)==0:
                     print("Client is requesting to quit")
                     conn.close()
                     print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
+                        del self.clients[client_id]
                         for i in range(len(self.files)):
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
