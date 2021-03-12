@@ -1,7 +1,6 @@
 import sys, os
 import logging
-myPath = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, myPath + '/../')
+sys.path.append(str(Path(__file__).parent.parent.absolute()))
 
 
 from pathlib import Path
