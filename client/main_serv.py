@@ -86,6 +86,7 @@ class MainServerConn():
     def send_HB(self):
         with self.wait_HB:
             self.main_serv.sendall(bytes("HB", encoding = 'utf-8'))
+            logger.info("Sent HB packet")
             self.recv_HB()
 
     def recv_HB(self):
@@ -95,10 +96,12 @@ class MainServerConn():
                 self.main_serv.settimeout(constants.CLIENT_MAIN_SERV_TIMEOUT)
                 HB_resp = self.main_serv.recv(4096)
                 if HB_resp.decode('utf-8') == 'HB+':
+                    logger.info("received reply to HB")
                     self.HB_timer = threading.Timer(10.0, self.send_HB)
                     self.HB_timer.start()
                     return
             except socket.timeout:
+                logger.info("Timed out")
                 retries -= 1
         logger.error("No replies to HB message, connection dead to main server")
         self.set_conn_status(False)

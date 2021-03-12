@@ -135,3 +135,372 @@
 2021-03-04 19:23:16,766 :: client.py:552 :: INFO :: Sent data with seq 2
 2021-03-04 19:23:16,829 :: client.py:460 :: INFO :: Received ACK from ('127.0.0.1', 57100) for seq_no: 2
 2021-03-04 19:23:16,909 :: client.py:575 :: INFO :: deleting 2
+2021-03-11 11:56:14,697 :: client.py:172 :: INFO :: Done with config initialization
+2021-03-11 11:57:27,623 :: client.py:172 :: INFO :: Done with config initialization
+2021-03-11 11:59:34,294 :: client.py:172 :: INFO :: Done with config initialization
+2021-03-11 11:59:34,321 :: client.py:529 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 11:59:38,113 :: client.py:561 :: INFO :: New connection request from ('127.0.0.1', 51548) for file 0
+2021-03-11 11:59:38,175 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 11:59:38,567 :: client.py:690 :: INFO :: Sent data with seq 0
+2021-03-11 11:59:38,722 :: client.py:690 :: INFO :: Sent data with seq 1
+2021-03-11 11:59:38,925 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 0
+2021-03-11 11:59:38,941 :: client.py:713 :: INFO :: deleting 0
+2021-03-11 11:59:39,096 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 1
+2021-03-11 11:59:39,112 :: client.py:713 :: INFO :: deleting 1
+2021-03-11 11:59:40,177 :: client.py:762 :: WARNING :: Resend called for ('127.0.0.1', 51548) as no ack received. Retry count: 10
+2021-03-11 11:59:40,254 :: client.py:690 :: INFO :: Sent data with seq 2
+2021-03-11 11:59:40,316 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 2
+2021-03-11 11:59:40,410 :: client.py:690 :: INFO :: Sent data with seq 3
+2021-03-11 11:59:40,629 :: client.py:713 :: INFO :: deleting 2
+2021-03-11 11:59:40,769 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 3
+2021-03-11 11:59:40,785 :: client.py:713 :: INFO :: deleting 3
+2021-03-11 11:59:41,880 :: client.py:762 :: WARNING :: Resend called for ('127.0.0.1', 51548) as no ack received. Retry count: 10
+2021-03-11 11:59:41,942 :: client.py:690 :: INFO :: Sent data with seq 0
+2021-03-11 11:59:42,005 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 0
+2021-03-11 11:59:42,097 :: client.py:690 :: INFO :: Sent data with seq 1
+2021-03-11 11:59:42,318 :: client.py:713 :: INFO :: deleting 0
+2021-03-11 11:59:42,425 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 1
+2021-03-11 11:59:42,440 :: client.py:713 :: INFO :: deleting 1
+2021-03-11 11:59:43,537 :: client.py:762 :: WARNING :: Resend called for ('127.0.0.1', 51548) as no ack received. Retry count: 10
+2021-03-11 11:59:43,567 :: client.py:690 :: INFO :: Sent data with seq 2
+2021-03-11 11:59:43,615 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 2
+2021-03-11 11:59:43,709 :: client.py:690 :: INFO :: Sent data with seq 3
+2021-03-11 11:59:43,929 :: client.py:713 :: INFO :: deleting 2
+2021-03-11 11:59:44,053 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 3
+2021-03-11 11:59:44,069 :: client.py:713 :: INFO :: deleting 3
+2021-03-11 11:59:45,161 :: client.py:762 :: WARNING :: Resend called for ('127.0.0.1', 51548) as no ack received. Retry count: 10
+2021-03-11 11:59:45,192 :: client.py:690 :: INFO :: Sent data with seq 0
+2021-03-11 11:59:45,271 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 0
+2021-03-11 11:59:45,349 :: client.py:690 :: INFO :: Sent data with seq 1
+2021-03-11 11:59:45,566 :: client.py:713 :: INFO :: deleting 0
+2021-03-11 11:59:45,721 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 1
+2021-03-11 11:59:45,737 :: client.py:713 :: INFO :: deleting 1
+2021-03-11 11:59:46,802 :: client.py:762 :: WARNING :: Resend called for ('127.0.0.1', 51548) as no ack received. Retry count: 10
+2021-03-11 11:59:46,833 :: client.py:690 :: INFO :: Sent data with seq 2
+2021-03-11 11:59:46,912 :: client.py:598 :: INFO :: Received ACK from ('127.0.0.1', 51548) for seq_no: 2
+2021-03-11 11:59:47,051 :: client.py:713 :: INFO :: deleting 2
+2021-03-11 12:20:29,028 :: client.py:174 :: INFO :: Done with config initialization
+2021-03-11 12:20:29,042 :: client.py:536 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 12:21:04,631 :: client.py:174 :: INFO :: Done with config initialization
+2021-03-11 12:21:04,648 :: client.py:536 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 12:21:08,753 :: client.py:568 :: INFO :: New connection request from ('127.0.0.1', 60735) for file 0
+2021-03-11 12:21:08,815 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 12:21:09,270 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:21:09,425 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:21:09,629 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 0
+2021-03-11 12:21:09,645 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:21:09,737 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 1
+2021-03-11 12:21:09,754 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:21:10,832 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 60735) as no ack received. Retry count: 10
+2021-03-11 12:21:10,864 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:21:10,925 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 2
+2021-03-11 12:21:11,004 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:21:11,207 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:21:11,345 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 3
+2021-03-11 12:21:11,360 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:21:12,457 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 60735) as no ack received. Retry count: 10
+2021-03-11 12:21:12,536 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:21:12,614 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 0
+2021-03-11 12:21:12,691 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:21:12,878 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:21:12,970 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 1
+2021-03-11 12:21:12,970 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:21:14,049 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 60735) as no ack received. Retry count: 10
+2021-03-11 12:21:14,096 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:21:14,159 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 2
+2021-03-11 12:21:14,251 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:21:14,399 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:21:14,444 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 3
+2021-03-11 12:21:14,445 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:21:15,487 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 60735) as no ack received. Retry count: 10
+2021-03-11 12:21:15,535 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:21:15,615 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 0
+2021-03-11 12:21:15,675 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:21:15,865 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:21:15,975 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 1
+2021-03-11 12:21:15,975 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:21:17,052 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 60735) as no ack received. Retry count: 10
+2021-03-11 12:21:17,099 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:21:17,130 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 60735) for seq_no: 2
+2021-03-11 12:21:17,285 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:21:23,860 :: client.py:488 :: INFO :: Sent data: b'\x00\x00\x02' to ('127.0.1.1', 7672)
+2021-03-11 12:21:23,937 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:21:23,982 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:21:23,998 :: client.py:352 :: INFO :: Connection complete after receiving file from ('127.0.1.1', 7672)
+2021-03-11 12:21:24,014 :: client.py:251 :: INFO :: Empty file detected: configs/clients/2/downloads/2.txt.txt
+2021-03-11 12:21:24,062 :: client.py:456 :: INFO :: Request for 2.txt from  7672 completed successfully.
+2021-03-11 12:22:27,137 :: client.py:174 :: INFO :: Done with config initialization
+2021-03-11 12:22:30,154 :: client.py:536 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 12:22:39,192 :: client.py:488 :: INFO :: Sent data: b'\x00\x00\x04' to ('127.0.1.1', 7672)
+2021-03-11 12:22:39,630 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:22:39,676 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:39,785 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:22:39,816 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:41,117 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:22:41,133 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:41,273 :: client.py:496 :: INFO :: Sent ACK for seq: 3
+2021-03-11 12:22:41,321 :: client.py:488 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:42,769 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:22:42,816 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:42,943 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:22:42,991 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:44,396 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:22:44,427 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:44,535 :: client.py:496 :: INFO :: Sent ACK for seq: 3
+2021-03-11 12:22:44,566 :: client.py:488 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:45,958 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:22:45,974 :: client.py:568 :: INFO :: New connection request from ('127.0.0.1', 55912) for file 0
+2021-03-11 12:22:46,004 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:46,035 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 12:22:46,098 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:22:46,146 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:46,475 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:22:46,629 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:22:46,800 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 0
+2021-03-11 12:22:46,816 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:22:46,955 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 1
+2021-03-11 12:22:46,970 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:22:47,564 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:22:47,611 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:22:47,626 :: /mnt/d/SocketProg/PyTorrent/utils.py:42 :: INFO :: Verify hash of file configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:22:47,627 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:22:47,939 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:22:48,032 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 55912) as no ack received. Retry count: 10
+2021-03-11 12:22:48,048 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:22:48,127 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 2
+2021-03-11 12:22:48,221 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:22:48,252 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:22:48,314 :: client.py:256 :: INFO :: File hash verified: configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:22:48,360 :: client.py:456 :: INFO :: Request for 4.txt from  7672 completed successfully.
+2021-03-11 12:22:48,376 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:22:48,484 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 3
+2021-03-11 12:22:48,500 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:22:49,598 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 55912) as no ack received. Retry count: 10
+2021-03-11 12:22:49,645 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:22:49,677 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 0
+2021-03-11 12:22:49,817 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:22:50,007 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:22:50,162 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 1
+2021-03-11 12:22:50,163 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:22:51,282 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 55912) as no ack received. Retry count: 10
+2021-03-11 12:22:51,329 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:22:51,389 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 2
+2021-03-11 12:22:51,483 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:22:51,643 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:22:51,753 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 3
+2021-03-11 12:22:51,753 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:22:52,877 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 55912) as no ack received. Retry count: 10
+2021-03-11 12:22:52,956 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:22:52,987 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 0
+2021-03-11 12:22:53,113 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:22:53,332 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:22:53,487 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 1
+2021-03-11 12:22:53,504 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:22:54,583 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 55912) as no ack received. Retry count: 10
+2021-03-11 12:22:54,629 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:22:54,691 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 55912) for seq_no: 2
+2021-03-11 12:22:54,850 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:23:03,676 :: client.py:568 :: INFO :: New connection request from ('127.0.0.1', 56471) for file 0
+2021-03-11 12:23:03,692 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 12:23:04,129 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:23:04,270 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:23:04,440 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 0
+2021-03-11 12:23:04,456 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:23:04,582 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 1
+2021-03-11 12:23:04,598 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:23:05,708 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 56471) as no ack received. Retry count: 10
+2021-03-11 12:23:05,753 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:23:05,832 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 2
+2021-03-11 12:23:05,912 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:23:06,130 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:23:06,299 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 3
+2021-03-11 12:23:06,315 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:23:07,394 :: client.py:488 :: INFO :: Sent data: b'\x00\x00\x04' to ('127.0.1.1', 7672)
+2021-03-11 12:23:07,441 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 56471) as no ack received. Retry count: 10
+2021-03-11 12:23:07,473 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:23:07,474 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 0
+2021-03-11 12:23:07,631 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:23:07,803 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:23:07,850 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:23:07,865 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:07,960 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:23:08,021 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:08,021 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 1
+2021-03-11 12:23:08,085 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:23:09,173 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 56471) as no ack received. Retry count: 10
+2021-03-11 12:23:09,218 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:23:09,298 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 2
+2021-03-11 12:23:09,375 :: client.py:697 :: INFO :: Sent data with seq 3
+2021-03-11 12:23:09,423 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:23:09,471 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:09,581 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:23:09,581 :: client.py:496 :: INFO :: Sent ACK for seq: 3
+2021-03-11 12:23:09,676 :: client.py:488 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:09,692 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 3
+2021-03-11 12:23:09,708 :: client.py:720 :: INFO :: deleting 3
+2021-03-11 12:23:10,769 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 56471) as no ack received. Retry count: 10
+2021-03-11 12:23:10,800 :: client.py:697 :: INFO :: Sent data with seq 0
+2021-03-11 12:23:10,878 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 0
+2021-03-11 12:23:10,956 :: client.py:697 :: INFO :: Sent data with seq 1
+2021-03-11 12:23:11,068 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:23:11,130 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:11,130 :: client.py:720 :: INFO :: deleting 0
+2021-03-11 12:23:11,225 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:23:11,256 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 1
+2021-03-11 12:23:11,257 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:11,287 :: client.py:720 :: INFO :: deleting 1
+2021-03-11 12:23:12,410 :: client.py:769 :: WARNING :: Resend called for ('127.0.0.1', 56471) as no ack received. Retry count: 10
+2021-03-11 12:23:12,457 :: client.py:697 :: INFO :: Sent data with seq 2
+2021-03-11 12:23:12,519 :: client.py:605 :: INFO :: Received ACK from ('127.0.0.1', 56471) for seq_no: 2
+2021-03-11 12:23:12,676 :: client.py:720 :: INFO :: deleting 2
+2021-03-11 12:23:12,692 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:23:12,738 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:12,846 :: client.py:496 :: INFO :: Sent ACK for seq: 3
+2021-03-11 12:23:12,894 :: client.py:488 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:14,363 :: client.py:496 :: INFO :: Sent ACK for seq: 0
+2021-03-11 12:23:14,410 :: client.py:488 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:14,520 :: client.py:496 :: INFO :: Sent ACK for seq: 1
+2021-03-11 12:23:14,566 :: client.py:488 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:16,035 :: client.py:496 :: INFO :: Sent ACK for seq: 2
+2021-03-11 12:23:16,082 :: client.py:488 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 12:23:16,113 :: /mnt/d/SocketProg/PyTorrent/utils.py:42 :: INFO :: Verify hash of file configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:23:16,129 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:23:16,550 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:23:16,957 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:23:17,333 :: client.py:256 :: INFO :: File hash verified: configs/clients/2/downloads/4.txt.txt
+2021-03-11 12:23:17,395 :: client.py:456 :: INFO :: Request for 4.txt from  7672 completed successfully.
+2021-03-11 22:49:27,044 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 22:49:27,052 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 22:49:38,238 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 57595) for file 0
+2021-03-11 22:49:38,285 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 22:49:38,692 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 22:49:38,834 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 22:49:39,024 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 0
+2021-03-11 22:49:39,040 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 22:49:39,165 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 1
+2021-03-11 22:49:39,181 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 22:49:40,284 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57595) as no ack received. Retry count: 10
+2021-03-11 22:49:40,316 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 22:49:40,394 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 2
+2021-03-11 22:49:40,457 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 22:49:40,660 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 22:49:40,784 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 3
+2021-03-11 22:49:40,799 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 22:49:41,830 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57595) as no ack received. Retry count: 10
+2021-03-11 22:49:41,861 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 22:49:41,940 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 0
+2021-03-11 22:49:42,020 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 22:49:42,243 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 22:49:42,353 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 1
+2021-03-11 22:49:42,369 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 22:49:43,455 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57595) as no ack received. Retry count: 10
+2021-03-11 22:49:43,503 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 22:49:43,566 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 2
+2021-03-11 22:49:43,660 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 22:49:43,864 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 22:49:43,928 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 3
+2021-03-11 22:49:43,928 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 22:49:44,999 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57595) as no ack received. Retry count: 10
+2021-03-11 22:49:45,076 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 22:49:45,155 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 0
+2021-03-11 22:49:45,234 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 22:49:45,438 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 22:49:45,547 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 1
+2021-03-11 22:49:45,563 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 22:49:46,609 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57595) as no ack received. Retry count: 10
+2021-03-11 22:49:46,672 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 22:49:46,752 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57595) for seq_no: 2
+2021-03-11 22:49:46,801 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 23:09:01,778 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 23:09:01,788 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 23:09:09,592 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 64922) for file 0
+2021-03-11 23:09:09,639 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-11 23:09:09,989 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 23:09:10,132 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 23:09:10,336 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 0
+2021-03-11 23:09:10,352 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 23:09:10,416 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 1
+2021-03-11 23:09:10,416 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 23:09:11,459 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 64922) as no ack received. Retry count: 10
+2021-03-11 23:09:11,538 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 23:09:11,601 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 2
+2021-03-11 23:09:11,696 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 23:09:11,902 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 23:09:12,030 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 3
+2021-03-11 23:09:12,046 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 23:09:13,127 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 64922) as no ack received. Retry count: 10
+2021-03-11 23:09:13,158 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 23:09:13,237 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 0
+2021-03-11 23:09:13,317 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 23:09:13,489 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 23:09:13,569 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 1
+2021-03-11 23:09:13,585 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 23:09:14,708 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 64922) as no ack received. Retry count: 10
+2021-03-11 23:09:14,753 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 23:09:14,833 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 2
+2021-03-11 23:09:14,913 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-11 23:09:15,104 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 23:09:15,246 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 3
+2021-03-11 23:09:15,262 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-11 23:09:16,370 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 64922) as no ack received. Retry count: 10
+2021-03-11 23:09:16,449 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-11 23:09:16,529 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 0
+2021-03-11 23:09:16,593 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-11 23:09:16,814 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-11 23:09:16,894 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 1
+2021-03-11 23:09:16,894 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-11 23:09:17,921 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 64922) as no ack received. Retry count: 10
+2021-03-11 23:09:17,952 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-11 23:09:18,000 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 64922) for seq_no: 2
+2021-03-11 23:09:18,159 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-11 23:11:07,691 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 23:11:07,699 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 23:11:10,976 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x00\x02' to ('127.0.1.1', 7672)
+2021-03-11 23:11:11,054 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 23:11:11,085 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:11:11,101 :: client/client.py:218 :: INFO :: Connection complete after receiving file from ('127.0.1.1', 7672)
+2021-03-11 23:11:11,117 :: client/client.py:117 :: INFO :: Empty file detected: configs/clients/2/downloads/2.txt.txt
+2021-03-11 23:11:11,149 :: client/client.py:322 :: INFO :: Request for 2.txt from  7672 completed successfully.
+2021-03-11 23:11:26,050 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x00\x02' to ('127.0.1.1', 7672)
+2021-03-11 23:11:26,129 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 23:11:26,174 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:11:26,174 :: client/client.py:218 :: INFO :: Connection complete after receiving file from ('127.0.1.1', 7672)
+2021-03-11 23:11:26,190 :: client/client.py:117 :: INFO :: Empty file detected: configs/clients/2/downloads/2.txt.txt
+2021-03-11 23:11:26,238 :: client/client.py:322 :: INFO :: Request for 2.txt from  7672 completed successfully.
+2021-03-11 23:12:01,799 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 23:12:01,808 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 23:12:04,222 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x00\x04' to ('127.0.1.1', 7672)
+2021-03-11 23:12:04,705 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 23:12:04,737 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:04,865 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 23:12:04,896 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:06,321 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 23:12:06,353 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:06,481 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 3
+2021-03-11 23:12:06,512 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:07,956 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 23:12:08,003 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:08,097 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 23:12:08,143 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:09,504 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 23:12:09,550 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:09,662 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 3
+2021-03-11 23:12:09,707 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x03\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:10,989 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 0
+2021-03-11 23:12:11,005 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x00\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:11,131 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 1
+2021-03-11 23:12:11,161 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x01\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:12,551 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:51 :: INFO :: Sent ACK for seq: 2
+2021-03-11 23:12:12,597 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:43 :: INFO :: Sent data: b'\x02\x01' to ('127.0.1.1', 7672)
+2021-03-11 23:12:12,613 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:42 :: INFO :: Verify hash of file configs/clients/2/downloads/4.txt.txt
+2021-03-11 23:12:12,628 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 23:12:13,020 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 23:12:13,333 :: /mnt/d/SocketProg/PyTorrent/utils/utils.py:31 :: INFO :: Get hash of configs/clients/2/downloads/4.txt.txt
+2021-03-11 23:12:13,679 :: client/client.py:122 :: INFO :: File hash verified: configs/clients/2/downloads/4.txt.txt
+2021-03-11 23:12:13,694 :: client/client.py:322 :: INFO :: Request for 4.txt from  7672 completed successfully.
+2021-03-11 23:16:06,557 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 23:16:06,563 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 23:16:16,615 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:89 :: INFO :: Sent HB packet
+2021-03-11 23:18:27,348 :: client/client.py:40 :: INFO :: Done with config initialization
+2021-03-11 23:18:27,354 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 24317)
+2021-03-11 23:18:37,408 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:89 :: INFO :: Sent HB packet

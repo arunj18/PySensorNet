@@ -148,7 +148,7 @@ class Server:
                 # Split the received data and place into an array
                 data_array = data.split(':')
                 # input()
-                if "QUIT" in data:
+                if "QUIT" in data or len(data)==0:
                     print("Client is requesting to quit")
                     conn.close()
                     print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
