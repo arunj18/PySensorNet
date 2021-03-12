@@ -1,7 +1,7 @@
 import socket
 import logging
 import constants
-from utils.utils import file_hash
+from utils import file_hash
 from pathlib import Path
 
 logger = logging.getLogger(__name__)

@@ -16,7 +16,7 @@ import constants
 from main_serv import MainServerConn
 from client_utils import ClientFile
 from p2p import myUDPClient, myUDPServer
-from utils.utils import verify_hash
+from utils import verify_hash
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)

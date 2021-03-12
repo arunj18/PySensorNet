@@ -3,7 +3,9 @@ import logging
 import threading
 from readerwriterlock import rwlock
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
 
 
 class Server:
@@ -22,9 +24,16 @@ class Server:
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.port = port
         self.hostname = "Server"
-        self.s.bind((socket.gethostname(), port))
+        self.init_success = False
+        try:
+            self.s.bind((socket.gethostname(), port))
+            self.init_success = True
+        except OSError as e:
+            logger.error(e)
+            pass
         self.IP = "192.1.1.1"
-        log.debug("Created server socket at localhost with port:" + str(port))
+        self.init_close = False
+        logger.debug("Created server socket at localhost with port:" + str(port))
 
         self.files = [[] for _ in range(50)]  # TODO #1 keep client ids by time of insertion into list # CHANGE
 
@@ -43,18 +52,27 @@ class Server:
         :param queue_size: How long the queue will be
         :return: N/A
         """
-        log.debug("Server socket at port " + str(self.port) + " is now listening")
+        logger.debug("Server socket at port " + str(self.port) + " is now listening")
         self.s.listen()
         self.timed_thread_killer()
         while True:
-            conn, address = self.s.accept()
-            log.info(f"Connected to {address}")
-            print(f"Server connected to {address}")
-            x = threading.Thread(target=self.handle, args=(conn, address,))
-            x.start()
-            with self.thread_lock:
-                self.threads.append(x)
+            if self.init_close and len(self.clients)==0:
+                return
+            print(len(self.clients))
+            self.s.settimeout(1.0)
+            try:
+                conn, address = self.s.accept()
+                logger.info(f"Connected to {address}")
+                print(f"Server connected to {address}")
+                x = threading.Thread(target=self.handle, args=(conn, address,))
+                x.start()
+                with self.thread_lock:
+                    self.threads.append(x)
+            except socket.timeout:
+                continue
 
+    def is_init_success(self):
+        return self.init_success
     def thread_killer(self):
         with self.thread_lock:
             to_del = []
@@ -73,6 +91,8 @@ class Server:
         self.timed_thread_killer()
 
     def timed_thread_killer(self):
+        if (self.init_close):
+            return
         self.timed_killer = threading.Timer(10.0, self.thread_killer)
         self.timed_killer.start()
 
@@ -93,8 +113,11 @@ class Server:
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 print('Server received', repr(data))
-                log.info(f"Received message from {address}")
-
+                logger.info(f"Received message from {address}")
+                if (self.init_close): # user has initiated server close
+                    conn.sendall(b"HB-")
+                    conn.close()
+                    return
                 data = data.decode('utf-8')
                 # Split the received data and place into an array
                 data_array = data.split(':')
@@ -139,7 +162,7 @@ class Server:
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 # print('Server received', repr(data))
-                log.info(f"Received message from {address}")
+                logger.info(f"Received message from {address}")
 
                 data = data.decode('utf-8')
                 if not data:
@@ -161,6 +184,17 @@ class Server:
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         return
                 # Client is trying to find a file
+                elif self.init_close:
+                    conn.sendall(b"HB-")
+                    conn.close()
+                    with self.lock.gen_wlock():
+                        del self.clients[client_id]
+                        for i in range(len(self.files)):
+                            # TODO fix this file_vector logic
+                            if file_vector[i] == '1':
+                                self.files[i].remove(client_id)
+                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                    return
                 else:
                     # Make sure the second element is an integer
                     try:
@@ -203,7 +237,7 @@ class Server:
                                 conn.settimeout(60)
                                 data = conn.recv(4096)  # 4096 is the size of the buffer
                                 print('Server received', repr(data))
-                                log.info(f"Received message from {address}")
+                                logger.info(f"Received message from {address}")
                         # Send that there are no clients with the file
                         else:
                             s = socket.socket()  # Create a socket object
@@ -214,6 +248,17 @@ class Server:
                 # time.sleep(2)
             except socket.timeout:
                 print('timedout')
+                if (self.init_close): # user has initiated server close
+                    conn.sendall(b"HB-")
+                    conn.close()
+                    with self.lock.gen_wlock():
+                        del self.clients[client_id]
+                        for i in range(len(self.files)):
+                            # TODO fix this file_vector logic
+                            if file_vector[i] == '1':
+                                self.files[i].remove(client_id)
+                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                    return
 
     def server_config(self):
         """
@@ -234,16 +279,37 @@ class Server:
         # log.debug(f"Client socket closed to {self.clientaddress}")
         # self.s.shutdown(1)
         self.s.close()
-        self.timed_killer.cancel()
-        for thread in self.threads:
-            thread.join()
+        try:
+            self.timed_killer.cancel()
+        except:
+            pass
+        self.thread_killer()
 
+    def user_input(self):
+        while True:
+            try:
+                if int(input()) == -1:
+                    self.init_close = True
+                    logger.info("Server exiting due to user input")
+                    print("Server shutting down...")
+                    break
+            except:
+                continue
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO,
-                        format="%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s",
-                        filename="./logs/server.log")
+    logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./logs/server.log" )
     server = Server(5000)
-    server.listen()
 
+    if (not server.is_init_success()):
+        print("Server could not be initialized, check logs for errors. Exiting...")
+        logger.error("Server init failed..")
+        exit()
+    server_thread = threading.Thread(target = server.listen)
     print("Hello! The server is starting up...\n")
+    server_thread.start()
+    server.user_input()
+    logger.info("User input thread joined")
+    server_thread.join()
+    logger.info("Server thread joined")
+    del server
+    

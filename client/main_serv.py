@@ -59,7 +59,7 @@ class MainServerConn():
     def request_file(self, file_no):
         with self.wait_HB: #make sure we are not waiting for a HB reply
             if (not self.get_conn_status()): #connection is dead
-                return 0, 0
+                return 0
             self.HB_timer.cancel() #cancel HB timer
             self.main_serv.sendall(bytes(f"FILE:{file_no}", encoding = "utf-8"))
             retries = 10
@@ -74,7 +74,10 @@ class MainServerConn():
                         self.HB_timer.start()
                         return port
                     except ValueError:
-                        print(resp)
+                        if resp.decode('utf-8') ==  'HB-':
+                            logger.info("server shutting down, client shutdown initiated")
+                            self.set_conn_status(False)
+                            return -2
                 except socket.timeout:
                     retries -= 1
             self.set_close()
@@ -91,7 +94,8 @@ class MainServerConn():
 
     def recv_HB(self):
         retries = 2
-        while retries:
+        while retries>=0:
+            # logger.info("trying to receive HB")
             try:
                 self.main_serv.settimeout(constants.CLIENT_MAIN_SERV_TIMEOUT)
                 HB_resp = self.main_serv.recv(4096)
@@ -100,9 +104,19 @@ class MainServerConn():
                     self.HB_timer = threading.Timer(10.0, self.send_HB)
                     self.HB_timer.start()
                     return
+                elif HB_resp.decode('utf-8') ==  'HB-':
+                    logger.info("server shutting down, client shutdown initiated")
+                    self.set_conn_status(False)
+                    return
+                if len(HB_resp) == 0:
+                    logger.error("Empty reply from server, connection closed.")
+                    self.set_conn_status(False)
+                    return
             except socket.timeout:
                 logger.info("Timed out")
-                retries -= 1
+                retries = retries - 1
+            except Exception as e:
+                logger.error(e)
         logger.error("No replies to HB message, connection dead to main server")
         self.set_conn_status(False)
 
