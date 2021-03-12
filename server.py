@@ -153,6 +153,7 @@ class Server:
                     conn.close()
                     print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
+                        del self.clients[client_id]
                         for i in range(len(self.files)):
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
