@@ -1,11 +1,12 @@
 import sys, os
 import logging
-myPath = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, myPath + '/../')
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.parent.absolute()))
 
 
 from pathlib import Path
-from utils import file_size
+from utils.utils import file_size
 from setup import file_generator, client_config_generator
 from yaml import load, Loader
 

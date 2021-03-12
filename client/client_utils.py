@@ -104,7 +104,7 @@ class WriteObj():
         Constructor of file write object
         param file_location : location of file to write into
         '''
-        self.file_obj = open(file_location, 'wb')
+        self.file_obj = open(file_location, 'wb', 0)
         self.file_loc = file_location
 
     def get_filepath(self):
