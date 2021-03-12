@@ -1,3 +1,0 @@
-Hostname: Server
-IP: 192.1.1.1
-Port_number: 5000

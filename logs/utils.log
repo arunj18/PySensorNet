@@ -2101,3 +2101,655 @@
 2021-03-02 17:53:16,692 :: setup.py:68 :: INFO :: Client MYPORT: 15388
 2021-03-02 17:53:16,692 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10110100000110011110000101101001011101010000011100
 2021-03-02 17:53:16,692 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:44,867 :: setup.py:23 :: INFO :: Created directories if they didn't exist at ./files/
+2021-03-12 00:25:44,885 :: setup.py:90 :: INFO :: Finished writing to file files/0.txt
+2021-03-12 00:25:44,903 :: setup.py:90 :: INFO :: Finished writing to file files/1.txt
+2021-03-12 00:25:44,923 :: setup.py:90 :: INFO :: Finished writing to file files/2.txt
+2021-03-12 00:25:44,941 :: setup.py:90 :: INFO :: Finished writing to file files/3.txt
+2021-03-12 00:25:44,960 :: setup.py:90 :: INFO :: Finished writing to file files/4.txt
+2021-03-12 00:25:44,982 :: setup.py:90 :: INFO :: Finished writing to file files/5.txt
+2021-03-12 00:25:45,000 :: setup.py:90 :: INFO :: Finished writing to file files/6.txt
+2021-03-12 00:25:45,021 :: setup.py:90 :: INFO :: Finished writing to file files/7.txt
+2021-03-12 00:25:45,039 :: setup.py:90 :: INFO :: Finished writing to file files/8.txt
+2021-03-12 00:25:45,057 :: setup.py:90 :: INFO :: Finished writing to file files/9.txt
+2021-03-12 00:25:45,075 :: setup.py:90 :: INFO :: Finished writing to file files/10.txt
+2021-03-12 00:25:45,106 :: setup.py:90 :: INFO :: Finished writing to file files/11.txt
+2021-03-12 00:25:45,125 :: setup.py:90 :: INFO :: Finished writing to file files/12.txt
+2021-03-12 00:25:45,142 :: setup.py:90 :: INFO :: Finished writing to file files/13.txt
+2021-03-12 00:25:45,161 :: setup.py:90 :: INFO :: Finished writing to file files/14.txt
+2021-03-12 00:25:45,179 :: setup.py:90 :: INFO :: Finished writing to file files/15.txt
+2021-03-12 00:25:45,196 :: setup.py:90 :: INFO :: Finished writing to file files/16.txt
+2021-03-12 00:25:45,214 :: setup.py:90 :: INFO :: Finished writing to file files/17.txt
+2021-03-12 00:25:45,233 :: setup.py:90 :: INFO :: Finished writing to file files/18.txt
+2021-03-12 00:25:45,251 :: setup.py:90 :: INFO :: Finished writing to file files/19.txt
+2021-03-12 00:25:45,269 :: setup.py:90 :: INFO :: Finished writing to file files/20.txt
+2021-03-12 00:25:45,297 :: setup.py:90 :: INFO :: Finished writing to file files/21.txt
+2021-03-12 00:25:45,315 :: setup.py:90 :: INFO :: Finished writing to file files/22.txt
+2021-03-12 00:25:45,333 :: setup.py:90 :: INFO :: Finished writing to file files/23.txt
+2021-03-12 00:25:45,352 :: setup.py:90 :: INFO :: Finished writing to file files/24.txt
+2021-03-12 00:25:45,371 :: setup.py:90 :: INFO :: Finished writing to file files/25.txt
+2021-03-12 00:25:45,389 :: setup.py:90 :: INFO :: Finished writing to file files/26.txt
+2021-03-12 00:25:45,408 :: setup.py:90 :: INFO :: Finished writing to file files/27.txt
+2021-03-12 00:25:45,428 :: setup.py:90 :: INFO :: Finished writing to file files/28.txt
+2021-03-12 00:25:45,447 :: setup.py:90 :: INFO :: Finished writing to file files/29.txt
+2021-03-12 00:25:45,471 :: setup.py:90 :: INFO :: Finished writing to file files/30.txt
+2021-03-12 00:25:45,489 :: setup.py:90 :: INFO :: Finished writing to file files/31.txt
+2021-03-12 00:25:45,509 :: setup.py:90 :: INFO :: Finished writing to file files/32.txt
+2021-03-12 00:25:45,527 :: setup.py:90 :: INFO :: Finished writing to file files/33.txt
+2021-03-12 00:25:45,544 :: setup.py:90 :: INFO :: Finished writing to file files/34.txt
+2021-03-12 00:25:45,563 :: setup.py:90 :: INFO :: Finished writing to file files/35.txt
+2021-03-12 00:25:45,581 :: setup.py:90 :: INFO :: Finished writing to file files/36.txt
+2021-03-12 00:25:45,619 :: setup.py:90 :: INFO :: Finished writing to file files/37.txt
+2021-03-12 00:25:45,637 :: setup.py:90 :: INFO :: Finished writing to file files/38.txt
+2021-03-12 00:25:45,656 :: setup.py:90 :: INFO :: Finished writing to file files/39.txt
+2021-03-12 00:25:45,674 :: setup.py:90 :: INFO :: Finished writing to file files/40.txt
+2021-03-12 00:25:45,697 :: setup.py:90 :: INFO :: Finished writing to file files/41.txt
+2021-03-12 00:25:45,715 :: setup.py:90 :: INFO :: Finished writing to file files/42.txt
+2021-03-12 00:25:45,733 :: setup.py:90 :: INFO :: Finished writing to file files/43.txt
+2021-03-12 00:25:45,751 :: setup.py:90 :: INFO :: Finished writing to file files/44.txt
+2021-03-12 00:25:45,774 :: setup.py:90 :: INFO :: Finished writing to file files/45.txt
+2021-03-12 00:25:45,792 :: setup.py:90 :: INFO :: Finished writing to file files/46.txt
+2021-03-12 00:25:45,811 :: setup.py:90 :: INFO :: Finished writing to file files/47.txt
+2021-03-12 00:25:45,828 :: setup.py:90 :: INFO :: Finished writing to file files/48.txt
+2021-03-12 00:25:45,854 :: setup.py:90 :: INFO :: Finished writing to file files/49.txt
+2021-03-12 00:25:45,855 :: setup.py:23 :: INFO :: Created directories if they didn't exist at ./configs/clients/
+2021-03-12 00:25:45,855 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/1
+2021-03-12 00:25:46,031 :: setup.py:66 :: INFO :: Client created with CLIENTID: 1
+2021-03-12 00:25:46,031 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:46,031 :: setup.py:68 :: INFO :: Client MYPORT: 41928
+2021-03-12 00:25:46,031 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01011000001100000000110101111010100000011111000111
+2021-03-12 00:25:46,031 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:46,035 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/2
+2021-03-12 00:25:46,230 :: setup.py:66 :: INFO :: Client created with CLIENTID: 2
+2021-03-12 00:25:46,230 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:46,230 :: setup.py:68 :: INFO :: Client MYPORT: 35696
+2021-03-12 00:25:46,230 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10100111010101111100001101100101000100010110001111
+2021-03-12 00:25:46,230 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:46,233 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/3
+2021-03-12 00:25:46,441 :: setup.py:66 :: INFO :: Client created with CLIENTID: 3
+2021-03-12 00:25:46,441 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:46,441 :: setup.py:68 :: INFO :: Client MYPORT: 16199
+2021-03-12 00:25:46,441 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01000000001001101101111001111000101010001001111110
+2021-03-12 00:25:46,441 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:46,446 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/4
+2021-03-12 00:25:46,591 :: setup.py:66 :: INFO :: Client created with CLIENTID: 4
+2021-03-12 00:25:46,591 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:46,591 :: setup.py:68 :: INFO :: Client MYPORT: 27960
+2021-03-12 00:25:46,591 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01011110100110000000101001001000000001000011110001
+2021-03-12 00:25:46,591 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:46,594 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/5
+2021-03-12 00:25:46,808 :: setup.py:66 :: INFO :: Client created with CLIENTID: 5
+2021-03-12 00:25:46,808 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:46,808 :: setup.py:68 :: INFO :: Client MYPORT: 31555
+2021-03-12 00:25:46,808 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110101100111111110101000010111001001000101110011
+2021-03-12 00:25:46,808 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:46,811 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/6
+2021-03-12 00:25:47,028 :: setup.py:66 :: INFO :: Client created with CLIENTID: 6
+2021-03-12 00:25:47,028 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:47,028 :: setup.py:68 :: INFO :: Client MYPORT: 17212
+2021-03-12 00:25:47,028 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11101010010000100001101000011111101110111101011011
+2021-03-12 00:25:47,028 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:47,035 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/7
+2021-03-12 00:25:47,246 :: setup.py:66 :: INFO :: Client created with CLIENTID: 7
+2021-03-12 00:25:47,246 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:47,246 :: setup.py:68 :: INFO :: Client MYPORT: 21910
+2021-03-12 00:25:47,246 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11110010000011000011010111111001100110111010011101
+2021-03-12 00:25:47,246 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:47,251 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/8
+2021-03-12 00:25:47,504 :: setup.py:66 :: INFO :: Client created with CLIENTID: 8
+2021-03-12 00:25:47,504 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:47,504 :: setup.py:68 :: INFO :: Client MYPORT: 20636
+2021-03-12 00:25:47,504 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11101100001110000100011110111100111111111100100101
+2021-03-12 00:25:47,504 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:47,508 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/9
+2021-03-12 00:25:47,716 :: setup.py:66 :: INFO :: Client created with CLIENTID: 9
+2021-03-12 00:25:47,716 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:47,716 :: setup.py:68 :: INFO :: Client MYPORT: 11851
+2021-03-12 00:25:47,716 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00101100110111110110100011001011100010110111100010
+2021-03-12 00:25:47,716 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:47,719 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/10
+2021-03-12 00:25:47,908 :: setup.py:66 :: INFO :: Client created with CLIENTID: 10
+2021-03-12 00:25:47,908 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:47,908 :: setup.py:68 :: INFO :: Client MYPORT: 31383
+2021-03-12 00:25:47,908 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00111011011111010100001111011101001000010000011010
+2021-03-12 00:25:47,908 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:47,911 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/11
+2021-03-12 00:25:48,117 :: setup.py:66 :: INFO :: Client created with CLIENTID: 11
+2021-03-12 00:25:48,117 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:48,117 :: setup.py:68 :: INFO :: Client MYPORT: 36008
+2021-03-12 00:25:48,117 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01010001110100001001110101100010110111101111000001
+2021-03-12 00:25:48,117 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:48,121 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/12
+2021-03-12 00:25:48,345 :: setup.py:66 :: INFO :: Client created with CLIENTID: 12
+2021-03-12 00:25:48,345 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:48,345 :: setup.py:68 :: INFO :: Client MYPORT: 44507
+2021-03-12 00:25:48,345 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11010001101111001001011111000010011110110101011011
+2021-03-12 00:25:48,345 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:48,348 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/13
+2021-03-12 00:25:48,540 :: setup.py:66 :: INFO :: Client created with CLIENTID: 13
+2021-03-12 00:25:48,540 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:48,540 :: setup.py:68 :: INFO :: Client MYPORT: 7035
+2021-03-12 00:25:48,540 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10001101011100110101000011101000011110110101101000
+2021-03-12 00:25:48,540 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:48,544 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/14
+2021-03-12 00:25:48,775 :: setup.py:66 :: INFO :: Client created with CLIENTID: 14
+2021-03-12 00:25:48,775 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:48,775 :: setup.py:68 :: INFO :: Client MYPORT: 25880
+2021-03-12 00:25:48,775 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01111111001000110010011001101100111101011010001101
+2021-03-12 00:25:48,775 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:48,779 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/15
+2021-03-12 00:25:48,980 :: setup.py:66 :: INFO :: Client created with CLIENTID: 15
+2021-03-12 00:25:48,980 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:48,980 :: setup.py:68 :: INFO :: Client MYPORT: 2486
+2021-03-12 00:25:48,980 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01110101001011110100101001010010011011000101111010
+2021-03-12 00:25:48,980 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:48,983 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/16
+2021-03-12 00:25:49,224 :: setup.py:66 :: INFO :: Client created with CLIENTID: 16
+2021-03-12 00:25:49,224 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:49,224 :: setup.py:68 :: INFO :: Client MYPORT: 29007
+2021-03-12 00:25:49,224 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111110111111100101110101011010101001010110111000
+2021-03-12 00:25:49,224 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:49,228 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/17
+2021-03-12 00:25:49,427 :: setup.py:66 :: INFO :: Client created with CLIENTID: 17
+2021-03-12 00:25:49,427 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:49,427 :: setup.py:68 :: INFO :: Client MYPORT: 25352
+2021-03-12 00:25:49,427 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10001110000000110111111100010111101110100001011010
+2021-03-12 00:25:49,427 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:49,431 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/18
+2021-03-12 00:25:49,641 :: setup.py:66 :: INFO :: Client created with CLIENTID: 18
+2021-03-12 00:25:49,641 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:49,641 :: setup.py:68 :: INFO :: Client MYPORT: 40905
+2021-03-12 00:25:49,641 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11110100100100001001010010111010100111111011010101
+2021-03-12 00:25:49,641 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:49,645 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/19
+2021-03-12 00:25:49,834 :: setup.py:66 :: INFO :: Client created with CLIENTID: 19
+2021-03-12 00:25:49,834 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:49,834 :: setup.py:68 :: INFO :: Client MYPORT: 34646
+2021-03-12 00:25:49,834 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10000011110110100001101011110001100011010100001100
+2021-03-12 00:25:49,834 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:49,837 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/20
+2021-03-12 00:25:50,051 :: setup.py:66 :: INFO :: Client created with CLIENTID: 20
+2021-03-12 00:25:50,051 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:50,051 :: setup.py:68 :: INFO :: Client MYPORT: 39036
+2021-03-12 00:25:50,051 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00010010100110100111111110101110000110101100101111
+2021-03-12 00:25:50,051 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:50,054 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/21
+2021-03-12 00:25:50,201 :: setup.py:66 :: INFO :: Client created with CLIENTID: 21
+2021-03-12 00:25:50,201 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:50,201 :: setup.py:68 :: INFO :: Client MYPORT: 21066
+2021-03-12 00:25:50,201 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110010000000000101011010100010100101100110101100
+2021-03-12 00:25:50,201 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:50,204 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/22
+2021-03-12 00:25:50,382 :: setup.py:66 :: INFO :: Client created with CLIENTID: 22
+2021-03-12 00:25:50,382 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:50,382 :: setup.py:68 :: INFO :: Client MYPORT: 3415
+2021-03-12 00:25:50,382 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00101000100001100001000111011110011011001010111010
+2021-03-12 00:25:50,382 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:50,386 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/23
+2021-03-12 00:25:50,567 :: setup.py:66 :: INFO :: Client created with CLIENTID: 23
+2021-03-12 00:25:50,568 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:50,568 :: setup.py:68 :: INFO :: Client MYPORT: 5606
+2021-03-12 00:25:50,568 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11111110100000110100111100100010011000010110100100
+2021-03-12 00:25:50,568 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:50,571 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/24
+2021-03-12 00:25:50,811 :: setup.py:66 :: INFO :: Client created with CLIENTID: 24
+2021-03-12 00:25:50,811 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:50,811 :: setup.py:68 :: INFO :: Client MYPORT: 43777
+2021-03-12 00:25:50,811 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10011010011010111110110111101111110001001000011001
+2021-03-12 00:25:50,812 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:50,815 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/25
+2021-03-12 00:25:51,025 :: setup.py:66 :: INFO :: Client created with CLIENTID: 25
+2021-03-12 00:25:51,025 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:51,025 :: setup.py:68 :: INFO :: Client MYPORT: 32219
+2021-03-12 00:25:51,025 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10000001111001111101100011111110101100001010001011
+2021-03-12 00:25:51,025 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:51,029 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/26
+2021-03-12 00:25:51,209 :: setup.py:66 :: INFO :: Client created with CLIENTID: 26
+2021-03-12 00:25:51,209 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:51,209 :: setup.py:68 :: INFO :: Client MYPORT: 17996
+2021-03-12 00:25:51,209 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111111100010010000011111000000110110000000011011
+2021-03-12 00:25:51,209 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:51,212 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/27
+2021-03-12 00:25:51,414 :: setup.py:66 :: INFO :: Client created with CLIENTID: 27
+2021-03-12 00:25:51,415 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:51,415 :: setup.py:68 :: INFO :: Client MYPORT: 16008
+2021-03-12 00:25:51,415 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11010110101111000101011111100010001001000101111100
+2021-03-12 00:25:51,415 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:51,418 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/28
+2021-03-12 00:25:51,654 :: setup.py:66 :: INFO :: Client created with CLIENTID: 28
+2021-03-12 00:25:51,654 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:51,654 :: setup.py:68 :: INFO :: Client MYPORT: 46390
+2021-03-12 00:25:51,654 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110101110101110100001011000111110110110111001001
+2021-03-12 00:25:51,654 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:51,657 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/29
+2021-03-12 00:25:51,828 :: setup.py:66 :: INFO :: Client created with CLIENTID: 29
+2021-03-12 00:25:51,828 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:51,828 :: setup.py:68 :: INFO :: Client MYPORT: 9064
+2021-03-12 00:25:51,828 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00101110110011001101000100001001110011000110001000
+2021-03-12 00:25:51,828 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:51,832 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/30
+2021-03-12 00:25:52,037 :: setup.py:66 :: INFO :: Client created with CLIENTID: 30
+2021-03-12 00:25:52,037 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,037 :: setup.py:68 :: INFO :: Client MYPORT: 33255
+2021-03-12 00:25:52,037 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111011000101001011010100011110101101010011000001
+2021-03-12 00:25:52,037 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,040 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/31
+2021-03-12 00:25:52,213 :: setup.py:66 :: INFO :: Client created with CLIENTID: 31
+2021-03-12 00:25:52,213 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,213 :: setup.py:68 :: INFO :: Client MYPORT: 39978
+2021-03-12 00:25:52,213 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11010000100011001111100110000001000100000110111111
+2021-03-12 00:25:52,213 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,217 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/32
+2021-03-12 00:25:52,430 :: setup.py:66 :: INFO :: Client created with CLIENTID: 32
+2021-03-12 00:25:52,430 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,430 :: setup.py:68 :: INFO :: Client MYPORT: 13246
+2021-03-12 00:25:52,430 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01001011000001010110101111110111010011100010111110
+2021-03-12 00:25:52,430 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,433 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/33
+2021-03-12 00:25:52,598 :: setup.py:66 :: INFO :: Client created with CLIENTID: 33
+2021-03-12 00:25:52,598 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,598 :: setup.py:68 :: INFO :: Client MYPORT: 19269
+2021-03-12 00:25:52,598 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000001100110111000000100111000110011100101010011
+2021-03-12 00:25:52,598 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,601 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/34
+2021-03-12 00:25:52,811 :: setup.py:66 :: INFO :: Client created with CLIENTID: 34
+2021-03-12 00:25:52,811 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,811 :: setup.py:68 :: INFO :: Client MYPORT: 16349
+2021-03-12 00:25:52,811 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01111000001001110001110111000010011001011111111100
+2021-03-12 00:25:52,811 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,815 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/35
+2021-03-12 00:25:52,985 :: setup.py:66 :: INFO :: Client created with CLIENTID: 35
+2021-03-12 00:25:52,985 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:52,985 :: setup.py:68 :: INFO :: Client MYPORT: 5593
+2021-03-12 00:25:52,985 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00100100110000001110001101010011011000101100011110
+2021-03-12 00:25:52,985 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:52,989 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/36
+2021-03-12 00:25:53,150 :: setup.py:66 :: INFO :: Client created with CLIENTID: 36
+2021-03-12 00:25:53,150 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:53,150 :: setup.py:68 :: INFO :: Client MYPORT: 22706
+2021-03-12 00:25:53,150 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01000111110100100011100000001000010100101001101101
+2021-03-12 00:25:53,150 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:53,154 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/37
+2021-03-12 00:25:53,381 :: setup.py:66 :: INFO :: Client created with CLIENTID: 37
+2021-03-12 00:25:53,381 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:53,381 :: setup.py:68 :: INFO :: Client MYPORT: 28187
+2021-03-12 00:25:53,381 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01000111111101100011110100100101101110110110010011
+2021-03-12 00:25:53,381 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:53,385 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/38
+2021-03-12 00:25:53,629 :: setup.py:66 :: INFO :: Client created with CLIENTID: 38
+2021-03-12 00:25:53,629 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:53,629 :: setup.py:68 :: INFO :: Client MYPORT: 30204
+2021-03-12 00:25:53,629 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11001100011111101100110001111011110110011101000111
+2021-03-12 00:25:53,629 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:53,632 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/39
+2021-03-12 00:25:53,835 :: setup.py:66 :: INFO :: Client created with CLIENTID: 39
+2021-03-12 00:25:53,835 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:53,835 :: setup.py:68 :: INFO :: Client MYPORT: 17382
+2021-03-12 00:25:53,835 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11101101000001011010001111100110010100110110010100
+2021-03-12 00:25:53,835 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:53,839 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/40
+2021-03-12 00:25:54,067 :: setup.py:66 :: INFO :: Client created with CLIENTID: 40
+2021-03-12 00:25:54,067 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:54,067 :: setup.py:68 :: INFO :: Client MYPORT: 12632
+2021-03-12 00:25:54,067 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11100010101011111111111010101000001111100111011000
+2021-03-12 00:25:54,067 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:54,070 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/41
+2021-03-12 00:25:54,252 :: setup.py:66 :: INFO :: Client created with CLIENTID: 41
+2021-03-12 00:25:54,252 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:54,252 :: setup.py:68 :: INFO :: Client MYPORT: 37677
+2021-03-12 00:25:54,252 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10110010001011000101101000000110111011110001000011
+2021-03-12 00:25:54,252 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:54,255 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/42
+2021-03-12 00:25:54,535 :: setup.py:66 :: INFO :: Client created with CLIENTID: 42
+2021-03-12 00:25:54,535 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:54,535 :: setup.py:68 :: INFO :: Client MYPORT: 18718
+2021-03-12 00:25:54,535 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10001111001110011100010011111101111111001001101101
+2021-03-12 00:25:54,535 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:54,538 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/43
+2021-03-12 00:25:54,703 :: setup.py:66 :: INFO :: Client created with CLIENTID: 43
+2021-03-12 00:25:54,703 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:54,703 :: setup.py:68 :: INFO :: Client MYPORT: 2068
+2021-03-12 00:25:54,703 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10101110001000100000100110101011001111100001000100
+2021-03-12 00:25:54,703 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:54,711 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/44
+2021-03-12 00:25:54,921 :: setup.py:66 :: INFO :: Client created with CLIENTID: 44
+2021-03-12 00:25:54,921 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:54,921 :: setup.py:68 :: INFO :: Client MYPORT: 23830
+2021-03-12 00:25:54,921 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11001011101001101110010010110110100100001111100110
+2021-03-12 00:25:54,921 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:54,924 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/45
+2021-03-12 00:25:55,138 :: setup.py:66 :: INFO :: Client created with CLIENTID: 45
+2021-03-12 00:25:55,138 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:55,138 :: setup.py:68 :: INFO :: Client MYPORT: 46120
+2021-03-12 00:25:55,138 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01011001101110100010001110011111010011101010011110
+2021-03-12 00:25:55,138 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:55,145 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/46
+2021-03-12 00:25:55,345 :: setup.py:66 :: INFO :: Client created with CLIENTID: 46
+2021-03-12 00:25:55,345 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:55,345 :: setup.py:68 :: INFO :: Client MYPORT: 21408
+2021-03-12 00:25:55,345 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01001110000110110001101001001111100100101100011111
+2021-03-12 00:25:55,345 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:55,349 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/47
+2021-03-12 00:25:55,462 :: setup.py:66 :: INFO :: Client created with CLIENTID: 47
+2021-03-12 00:25:55,462 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:55,462 :: setup.py:68 :: INFO :: Client MYPORT: 37998
+2021-03-12 00:25:55,462 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110001110100000000011000000001000010001000001011
+2021-03-12 00:25:55,462 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:55,466 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/48
+2021-03-12 00:25:55,683 :: setup.py:66 :: INFO :: Client created with CLIENTID: 48
+2021-03-12 00:25:55,683 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:55,683 :: setup.py:68 :: INFO :: Client MYPORT: 17575
+2021-03-12 00:25:55,683 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10110111000001001110011010001100111111010101101101
+2021-03-12 00:25:55,683 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:55,687 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/49
+2021-03-12 00:25:55,902 :: setup.py:66 :: INFO :: Client created with CLIENTID: 49
+2021-03-12 00:25:55,902 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:55,902 :: setup.py:68 :: INFO :: Client MYPORT: 12479
+2021-03-12 00:25:55,902 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10000100111011100101100111010000110010011001111011
+2021-03-12 00:25:55,902 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:55,906 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/50
+2021-03-12 00:25:56,065 :: setup.py:66 :: INFO :: Client created with CLIENTID: 50
+2021-03-12 00:25:56,065 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:56,066 :: setup.py:68 :: INFO :: Client MYPORT: 26152
+2021-03-12 00:25:56,066 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10011001001011010000001110000010011110000001011101
+2021-03-12 00:25:56,066 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:56,069 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/51
+2021-03-12 00:25:56,258 :: setup.py:66 :: INFO :: Client created with CLIENTID: 51
+2021-03-12 00:25:56,258 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:56,258 :: setup.py:68 :: INFO :: Client MYPORT: 40110
+2021-03-12 00:25:56,258 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11011000010101101010101011010011110001100001110100
+2021-03-12 00:25:56,258 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:56,261 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/52
+2021-03-12 00:25:56,461 :: setup.py:66 :: INFO :: Client created with CLIENTID: 52
+2021-03-12 00:25:56,461 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:56,461 :: setup.py:68 :: INFO :: Client MYPORT: 48747
+2021-03-12 00:25:56,461 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00011111010110001011011011001001010001011111011000
+2021-03-12 00:25:56,461 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:56,465 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/53
+2021-03-12 00:25:56,677 :: setup.py:66 :: INFO :: Client created with CLIENTID: 53
+2021-03-12 00:25:56,677 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:56,677 :: setup.py:68 :: INFO :: Client MYPORT: 46743
+2021-03-12 00:25:56,677 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00101111110100001000111101101101100011010101100101
+2021-03-12 00:25:56,677 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:56,681 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/54
+2021-03-12 00:25:56,882 :: setup.py:66 :: INFO :: Client created with CLIENTID: 54
+2021-03-12 00:25:56,882 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:56,882 :: setup.py:68 :: INFO :: Client MYPORT: 41416
+2021-03-12 00:25:56,882 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01110101110010010011100110011000001110010011011101
+2021-03-12 00:25:56,882 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:56,886 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/55
+2021-03-12 00:25:57,085 :: setup.py:66 :: INFO :: Client created with CLIENTID: 55
+2021-03-12 00:25:57,085 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:57,085 :: setup.py:68 :: INFO :: Client MYPORT: 48679
+2021-03-12 00:25:57,085 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00010100011011000010111101110100010100011011100111
+2021-03-12 00:25:57,085 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:57,089 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/56
+2021-03-12 00:25:57,283 :: setup.py:66 :: INFO :: Client created with CLIENTID: 56
+2021-03-12 00:25:57,283 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:57,283 :: setup.py:68 :: INFO :: Client MYPORT: 20313
+2021-03-12 00:25:57,283 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11011011000000111011110111100011011000100001001110
+2021-03-12 00:25:57,283 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:57,286 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/57
+2021-03-12 00:25:57,498 :: setup.py:66 :: INFO :: Client created with CLIENTID: 57
+2021-03-12 00:25:57,498 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:57,498 :: setup.py:68 :: INFO :: Client MYPORT: 3044
+2021-03-12 00:25:57,498 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10000010100110111100100000001001111111001110111111
+2021-03-12 00:25:57,498 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:57,501 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/58
+2021-03-12 00:25:57,663 :: setup.py:66 :: INFO :: Client created with CLIENTID: 58
+2021-03-12 00:25:57,663 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:57,663 :: setup.py:68 :: INFO :: Client MYPORT: 3458
+2021-03-12 00:25:57,663 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11101000001001010011110010010001001101001100101000
+2021-03-12 00:25:57,663 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:57,667 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/59
+2021-03-12 00:25:57,815 :: setup.py:66 :: INFO :: Client created with CLIENTID: 59
+2021-03-12 00:25:57,815 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:57,815 :: setup.py:68 :: INFO :: Client MYPORT: 18113
+2021-03-12 00:25:57,815 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110111000110001001000000001101011100001011010000
+2021-03-12 00:25:57,815 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:57,819 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/60
+2021-03-12 00:25:58,049 :: setup.py:66 :: INFO :: Client created with CLIENTID: 60
+2021-03-12 00:25:58,049 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:58,049 :: setup.py:68 :: INFO :: Client MYPORT: 11455
+2021-03-12 00:25:58,049 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11001101000010111001101111111011000101101001010111
+2021-03-12 00:25:58,049 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:58,053 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/61
+2021-03-12 00:25:58,280 :: setup.py:66 :: INFO :: Client created with CLIENTID: 61
+2021-03-12 00:25:58,280 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:58,280 :: setup.py:68 :: INFO :: Client MYPORT: 20646
+2021-03-12 00:25:58,280 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11000001101111000011111000100011100111101101110111
+2021-03-12 00:25:58,280 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:58,284 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/62
+2021-03-12 00:25:58,490 :: setup.py:66 :: INFO :: Client created with CLIENTID: 62
+2021-03-12 00:25:58,490 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:58,490 :: setup.py:68 :: INFO :: Client MYPORT: 40933
+2021-03-12 00:25:58,490 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00001011100101110000100111101010001110011100110101
+2021-03-12 00:25:58,490 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:58,494 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/63
+2021-03-12 00:25:58,717 :: setup.py:66 :: INFO :: Client created with CLIENTID: 63
+2021-03-12 00:25:58,717 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:58,717 :: setup.py:68 :: INFO :: Client MYPORT: 2745
+2021-03-12 00:25:58,717 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000011101101011011011011010010111111000010111011
+2021-03-12 00:25:58,717 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:58,721 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/64
+2021-03-12 00:25:58,896 :: setup.py:66 :: INFO :: Client created with CLIENTID: 64
+2021-03-12 00:25:58,896 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:58,896 :: setup.py:68 :: INFO :: Client MYPORT: 23345
+2021-03-12 00:25:58,896 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000110010010010011110100011000011001110010011111
+2021-03-12 00:25:58,896 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:58,900 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/65
+2021-03-12 00:25:59,091 :: setup.py:66 :: INFO :: Client created with CLIENTID: 65
+2021-03-12 00:25:59,091 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:59,091 :: setup.py:68 :: INFO :: Client MYPORT: 13938
+2021-03-12 00:25:59,091 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00011001011111000111011111001110100100001000101010
+2021-03-12 00:25:59,091 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:59,094 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/66
+2021-03-12 00:25:59,290 :: setup.py:66 :: INFO :: Client created with CLIENTID: 66
+2021-03-12 00:25:59,290 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:59,290 :: setup.py:68 :: INFO :: Client MYPORT: 12017
+2021-03-12 00:25:59,290 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11010111111100100001001000110110010011101011100100
+2021-03-12 00:25:59,290 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:59,294 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/67
+2021-03-12 00:25:59,490 :: setup.py:66 :: INFO :: Client created with CLIENTID: 67
+2021-03-12 00:25:59,490 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:59,490 :: setup.py:68 :: INFO :: Client MYPORT: 21870
+2021-03-12 00:25:59,491 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110101010110000011111010101100001100100100110011
+2021-03-12 00:25:59,491 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:59,494 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/68
+2021-03-12 00:25:59,656 :: setup.py:66 :: INFO :: Client created with CLIENTID: 68
+2021-03-12 00:25:59,656 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:59,656 :: setup.py:68 :: INFO :: Client MYPORT: 23213
+2021-03-12 00:25:59,656 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01100010010100100011001111000010100110110100110000
+2021-03-12 00:25:59,656 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:59,664 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/69
+2021-03-12 00:25:59,887 :: setup.py:66 :: INFO :: Client created with CLIENTID: 69
+2021-03-12 00:25:59,887 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:25:59,887 :: setup.py:68 :: INFO :: Client MYPORT: 13795
+2021-03-12 00:25:59,887 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11000111001001101010101011111100100010111010101000
+2021-03-12 00:25:59,887 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:25:59,891 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/70
+2021-03-12 00:26:00,062 :: setup.py:66 :: INFO :: Client created with CLIENTID: 70
+2021-03-12 00:26:00,062 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:00,062 :: setup.py:68 :: INFO :: Client MYPORT: 47907
+2021-03-12 00:26:00,062 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01011001011100010100010001010001111100000010010111
+2021-03-12 00:26:00,062 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:00,066 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/71
+2021-03-12 00:26:00,286 :: setup.py:66 :: INFO :: Client created with CLIENTID: 71
+2021-03-12 00:26:00,286 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:00,286 :: setup.py:68 :: INFO :: Client MYPORT: 41430
+2021-03-12 00:26:00,286 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00111011111100111000101111000111000001100110101111
+2021-03-12 00:26:00,286 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:00,290 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/72
+2021-03-12 00:26:00,520 :: setup.py:66 :: INFO :: Client created with CLIENTID: 72
+2021-03-12 00:26:00,520 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:00,520 :: setup.py:68 :: INFO :: Client MYPORT: 48494
+2021-03-12 00:26:00,520 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000101101101000101011111110100011101111111111000
+2021-03-12 00:26:00,520 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:00,523 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/73
+2021-03-12 00:26:00,706 :: setup.py:66 :: INFO :: Client created with CLIENTID: 73
+2021-03-12 00:26:00,706 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:00,706 :: setup.py:68 :: INFO :: Client MYPORT: 41333
+2021-03-12 00:26:00,706 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00111011010000011011010100001000110000011101111011
+2021-03-12 00:26:00,706 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:00,709 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/74
+2021-03-12 00:26:00,860 :: setup.py:66 :: INFO :: Client created with CLIENTID: 74
+2021-03-12 00:26:00,860 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:00,860 :: setup.py:68 :: INFO :: Client MYPORT: 8885
+2021-03-12 00:26:00,860 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11001000010101010110010000001111100000001100010011
+2021-03-12 00:26:00,860 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:00,864 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/75
+2021-03-12 00:26:01,072 :: setup.py:66 :: INFO :: Client created with CLIENTID: 75
+2021-03-12 00:26:01,072 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,072 :: setup.py:68 :: INFO :: Client MYPORT: 33652
+2021-03-12 00:26:01,072 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11000011101101000110101000110111101111000000111011
+2021-03-12 00:26:01,072 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,076 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/76
+2021-03-12 00:26:01,250 :: setup.py:66 :: INFO :: Client created with CLIENTID: 76
+2021-03-12 00:26:01,250 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,250 :: setup.py:68 :: INFO :: Client MYPORT: 38364
+2021-03-12 00:26:01,250 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111011010000000011011100000101111100100101001000
+2021-03-12 00:26:01,250 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,253 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/77
+2021-03-12 00:26:01,404 :: setup.py:66 :: INFO :: Client created with CLIENTID: 77
+2021-03-12 00:26:01,404 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,404 :: setup.py:68 :: INFO :: Client MYPORT: 39179
+2021-03-12 00:26:01,404 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10100100100100101010011000110000100001010010010010
+2021-03-12 00:26:01,404 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,408 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/78
+2021-03-12 00:26:01,598 :: setup.py:66 :: INFO :: Client created with CLIENTID: 78
+2021-03-12 00:26:01,598 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,598 :: setup.py:68 :: INFO :: Client MYPORT: 24575
+2021-03-12 00:26:01,598 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110100100101111110101010011001100000010100111110
+2021-03-12 00:26:01,598 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,601 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/79
+2021-03-12 00:26:01,799 :: setup.py:66 :: INFO :: Client created with CLIENTID: 79
+2021-03-12 00:26:01,799 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,799 :: setup.py:68 :: INFO :: Client MYPORT: 20610
+2021-03-12 00:26:01,799 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01101101100111101101010000101101001110001010100011
+2021-03-12 00:26:01,799 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,803 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/80
+2021-03-12 00:26:01,906 :: setup.py:66 :: INFO :: Client created with CLIENTID: 80
+2021-03-12 00:26:01,906 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:01,906 :: setup.py:68 :: INFO :: Client MYPORT: 15363
+2021-03-12 00:26:01,906 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00001011100011010001101000000000100000000000100010
+2021-03-12 00:26:01,906 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:01,910 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/81
+2021-03-12 00:26:02,112 :: setup.py:66 :: INFO :: Client created with CLIENTID: 81
+2021-03-12 00:26:02,112 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:02,112 :: setup.py:68 :: INFO :: Client MYPORT: 20698
+2021-03-12 00:26:02,112 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00110111011001000010001110010101010011011011111000
+2021-03-12 00:26:02,112 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:02,115 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/82
+2021-03-12 00:26:02,377 :: setup.py:66 :: INFO :: Client created with CLIENTID: 82
+2021-03-12 00:26:02,377 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:02,377 :: setup.py:68 :: INFO :: Client MYPORT: 40770
+2021-03-12 00:26:02,377 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00111011100111110111111110010000110110011111101101
+2021-03-12 00:26:02,377 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:02,380 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/83
+2021-03-12 00:26:02,583 :: setup.py:66 :: INFO :: Client created with CLIENTID: 83
+2021-03-12 00:26:02,583 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:02,583 :: setup.py:68 :: INFO :: Client MYPORT: 20910
+2021-03-12 00:26:02,583 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01110011010011011100111010010011010001101000110011
+2021-03-12 00:26:02,583 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:02,586 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/84
+2021-03-12 00:26:02,726 :: setup.py:66 :: INFO :: Client created with CLIENTID: 84
+2021-03-12 00:26:02,726 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:02,727 :: setup.py:68 :: INFO :: Client MYPORT: 1895
+2021-03-12 00:26:02,727 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000000001001101000000110000111001010001101011010
+2021-03-12 00:26:02,727 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:02,730 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/85
+2021-03-12 00:26:02,950 :: setup.py:66 :: INFO :: Client created with CLIENTID: 85
+2021-03-12 00:26:02,950 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:02,950 :: setup.py:68 :: INFO :: Client MYPORT: 4798
+2021-03-12 00:26:02,950 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111101011011001101011010011011100100100100110011
+2021-03-12 00:26:02,950 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:02,954 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/86
+2021-03-12 00:26:03,206 :: setup.py:66 :: INFO :: Client created with CLIENTID: 86
+2021-03-12 00:26:03,206 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:03,206 :: setup.py:68 :: INFO :: Client MYPORT: 12276
+2021-03-12 00:26:03,206 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10011110001110100101101111101110111101110101110100
+2021-03-12 00:26:03,206 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:03,210 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/87
+2021-03-12 00:26:03,428 :: setup.py:66 :: INFO :: Client created with CLIENTID: 87
+2021-03-12 00:26:03,428 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:03,428 :: setup.py:68 :: INFO :: Client MYPORT: 40522
+2021-03-12 00:26:03,428 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111011111011001011110011011100000110010110010000
+2021-03-12 00:26:03,428 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:03,432 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/88
+2021-03-12 00:26:03,612 :: setup.py:66 :: INFO :: Client created with CLIENTID: 88
+2021-03-12 00:26:03,612 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:03,612 :: setup.py:68 :: INFO :: Client MYPORT: 47238
+2021-03-12 00:26:03,612 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11100000100001010001110011100010101101101001001110
+2021-03-12 00:26:03,612 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:03,615 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/89
+2021-03-12 00:26:03,839 :: setup.py:66 :: INFO :: Client created with CLIENTID: 89
+2021-03-12 00:26:03,839 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:03,839 :: setup.py:68 :: INFO :: Client MYPORT: 5823
+2021-03-12 00:26:03,839 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01100111111100001111101110011001011101100101000111
+2021-03-12 00:26:03,839 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:03,842 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/90
+2021-03-12 00:26:04,039 :: setup.py:66 :: INFO :: Client created with CLIENTID: 90
+2021-03-12 00:26:04,039 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:04,039 :: setup.py:68 :: INFO :: Client MYPORT: 33801
+2021-03-12 00:26:04,039 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11001100100111010010011101000111100000110101111001
+2021-03-12 00:26:04,039 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:04,043 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/91
+2021-03-12 00:26:04,238 :: setup.py:66 :: INFO :: Client created with CLIENTID: 91
+2021-03-12 00:26:04,238 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:04,238 :: setup.py:68 :: INFO :: Client MYPORT: 8740
+2021-03-12 00:26:04,238 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00011000111110011111000000110100110100001011110110
+2021-03-12 00:26:04,238 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:04,245 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/92
+2021-03-12 00:26:04,471 :: setup.py:66 :: INFO :: Client created with CLIENTID: 92
+2021-03-12 00:26:04,471 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:04,471 :: setup.py:68 :: INFO :: Client MYPORT: 12884
+2021-03-12 00:26:04,471 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 11110111101101111011010001011010010110010011001010
+2021-03-12 00:26:04,471 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:04,474 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/93
+2021-03-12 00:26:04,691 :: setup.py:66 :: INFO :: Client created with CLIENTID: 93
+2021-03-12 00:26:04,692 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:04,692 :: setup.py:68 :: INFO :: Client MYPORT: 19955
+2021-03-12 00:26:04,692 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00111111000101101100011010000110110110011001111100
+2021-03-12 00:26:04,692 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:04,695 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/94
+2021-03-12 00:26:04,900 :: setup.py:66 :: INFO :: Client created with CLIENTID: 94
+2021-03-12 00:26:04,900 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:04,900 :: setup.py:68 :: INFO :: Client MYPORT: 28612
+2021-03-12 00:26:04,900 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10100101001110000111111110101010101001101010101100
+2021-03-12 00:26:04,900 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:04,903 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/95
+2021-03-12 00:26:05,094 :: setup.py:66 :: INFO :: Client created with CLIENTID: 95
+2021-03-12 00:26:05,094 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,094 :: setup.py:68 :: INFO :: Client MYPORT: 3837
+2021-03-12 00:26:05,094 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 01011110100101011000000001010110011111011001011010
+2021-03-12 00:26:05,095 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:05,098 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/96
+2021-03-12 00:26:05,248 :: setup.py:66 :: INFO :: Client created with CLIENTID: 96
+2021-03-12 00:26:05,248 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,248 :: setup.py:68 :: INFO :: Client MYPORT: 29410
+2021-03-12 00:26:05,248 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00100100010000111000001001000010000011001000111111
+2021-03-12 00:26:05,248 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:05,251 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/97
+2021-03-12 00:26:05,469 :: setup.py:66 :: INFO :: Client created with CLIENTID: 97
+2021-03-12 00:26:05,469 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,469 :: setup.py:68 :: INFO :: Client MYPORT: 38035
+2021-03-12 00:26:05,469 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00000001010111000111111011110000011101011101110011
+2021-03-12 00:26:05,469 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:05,473 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/98
+2021-03-12 00:26:05,627 :: setup.py:66 :: INFO :: Client created with CLIENTID: 98
+2021-03-12 00:26:05,627 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,627 :: setup.py:68 :: INFO :: Client MYPORT: 2861
+2021-03-12 00:26:05,627 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10111011100100001101001000000110000001000101011001
+2021-03-12 00:26:05,627 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:05,631 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/99
+2021-03-12 00:26:05,801 :: setup.py:66 :: INFO :: Client created with CLIENTID: 99
+2021-03-12 00:26:05,801 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,801 :: setup.py:68 :: INFO :: Client MYPORT: 16744
+2021-03-12 00:26:05,801 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 10101000000100011000111101010111000011110001100010
+2021-03-12 00:26:05,801 :: setup.py:70 :: INFO :: Dumped client config as yaml data
+2021-03-12 00:26:05,805 :: setup.py:23 :: INFO :: Created directories if they didn't exist at configs/clients/100
+2021-03-12 00:26:05,959 :: setup.py:66 :: INFO :: Client created with CLIENTID: 100
+2021-03-12 00:26:05,959 :: setup.py:67 :: INFO :: Client SERVERPORT: 5000
+2021-03-12 00:26:05,959 :: setup.py:68 :: INFO :: Client MYPORT: 27352
+2021-03-12 00:26:05,959 :: setup.py:69 :: INFO :: Client FILE_VECTOR: 00101101011100010000010100010010101010110100000001
+2021-03-12 00:26:05,959 :: setup.py:70 :: INFO :: Dumped client config as yaml data
