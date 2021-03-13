@@ -157,18 +157,15 @@ class Server:
 
         # !!! CHANGES MADE HERE!!!
         # Go into a loop to listen for other requests
-        while True:
+        retries = 10
+        while retries>=0:
             conn.settimeout(20.0)
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
-                # print('Server received', repr(data))
                 logger.info(f"Received message from {address}")
-
                 data = data.decode('utf-8')
                 if not data:
                     print(data)
-                # input()
-                # Split the received data and place into an array
                 data_array = data.split(':')
                 # input()
                 if "QUIT" in data or len(data)==0:
@@ -199,50 +196,38 @@ class Server:
                     # Make sure the second element is an integer
                     try:
                         print (data_array)
-                        if (len(data_array) == 1):
-                            if (data_array[0] == "HB"):
-                                conn.sendall(b'HB+')
-                                continue
-                        if len(data_array)==2:
+                        if data_array[0] == "HB":
+                            conn.sendall(b'HB+')
+                            retries = 10
+                            continue
+                        elif data_array[0] == 'FILE':
                             with self.lock.gen_rlock():
                                 i = int(data_array[1])
+                                if i < 0 or i>=50 :
+                                    conn.sendall(b"PORT:-1:-1")
+                                    retries = 10
+                                    continue
                                 if len(self.files[i]) == 0:
-                                    conn.sendall(b"PORT:-1")
+                                    conn.sendall(b"PORT:-1:-1")
+                                    retries = 10
                                     continue
                                 else:
                                     port = self.clients[self.files[i][0]]["PORT"]
-                                    conn.sendall(bytes(f"PORT: {port}", encoding = "utf-8"))
+                                    conn.sendall(bytes(f"PORT:{port}:{self.files[i][0]}", encoding = "utf-8"))
+                                    retries = 10
                                     continue
-                        clients_with_file = []
-                        # Check if there are any clients with the number the client is looking for
-                        for client in self.clients:
-                            file_vector = self.clients[client][3]
-                            if str(file_vector[i]) == str(1):
-                                my_client_id = self.clients[client][1]
-                                clients_with_file.append(my_client_id)
-                        # Make sure there are clients with the file
-                        if len(clients_with_file) != 0:
-                            # Activate the reader lock
-                            with self.lock.gen_rlock():
-                                my_client = bytes([clients_with_file[0]])
-                                # Not sure if this is how you should send it...
-                                # Send the number of the client that has
-                                s = socket.socket()  # Create a socket object
-                                s.connect((conn, address))  # connect with the server
-                                s.send(my_client)  # communicate with the server
+                        elif data_array[0] == "LOG":
+                            logger.info(f"Request success for file {data_array[1]} from client id {data_array[2]}")
+                            conn.sendall(b'LOG:DONE')
+                            retries = 10
+                            continue
+                        else: 
+                            logger.error(f"Malformed request received")
+                            conn.sendall(b"ERR:MALFORM")
+                            retries = 10
+                            continue
 
-                            # Listen for the confirmation that the transfer is complete
-                            complete = False
-                            while not complete:
-                                conn.settimeout(60)
-                                data = conn.recv(4096)  # 4096 is the size of the buffer
-                                print('Server received', repr(data))
-                                logger.info(f"Received message from {address}")
-                        # Send that there are no clients with the file
-                        else:
-                            s = socket.socket()  # Create a socket object
-                            s.connect((conn, address))  # connect with the server
-                            s.send(b'0')  # communicate with the server
+
                     except ValueError:
                         print("Did not receive a correct request. Try again.")
                 # time.sleep(2)
@@ -259,6 +244,16 @@ class Server:
                                 self.files[i].remove(client_id)
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
+                retries -= 1
+        logger.error("Retries expired for client {client_id}, shutting off client")
+        conn.close()
+        with self.lock.gen_wlock():
+            del self.clients[client_id]
+            for i in range(len(self.files)):
+                # TODO fix this file_vector logic
+                if file_vector[i] == '1':
+                    self.files[i].remove(client_id)
+        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
 
     def server_config(self):
         """

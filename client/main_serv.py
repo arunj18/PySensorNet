@@ -59,7 +59,7 @@ class MainServerConn():
     def request_file(self, file_no):
         with self.wait_HB: #make sure we are not waiting for a HB reply
             if (not self.get_conn_status()): #connection is dead
-                return 0
+                return 0, -1
             self.HB_timer.cancel() #cancel HB timer
             self.main_serv.sendall(bytes(f"FILE:{file_no}", encoding = "utf-8"))
             retries = 10
@@ -68,21 +68,55 @@ class MainServerConn():
                     self.main_serv.settimeout(constants.CLIENT_MAIN_SERV_TIMEOUT)
                     resp = self.main_serv.recv(4096)
                     resp = resp.decode('utf-8')
+                    print(resp)
                     try:
-                        _, port = resp.split(':')
+                        _, port, client_id = resp.split(':')
                         self.HB_timer = threading.Timer(10.0, self.send_HB)
                         self.HB_timer.start()
-                        return port
+                        return port, client_id
                     except ValueError:
-                        if resp.decode('utf-8') ==  'HB-':
+                        if resp == 'HB-' or len(resp)==0:
+                            logger.info("server shutting down, client shutdown initiated")
+                            self.set_conn_status(False)
+                            return -2, -1
+                except socket.timeout:
+                    retries -= 1
+            
+            logger.info("server connection broken, client shutdown initiated") 
+            self.set_close()
+            self.set_conn_status(False)
+            return -2, -1
+
+    def send_success(self, file_no, client_id):
+        with self.wait_HB:
+            if (not self.get_conn_status()): #connection is dead
+                return -1
+            self.HB_timer.cancel() #cancel HB timer
+            self.main_serv.sendall(bytes(f"LOG:{file_no}:{client_id}", encoding = "utf-8"))
+            retries = 10
+            while retries:
+                try:
+                    self.main_serv.settimeout(constants.CLIENT_MAIN_SERV_TIMEOUT)
+                    resp = self.main_serv.recv(4096)
+                    resp = resp.decode('utf-8')
+                    try:
+                        _, success = resp.split(':')
+                        if success == 'DONE':
+                            self.HB_timer = threading.Timer(10.0, self.send_HB)
+                            self.HB_timer.start()
+                            return 0
+                    except ValueError:
+                        if resp == 'HB-' or len(resp)==0:
                             logger.info("server shutting down, client shutdown initiated")
                             self.set_conn_status(False)
                             return -2
                 except socket.timeout:
                     retries -= 1
+
+            logger.info("server connection broken, client shutdown initiated") 
             self.set_close()
             self.set_conn_status(False)
-            return -2
+            return -1
 
 
 

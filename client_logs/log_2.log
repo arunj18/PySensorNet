@@ -1,0 +1,514 @@
+2021-03-13 09:35:33,593 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:35:33,601 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:35:43,644 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:35:43,661 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:35:53,746 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:35:53,794 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:36:03,887 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:36:03,935 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:36:14,027 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:36:14,075 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:36:24,170 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:36:24,218 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:36:34,295 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:36:34,339 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:36:54,624 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:36:54,634 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:37:04,682 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:04,730 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:37:14,805 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:14,865 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:37:24,923 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:24,955 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:37:35,061 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:35,093 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:37:45,184 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:45,200 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:37:55,280 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:37:55,327 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:05,421 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:05,453 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:15,524 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:15,555 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:25,627 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:25,659 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:35,724 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:35,772 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:45,837 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:45,881 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:38:55,945 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:38:55,977 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:06,094 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:06,142 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:16,220 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:16,264 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:26,316 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:26,356 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:36,405 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:36,437 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:46,492 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:46,536 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:39:56,641 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:39:56,685 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:06,746 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:06,762 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:16,812 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:16,844 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:26,923 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:26,951 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:37,008 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:37,020 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:47,065 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:47,113 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:40:57,187 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:40:57,219 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:07,280 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:07,296 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:17,345 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:17,393 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:27,469 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:27,501 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:37,551 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:37,599 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:47,653 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:47,697 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:41:57,794 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:41:57,826 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:07,898 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:07,930 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:18,034 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:18,082 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:28,193 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:28,241 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:38,297 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:38,345 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:48,403 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:48,451 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:42:58,489 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:42:58,505 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:08,591 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:08,635 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:18,699 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:18,715 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:28,774 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:28,822 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:38,910 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:38,938 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:48,988 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:49,020 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:43:59,082 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:43:59,110 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:09,159 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:09,223 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:19,301 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:19,301 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:29,357 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:29,389 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:39,479 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:39,543 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:49,649 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:49,701 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:44:59,786 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:44:59,830 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:45:09,903 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:45:09,935 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:45:19,986 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:45:20,018 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:45:30,093 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:45:30,109 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:45:40,179 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:45:40,194 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:45:50,228 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:45:50,276 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:00,367 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:00,367 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:10,412 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:10,460 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:20,548 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:20,564 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:30,613 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:30,614 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:40,649 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:40,697 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:46:50,757 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:46:50,789 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:47:00,844 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:47:00,877 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:47:10,954 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:47:10,986 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:47:21,087 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:47:21,119 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:136 :: INFO :: received reply to HB
+2021-03-13 09:47:31,170 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:125 :: INFO :: Sent HB packet
+2021-03-13 09:47:31,218 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:141 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 09:47:31,218 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 09:47:31,218 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 09:47:56,702 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 09:47:56,702 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 09:48:02,034 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:48:02,042 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:48:12,100 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:48:12,148 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:48:22,229 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:48:22,277 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:48:31,689 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:48:37,718 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:48:42,977 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 57051) for file 0
+2021-03-13 09:48:43,041 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-13 09:48:43,437 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:48:43,577 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:48:43,781 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 0
+2021-03-13 09:48:43,781 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:48:43,889 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 1
+2021-03-13 09:48:43,905 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:48:44,957 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57051) as no ack received. Retry count: 10
+2021-03-13 09:48:44,985 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:48:45,037 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 2
+2021-03-13 09:48:45,137 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:48:45,319 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:48:45,405 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 3
+2021-03-13 09:48:45,421 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:48:46,537 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57051) as no ack received. Retry count: 10
+2021-03-13 09:48:46,582 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:48:46,663 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 0
+2021-03-13 09:48:46,753 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:48:46,970 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:48:47,134 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 1
+2021-03-13 09:48:47,150 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:48:47,766 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:48:47,810 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:48:48,227 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57051) as no ack received. Retry count: 10
+2021-03-13 09:48:48,258 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:48:48,338 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 2
+2021-03-13 09:48:48,410 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:48:48,622 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:48:48,759 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 3
+2021-03-13 09:48:48,775 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:48:49,850 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57051) as no ack received. Retry count: 10
+2021-03-13 09:48:49,878 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:48:49,958 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 0
+2021-03-13 09:48:50,022 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:48:50,246 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:48:50,350 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 1
+2021-03-13 09:48:50,366 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:48:51,402 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 57051) as no ack received. Retry count: 10
+2021-03-13 09:48:51,446 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:48:51,510 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 57051) for seq_no: 2
+2021-03-13 09:48:51,634 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:48:57,879 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:48:57,927 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:07,993 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:08,073 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:18,147 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:18,195 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:28,261 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:28,293 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:38,338 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:38,354 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:48,397 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:48,445 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:49:58,545 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:49:58,593 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:50:08,673 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:50:08,689 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:50:18,740 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:50:18,784 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:50:28,840 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:50:28,888 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:50:38,960 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:50:38,992 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 09:50:39,004 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 09:50:39,004 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 09:51:08,307 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 09:51:08,307 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 09:51:49,254 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:51:49,261 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:51:55,098 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 62464) for file 49
+2021-03-13 09:51:55,162 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/49.txt
+2021-03-13 09:51:55,582 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:51:55,750 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:51:55,967 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 0
+2021-03-13 09:51:55,983 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:51:56,127 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 1
+2021-03-13 09:51:56,143 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:51:57,215 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 62464) as no ack received. Retry count: 10
+2021-03-13 09:51:57,263 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:51:57,339 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 2
+2021-03-13 09:51:57,419 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:51:57,643 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:51:57,803 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 3
+2021-03-13 09:51:57,819 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:51:58,944 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 62464) as no ack received. Retry count: 10
+2021-03-13 09:51:58,992 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:51:59,056 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 0
+2021-03-13 09:51:59,152 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:51:59,336 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:51:59,336 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:51:59,412 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:51:59,428 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 1
+2021-03-13 09:51:59,428 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:52:00,480 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 62464) as no ack received. Retry count: 10
+2021-03-13 09:52:00,496 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:52:00,560 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 2
+2021-03-13 09:52:00,656 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:52:00,840 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:52:00,932 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 3
+2021-03-13 09:52:00,948 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:52:02,060 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 62464) as no ack received. Retry count: 10
+2021-03-13 09:52:02,104 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:52:02,176 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 0
+2021-03-13 09:52:02,272 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:52:02,436 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:52:02,580 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 1
+2021-03-13 09:52:02,596 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:52:03,652 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 62464) as no ack received. Retry count: 10
+2021-03-13 09:52:03,684 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:52:03,748 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 62464) for seq_no: 2
+2021-03-13 09:52:03,876 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:52:09,519 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:52:09,567 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:52:19,666 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:52:19,694 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:52:29,747 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:52:29,787 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:52:39,866 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:52:39,914 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:52:49,986 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:52:50,030 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:00,106 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:00,152 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:10,228 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:10,276 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:20,344 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:20,361 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:30,434 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:30,482 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:40,543 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:40,591 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:53:50,672 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:53:50,716 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:54:00,749 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:54:00,789 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 09:54:00,789 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 09:54:00,790 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 09:54:19,744 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 09:54:19,744 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 09:54:57,211 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 09:54:57,219 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 09:55:01,041 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 54817) for file 49
+2021-03-13 09:55:01,123 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/49.txt
+2021-03-13 09:55:01,494 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:55:01,646 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:55:01,823 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 0
+2021-03-13 09:55:01,838 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:55:01,919 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 1
+2021-03-13 09:55:01,935 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:55:03,003 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 54817) as no ack received. Retry count: 10
+2021-03-13 09:55:03,050 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:55:03,118 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 2
+2021-03-13 09:55:03,207 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:55:03,411 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:55:03,523 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 3
+2021-03-13 09:55:03,539 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:55:04,634 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 54817) as no ack received. Retry count: 10
+2021-03-13 09:55:04,650 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:55:04,727 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 0
+2021-03-13 09:55:04,807 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:55:04,995 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:55:05,107 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 1
+2021-03-13 09:55:05,119 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:55:06,183 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 54817) as no ack received. Retry count: 10
+2021-03-13 09:55:06,231 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:55:06,295 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 2
+2021-03-13 09:55:06,375 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 09:55:06,547 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:55:06,643 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 3
+2021-03-13 09:55:06,659 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 09:55:07,251 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:07,299 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:55:07,759 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 54817) as no ack received. Retry count: 10
+2021-03-13 09:55:07,836 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 09:55:07,916 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 0
+2021-03-13 09:55:07,980 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 09:55:08,216 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 09:55:08,360 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 1
+2021-03-13 09:55:08,376 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 09:55:09,448 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 54817) as no ack received. Retry count: 10
+2021-03-13 09:55:09,479 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 09:55:09,551 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 54817) for seq_no: 2
+2021-03-13 09:55:09,656 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 09:55:17,373 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:17,401 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:55:27,484 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:27,532 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:55:37,610 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:37,642 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:55:47,742 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:47,786 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:55:57,894 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:55:57,910 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:08,017 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:08,065 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:18,114 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:18,126 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:28,185 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:28,217 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:38,282 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:38,326 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:48,403 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:48,451 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:56:58,545 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:56:58,575 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:08,639 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:08,687 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:18,784 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:18,828 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:28,878 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:28,922 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:38,983 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:39,015 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:49,116 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:49,148 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:57:59,232 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:57:59,248 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:09,313 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:09,361 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:19,473 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:19,521 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:29,595 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:29,627 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:39,687 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:39,703 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:49,796 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:49,828 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:58:59,913 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:58:59,925 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:59:09,979 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:59:10,004 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:59:20,052 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:59:20,101 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:59:30,203 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:59:30,268 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:59:40,361 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:59:40,393 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 09:59:50,465 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 09:59:50,513 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:00:00,603 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:00:00,619 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 10:00:00,635 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:00:00,635 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:00:28,273 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:00:28,274 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 10:01:12,108 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 10:01:12,116 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 10:01:22,170 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:01:22,214 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:01:32,294 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:01:32,342 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:01:42,445 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:01:42,477 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:01:52,586 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:01:52,650 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:02:02,695 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:02:02,743 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:02:10,309 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:02:10,309 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:02:10,309 :: client/client.py:76 :: INFO :: Client shutdown called, client exiting
+2021-03-13 10:02:10,309 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:02:11,265 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 10:02:20,125 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 10:02:20,132 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 10:02:30,177 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:02:30,224 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:02:40,290 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:02:40,334 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:02:50,407 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:02:50,423 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:03:00,486 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:03:00,534 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:03:10,600 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:03:10,616 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:03:20,673 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:03:20,689 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 10:03:20,689 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:03:20,689 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:03:50,446 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:03:50,446 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 10:04:07,510 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 10:04:14,545 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 10:04:24,603 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:04:24,631 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:04:25,380 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:123 :: INFO :: New connection request from ('127.0.0.1', 55812) for file 0
+2021-03-13 10:04:25,460 :: /mnt/d/SocketProg/PyTorrent/utils.py:31 :: INFO :: Get hash of configs/clients/2/0.txt
+2021-03-13 10:04:25,859 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 10:04:26,016 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 10:04:26,220 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 0
+2021-03-13 10:04:26,235 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 10:04:26,339 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 1
+2021-03-13 10:04:26,356 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 10:04:27,432 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 55812) as no ack received. Retry count: 10
+2021-03-13 10:04:27,480 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 10:04:27,556 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 2
+2021-03-13 10:04:27,648 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 10:04:27,860 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 10:04:27,984 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 3
+2021-03-13 10:04:28,000 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 10:04:29,106 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 55812) as no ack received. Retry count: 10
+2021-03-13 10:04:29,154 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 10:04:29,202 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 0
+2021-03-13 10:04:29,314 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 10:04:29,486 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 10:04:29,582 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 1
+2021-03-13 10:04:29,598 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 10:04:30,666 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 55812) as no ack received. Retry count: 10
+2021-03-13 10:04:30,682 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 10:04:30,762 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 2
+2021-03-13 10:04:30,826 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 3
+2021-03-13 10:04:31,062 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 10:04:31,158 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 3
+2021-03-13 10:04:31,174 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 3
+2021-03-13 10:04:32,222 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 55812) as no ack received. Retry count: 10
+2021-03-13 10:04:32,234 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 0
+2021-03-13 10:04:32,298 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 0
+2021-03-13 10:04:32,402 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 1
+2021-03-13 10:04:32,582 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 0
+2021-03-13 10:04:32,682 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 1
+2021-03-13 10:04:32,694 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 1
+2021-03-13 10:04:33,741 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:324 :: WARNING :: Resend called for ('127.0.0.1', 55812) as no ack received. Retry count: 10
+2021-03-13 10:04:33,765 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:252 :: INFO :: Sent data with seq 2
+2021-03-13 10:04:33,845 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:160 :: INFO :: Received ACK from ('127.0.0.1', 55812) for seq_no: 2
+2021-03-13 10:04:33,997 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:275 :: INFO :: deleting 2
+2021-03-13 10:04:34,725 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:04:34,757 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:04:44,818 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:04:44,850 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:04:54,895 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:04:54,927 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:05:05,005 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:05:05,017 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:05:15,102 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:05:15,150 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:05:25,208 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:05:25,256 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:05:35,299 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:05:35,363 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 10:05:35,379 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:05:35,379 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:05:44,786 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:05:44,786 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 10:06:09,197 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 10:06:11,210 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 10:06:21,254 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:06:21,282 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:142 :: INFO :: server shutting down, client shutdown initiated
+2021-03-13 10:06:21,298 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:06:21,298 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:06:41,268 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:06:41,268 :: client/client.py:86 :: INFO :: my server joined
+2021-03-13 10:06:54,810 :: client/client.py:44 :: INFO :: Done with config initialization
+2021-03-13 10:06:54,819 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:91 :: INFO :: Started server successfully at address: ('127.0.1.1', 35111)
+2021-03-13 10:07:04,876 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:126 :: INFO :: Sent HB packet
+2021-03-13 10:07:04,920 :: /mnt/d/SocketProg/PyTorrent/client/main_serv.py:137 :: INFO :: received reply to HB
+2021-03-13 10:07:11,156 :: client/client.py:71 :: ERROR :: Connection to server lost, client exiting..
+2021-03-13 10:07:11,156 :: /mnt/d/SocketProg/PyTorrent/client/p2p.py:110 :: INFO :: Server listen set to close
+2021-03-13 10:07:11,156 :: client/client.py:76 :: INFO :: Client shutdown called, client exiting
+2021-03-13 10:07:11,157 :: client/client.py:84 :: INFO :: input thread joined
+2021-03-13 10:07:12,140 :: client/client.py:86 :: INFO :: my server joined

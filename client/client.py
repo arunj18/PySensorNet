@@ -7,6 +7,7 @@ from readerwriterlock import rwlock
 from pathlib import Path
 from inputimeout import inputimeout, TimeoutOccurred
 import argparse
+import time
 
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
@@ -25,6 +26,9 @@ logger.setLevel(logging.INFO)
 class Client():
     def __init__(self, config_file_path):
         # reach out to server to share config
+        if not Path(config_file_path).is_file():
+            logger.error("Config file does not exist")
+            exit(1)
         with open(config_file_path,'r') as f:
             config = yaml.load(f, Loader = yaml.Loader)
         print(config)
@@ -67,11 +71,14 @@ class Client():
             logger.error("Connection to server lost, client exiting..")
             self.serv_conn.set_close()
             my_server.set_close()
+
         if (self.client_shutdown):
             logger.info("Client shutdown called, client exiting")
             if (self.serv_conn.get_conn_status()):
                 self.serv_conn.set_close()
                 my_server.set_close()
+
+
         print("Client shutting down...")
         input_thread.join()
         logger.info("input thread joined")
@@ -295,33 +302,48 @@ class Client():
         while(not self.client_shutdown and self.serv_conn.get_conn_status()): # keep looping to get user input
             os.system('cls' if os.name == 'nt' else 'clear')
             try:
-                file_name = inputimeout(prompt = ">>", timeout = 30.0)
+                file_name = inputimeout(prompt = "Please enter file to download or -1 to exit client \n>>", timeout = 30.0)
             except TimeoutOccurred:
                 continue
-            if (int(file_name[:-4]) == -1):
-                self.serv_conn.set_close()
-                self.client_shutdown = True
-                return
-            if self.serv_conn.get_conn_status():
-                port = self.serv_conn.request_file(int(file_name[:-4]))
-                if (port == -2):
-                    continue
-                if (int(port)==self.my_port):
-                    print("Requesting from myself...")
-                    continue
-                if (int(port)==-1):
-                    print("No peers have file")
-                    # time.sleep(5)
-                    continue
-                retries = constants.CLIENT_REQUEST_RETRIES
-                while (retries > 0):
-                    if (not self.request_file(file_name[:-4], (socket.gethostbyname(socket.gethostname()), int(port)), self.client_file_mgr.newWrite(self.down_loca/(file_name+'.txt')))):
-                        retries -= 1
-                        logger.error(f"Request for {file_name} from {port} failed, retrying...")
+            if (len(file_name) == 2):
+                try:
+                    if int(file_name) == -1:
+                        self.serv_conn.set_close()
+                        self.client_shutdown = True
+                        return
                     else:
-                        logger.info(f"Request for {file_name} from {port} completed successfully.")
-                        break
-                    retries -= 1
+                        print("Invalid input entered")
+                        time.sleep(5.0)
+                except ValueError:
+                    print("Invalid input entered")
+                    time.sleep(5.0)
+            if file_name[-4:] == '.txt':
+                try: 
+                    file_no = int(file_name[:-4])
+                except ValueError:
+                    print("Invalid input entered")
+                    time.sleep(5.0)
+
+                if self.serv_conn.get_conn_status():
+                    port, client_id = self.serv_conn.request_file(file_no)
+                    if (port == -2):
+                        continue
+                    if (int(port)==self.my_port):
+                        print("Requesting from myself...")
+                        continue
+                    if (int(port)==-1):
+                        print("No peers have file")
+                        time.sleep(5.0)
+                        continue
+                    success = self.request_file(file_name[:-4], (socket.gethostbyname(socket.gethostname()), int(port)), self.client_file_mgr.newWrite(self.down_loca/(file_name[:-4]+'.txt')))
+                    if not success:
+                        logger.error(f"Request for {file_name} from {port} failed.")
+                        print("Request failed, check logs for info.")
+                        time.sleep(5.0)
+                    else:
+                        logger.info(f"Request for {file_name} from {client_id} completed successfully.")
+                        print(f"Request for file {file_name} completed successfully")
+                        time.sleep(5.0)
 
 
     def __del__(self):
