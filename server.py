@@ -1,6 +1,7 @@
 import socket
 import logging
 import threading
+import time
 from readerwriterlock import rwlock
 
 log = logging.getLogger(__name__)
@@ -103,11 +104,13 @@ class Server:
                 if len(data_array) == 4:
                     # Activate the writer lock
                     with self.lock.gen_wlock():
+                        # TODO add more logic here in case a client sends updated information (would this happen??)
+                        self.files.append([time.time()])
                         print(data_array)
                         # input()
                         print("Processed result: {}".format(data))
                         # conn.sendall("-".encode("utf8"))
-                        # Remove single quotes frteom the second and fourth elements
+                        # Remove single quotes from the second and fourth elements
                         data_array[1] = data_array[1].replace("'", "")
                         data_array[3] = data_array[3].replace("'", "")
                         # Single out the client ID
