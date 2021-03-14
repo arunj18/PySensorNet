@@ -3,7 +3,6 @@ import logging
 import threading
 import time
 from readerwriterlock import rwlock
-import sys
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -282,7 +281,6 @@ class Server:
             self.timed_killer.cancel()
         except:
             pass
-        self.init_close = True
         self.thread_killer()
 
     def user_input(self):
@@ -296,15 +294,14 @@ class Server:
             except:
                 continue
 
-def main():
+if __name__ == "__main__":
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./logs/server.log" )
     server = Server(5000)
 
     if (not server.is_init_success()):
         print("Server could not be initialized, check logs for errors. Exiting...")
         logger.error("Server init failed..")
-        del server
-        return
+        exit()
     server_thread = threading.Thread(target = server.listen)
     print("Hello! The server is starting up...\n")
     server_thread.start()
@@ -313,7 +310,4 @@ def main():
     server_thread.join()
     logger.info("Server thread joined")
     del server
-
-if __name__ == "__main__":
-    main()
     
