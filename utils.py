@@ -40,10 +40,5 @@ def verify_hash(hash, path):
     path: string or Path object of the path of the file
     '''
     logger.info(f"Verify hash of file {path}")
-    print(hash==file_hash(path))
-    print(hash)
-    print(file_hash(path))
-    # input()
-    if (hash==file_hash(path)):
-        return True
-    return False
+    return hash == file_hash(path)
+    
