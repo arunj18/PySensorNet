@@ -70,7 +70,7 @@ class Server:
                 with self.thread_lock:
                     self.threads.append(x)
             except socket.timeout:
-                logger.error(f"Malformed request received")
+                logger.info("No connection")
                 continue
 
     def is_init_success(self):
@@ -98,6 +98,7 @@ class Server:
                 for i in range(len(self.threads) - 1, -1, -1):
                     if i in to_del:
                         del self.threads[i]
+                        logger.info(f"Thread {i} killed")
                         print(f"Thread {i} killed")
         self.timed_thread_killer()
 
@@ -127,6 +128,7 @@ class Server:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 print('Server received', repr(data))
                 logger.info(f"Received message from {address}")
+                logger.info(repr(data))
                 if self.init_close:  # user has initiated server close
                     conn.sendall(b"HB-")
                     conn.close()
@@ -141,6 +143,7 @@ class Server:
                     with self.lock.gen_wlock():
                         print(data_array)
                         print("Processed result: {}".format(data))
+                        logger.info("Processed result: {}".format(data))
                         # conn.sendall("-".encode("utf8"))
                         # Remove single quotes from the second and fourth elements
                         data_array[1] = data_array[1].replace("'", "")
@@ -157,6 +160,7 @@ class Server:
                             if data_array[2][i] == '1':
                                 self.files[i].append(data_array[1])
                         print(self.files)
+                        logger.info(self.files)
                         conn.sendall(b"Success!")
                         conn_estd = True
                         break
@@ -164,6 +168,7 @@ class Server:
                 retries -= 1
         if not conn_estd:
             print(f"Connection to {address} failed")
+            logger.info(f"Connection to {address} failed")
             return
 
         # Go into a loop to listen for other requests
@@ -181,6 +186,7 @@ class Server:
                     print("Client is requesting to quit")
                     conn.close()
                     print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                    logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
                         del self.clients[client_id]
                         for i in range(len(self.files)):
@@ -188,6 +194,7 @@ class Server:
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         return
                 # Client is trying to find a file
                 elif self.init_close:
@@ -200,6 +207,7 @@ class Server:
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
                 else:
                     # Make sure the second element is an integer
@@ -250,6 +258,7 @@ class Server:
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
                         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
                 retries -= 1
         logger.error("Retries expired for client {client_id}, shutting off client")
@@ -261,6 +270,7 @@ class Server:
                 if file_vector[i] == '1':
                     self.files[i].remove(client_id)
         print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+        logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
 
     def server_config(self):
         """
