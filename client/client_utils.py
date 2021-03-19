@@ -1,4 +1,3 @@
-import socket
 import logging
 import constants
 from utils import file_hash
@@ -26,6 +25,7 @@ class ClientFile():
                 if not Path(file_i_location).is_file():
                     raise FileNotFoundError
                 self.filedict[i] = file_i_location
+
     def checkFile(self, i):
         '''
         Function to check if file exists for the file
@@ -49,6 +49,7 @@ class ClientFile():
         '''
         return WriteObj(loc)
 
+
 class ReadObj():
     '''
     Class for a file read object
@@ -58,13 +59,14 @@ class ReadObj():
         Constructor for read object class
         param file_location : path of the file to read
         '''
-        if (Path(file_location).stat().st_size==0): #empty file
+        # empty file
+        if (Path(file_location).stat().st_size == 0):
             self.file_hash = None
             return
         self.file_obj = open(file_location, 'rb')
-        self.file_hash = bytes(file_hash(file_location), encoding='utf-8') # get hash of the file
+        # get hash of the file
+        self.file_hash = bytes(file_hash(file_location), encoding='utf-8')
         self.file_loc = file_location
-
 
     def get_filepath(self):
         '''
@@ -78,14 +80,15 @@ class ReadObj():
         '''
         # if file is not empty
         if (self.file_hash is not None):
-            yield (self.file_hash, constants.DATA_PACKET) # yield file hash first
-            while (block:=self.file_obj.read(constants.DATA_PAYLOAD_SIZE)):
+            # yield file hash first
+            yield (self.file_hash, constants.DATA_PACKET)
+            while (block := self.file_obj.read(constants.DATA_PAYLOAD_SIZE)):
                 if len(block) < constants.DATA_PAYLOAD_SIZE:
                     yield (block, constants.SERVER_END_PACKET)
                     break
                 yield (block, constants.DATA_PACKET)
-
-        else: # yield an empty bytes object
+        # yield an empty bytes object
+        else:
             yield (b'', constants.SERVER_END_PACKET)
 
     def __del__(self):
@@ -94,6 +97,7 @@ class ReadObj():
         '''
         if (self.file_hash is not None):
             self.file_obj.close()
+
 
 class WriteObj():
     '''

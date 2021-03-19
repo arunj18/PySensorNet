@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 logger.setLevel(logging.INFO)
 
+
 def file_size(path):
     '''
     Function to get size of file given as path
@@ -13,15 +14,15 @@ def file_size(path):
     '''
     logger.info(f"Get file size of {path}")
     size = None
-    if (type(path) == type(Path('./'))):
+    if isinstance(path, Path):
         size = path.stat().st_size
     elif(type(path) == str):
         size = Path(path).stat().st_size
     else:
         logger.error(f"Unknown type of path = {path}")
-    
     logger.debug("Size of file {path} = {size}")
     return size
+
 
 def file_hash(path):
     '''
@@ -34,6 +35,7 @@ def file_hash(path):
     hash = sha1hasher.hash_file(path)
     return hash
 
+
 def verify_hash(hash, path):
     '''
     Function to verify hash of the file
@@ -41,4 +43,3 @@ def verify_hash(hash, path):
     '''
     logger.info(f"Verify hash of file {path}")
     return hash == file_hash(path)
-    
