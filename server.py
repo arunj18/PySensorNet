@@ -313,7 +313,7 @@ class Server:
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
             try:
-                num = inputimeout(prompt = f"Number of active clients: {len(self.clients)}\nEnter -1 to init server exit\n>>", timeout = 10.0)
+                num = inputimeout(prompt = f"Number of active clients: {len(self.clients)}\nEnter -1 to init server exit\n>>", timeout = 10.0).strip()
                 try:
                     if (int(num) == -1):
                         self.init_close = True

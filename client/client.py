@@ -304,7 +304,7 @@ class Client():
         while(not self.client_shutdown and self.serv_conn.get_conn_status()): # keep looping to get user input
             os.system('cls' if os.name == 'nt' else 'clear')
             try:
-                file_name = inputimeout(prompt = "Please enter file to download or -1 to exit client \n>>", timeout = 30.0)
+                file_name = inputimeout(prompt = "Please enter file to download or -1 to exit client \n>>", timeout = 30.0).strip()
             except TimeoutOccurred:
                 continue
             if (len(file_name) == 2):
@@ -319,12 +319,14 @@ class Client():
                 except ValueError:
                     print("Invalid input entered")
                     time.sleep(5.0)
+                    continue
             if file_name[-4:] == '.txt':
                 try: 
                     file_no = int(file_name[:-4])
                 except ValueError:
                     print("Invalid input entered")
                     time.sleep(5.0)
+                    continue
 
                 if self.serv_conn.get_conn_status():
                     port, client_id = self.serv_conn.request_file(file_no)
@@ -332,7 +334,7 @@ class Client():
                         continue
                     if (int(port)==self.my_port):
                         print("Requesting from myself...")
-                        continue
+                        #continue
                     if (int(port)==-1):
                         print("No peers have file")
                         time.sleep(5.0)

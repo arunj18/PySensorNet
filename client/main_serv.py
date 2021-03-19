@@ -185,6 +185,9 @@ class MainServerConn():
     def __del__(self):
         # print (self.main_serv)
         if (self.conn_estd):
+         try:
             self.main_serv.shutdown(1)
             self.main_serv.close()
+         except:
+            pass
 
