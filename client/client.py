@@ -31,8 +31,10 @@ class Client():
             exit(1)
         with open(config_file_path,'r') as f:
             config = yaml.load(f, Loader = yaml.Loader)
+        print("Client with following config is being loaded.. (10s to init)")
         print(config)
-        input()
+        time.sleep(10.0)
+        # input()
         self.client_id = config['CLIENTID']
         self.file_vector = config['FILE_VECTOR']
         self.my_port = config['MYPORT']
@@ -355,7 +357,7 @@ if __name__ == "__main__":
     parser.add_argument('client_no', metavar = 'C', type = int)
     args = parser.parse_args()
     # print(args.client_no)
-    input()
+    # input()
     client_no = args.client_no
     Path('./client_logs').mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./client_logs/log_{client_no}.log" )

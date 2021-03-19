@@ -1,7 +1,11 @@
 import socket
 import logging
 import threading
+import os
+import time
+
 from readerwriterlock import rwlock
+from inputimeout import inputimeout, TimeoutOccurred
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -59,12 +63,11 @@ class Server:
         while True:
             if self.init_close and len(self.clients) == 0:
                 return
-            print(len(self.clients))
             self.s.settimeout(1.0)
             try:
                 conn, address = self.s.accept()
                 logger.info(f"Connected to {address}")
-                print(f"Server connected to {address}")
+                # print(f"Server connected to {address}")
                 x = threading.Thread(target=self.handle, args=(conn, address,))
                 x.start()
                 with self.thread_lock:
@@ -99,7 +102,7 @@ class Server:
                     if i in to_del:
                         del self.threads[i]
                         logger.info(f"Thread {i} killed")
-                        print(f"Thread {i} killed")
+                        # print(f"Thread {i} killed")
         self.timed_thread_killer()
 
     def timed_thread_killer(self):
@@ -126,7 +129,7 @@ class Server:
             conn.settimeout(10)
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
-                print('Server received', repr(data))
+                # print('Server received', repr(data))
                 logger.info(f"Received message from {address}")
                 logger.info(repr(data))
                 if self.init_close:  # user has initiated server close
@@ -136,13 +139,13 @@ class Server:
                 data = data.decode('utf-8')
                 # Split the received data and place into an array
                 data_array = data.split(':')
-                print(data_array)
+                # print(data_array)
                 # Extra check to make sure the information is the correct size
                 if len(data_array) == 4:
                     # Activate the writer lock
                     with self.lock.gen_wlock():
-                        print(data_array)
-                        print("Processed result: {}".format(data))
+                        # print(data_array)
+                        # print("Processed result: {}".format(data))
                         logger.info("Processed result: {}".format(data))
                         # conn.sendall("-".encode("utf8"))
                         # Remove single quotes from the second and fourth elements
@@ -159,16 +162,20 @@ class Server:
                         for i in range(len(self.files)):
                             if data_array[2][i] == '1':
                                 self.files[i].append(data_array[1])
-                        print(self.files)
+                        # print(self.files)
                         logger.info(self.files)
                         conn.sendall(b"Success!")
                         conn_estd = True
                         break
+                else:
+                    logger.error(f"Malformed request received")
+                    conn.sendall(b"ERR:MALFORM")
             except socket.timeout:
                 retries -= 1
         if not conn_estd:
-            print(f"Connection to {address} failed")
+            # print(f"Connection to {address} failed")
             logger.info(f"Connection to {address} failed")
+            conn.close() # close connection
             return
 
         # Go into a loop to listen for other requests
@@ -179,13 +186,11 @@ class Server:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
                 logger.info(f"Received message from {address}")
                 data = data.decode('utf-8')
-                if not data:
-                    print(data)
                 data_array = data.split(':')
                 if "QUIT" in data or len(data) == 0:
                     print("Client is requesting to quit")
                     conn.close()
-                    print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                    # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
                         del self.clients[client_id]
@@ -193,7 +198,7 @@ class Server:
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         return
                 # Client is trying to find a file
@@ -206,13 +211,13 @@ class Server:
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
                 else:
                     # Make sure the second element is an integer
                     try:
-                        print(data_array)
+                        # print(data_array)
                         if data_array[0] == "HB":
                             conn.sendall(b'HB+')
                             retries = 10
@@ -245,9 +250,10 @@ class Server:
                             continue
 
                     except ValueError:
-                        print("Did not receive a correct request. Try again.")
+                        # print("Did not receive a correct request. Try again.")
+                        pass
             except socket.timeout:
-                print('timedout')
+                # print('timedout')
                 if self.init_close:  # user has initiated server close
                     conn.sendall(b"HB-")
                     conn.close()
@@ -257,7 +263,7 @@ class Server:
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
                 retries -= 1
@@ -269,7 +275,7 @@ class Server:
                 # TODO fix this file_vector logic
                 if file_vector[i] == '1':
                     self.files[i].remove(client_id)
-        print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
+        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
 
     def server_config(self):
@@ -304,13 +310,20 @@ class Server:
         :return: N/A
         """
         while True:
+            os.system('cls' if os.name == 'nt' else 'clear')
             try:
-                if int(input()) == -1:
-                    self.init_close = True
-                    logger.info("Server exiting due to user input")
-                    print("Server shutting down...")
-                    break
-            except:
+                num = inputimeout(prompt = f"Number of active clients: {len(self.clients)}\nEnter -1 to init server exit\n>>", timeout = 10.0)
+                try:
+                    if (int(num) == -1):
+                        self.init_close = True
+                        logger.info("Server exiting due to user input")
+                        print("Server shutting down")
+                        break
+                except Exception:
+                    time.sleep(10.0)
+                    print("Invalid input")
+                    pass
+            except TimeoutOccurred:
                 continue
 
 

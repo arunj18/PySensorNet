@@ -1,17 +1,15 @@
 [[source]]
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [packages]
-pyyaml = "*"
 filehash = "*"
-readerwriterlock = "*"
+pytest = "*"
 inputimeout = "*"
+readerwriterlock = "*"
 
 [dev-packages]
-pytest = "*"
-pytest-cov = "*"
 
 [requires]
 python_version = "3.8"

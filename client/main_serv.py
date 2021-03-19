@@ -43,11 +43,26 @@ class MainServerConn():
                 self.main_serv.settimeout(constants.CLIENT_MAIN_SERV_TIMEOUT)
                 success = self.main_serv.recv(4096)
                 chunks.append(success)
-                print(success.decode('utf-8'))
+                # print(success.decode('utf-8'))
                 if success.decode('utf-8') == "Success!":
-                    self.set_conn_status(True)
                     conn_estd = True
                     break 
+                elif success.decode('utf-8') == 'HB-':
+                    conn_estd = False
+                    logger.error("Received server close from main server, init fail.")
+                    break
+                elif success.decode('utf-8') == "ERR:MALFORM":
+                    conn_estd = False
+                    logger.error("Server received malformed request. init fail.")
+                    break
+                else:
+                    msg = success.decode("utf-8")
+                    logger.error(f"Unknown message received {msg}")
+                    if len(msg) == 0:
+                        conn_estd = False
+                        logger.error("Connection closed")
+                        break
+
             except socket.timeout as e:
                 print(e)
                 retries-=1
