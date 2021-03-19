@@ -71,7 +71,6 @@ class Server:
                     self.threads.append(x)
             except socket.timeout:
                 logger.error(f"Malformed request received")
-                conn.sendall(b"ERR:MALFORM")
                 continue
 
     def is_init_success(self):
