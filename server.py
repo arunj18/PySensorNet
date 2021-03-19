@@ -3,6 +3,7 @@ import logging
 import threading
 import os
 import time
+from pathlib import Path
 
 from readerwriterlock import rwlock
 from inputimeout import inputimeout, TimeoutOccurred
@@ -328,6 +329,7 @@ class Server:
 
 
 def main():
+    Path('./logs/').mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s",
                         filename=f"./logs/server.log")
