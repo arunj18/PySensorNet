@@ -357,6 +357,7 @@ if __name__ == "__main__":
     # print(args.client_no)
     input()
     client_no = args.client_no
+    Path('./client_logs').mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level = logging.INFO, format = "%(asctime)s :: %(pathname)s:%(lineno)d :: %(levelname)s :: %(message)s", filename = f"./client_logs/log_{client_no}.log" )
     client = Client(f'./configs/clients/{client_no}/{client_no}.yaml')
     # client.send_msg("Hello from Client 1", socket.socket(socket.AF_INET, socket.SOCK_DGRAM), (socket.gethostname(),5000))

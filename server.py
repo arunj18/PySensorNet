@@ -1,9 +1,7 @@
 import socket
 import logging
 import threading
-import time
 from readerwriterlock import rwlock
-import sys
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -72,6 +70,8 @@ class Server:
                 with self.thread_lock:
                     self.threads.append(x)
             except socket.timeout:
+                logger.error(f"Malformed request received")
+                conn.sendall(b"ERR:MALFORM")
                 continue
 
     def is_init_success(self):
