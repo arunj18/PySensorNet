@@ -8,6 +8,7 @@ filehash = "*"
 pytest = "*"
 inputimeout = "*"
 readerwriterlock = "*"
+pyyaml = "*"
 
 [dev-packages]
 
