@@ -48,7 +48,7 @@ class Client():
         self.client_shutdown = False
 
         # send init message to server 
-        print("Do INIT")
+        #print("Do INIT")
         self.serv_conn = MainServerConn(config, self.serv_port)
         print("INIT DONE")
         if (not self.serv_conn.get_conn_status()):
@@ -58,9 +58,12 @@ class Client():
         # then start listening on port
         my_server = myUDPServer(self.my_port, self.client_file_mgr)
         if (not my_server.check_success()):
-            return 
-        server = threading.Thread(target = my_server.listen)
-        server.start()
+            print("P2P Server init failed. Closing client")
+            self.serv_conn.set_close()
+            return
+        else:
+            server = threading.Thread(target = my_server.listen)
+            server.start()
 
         # open user input
         input_thread = threading.Thread(target = self.user_input)

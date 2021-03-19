@@ -159,10 +159,9 @@ class myUDPServer():
                     elif (data[1] == 1): # this is an ack
                         logger.info(f"Received ACK from {addr} for seq_no: {data[0]}")
 
-                        # server does not know this client, maybe expired connection or it was shutdown
-                        if (addr not in self.clients.keys()):
-                            if addr not in self.clients.keys():
-                                self.clients[addr] = { 'requested_file' : None, 'reader' : None, 'status': 'terminate', 'retries' : constants.SERVER_MAX_RETRIES, 'lock': threading.Lock()}
+                        # server does not know this client, maybe expired connection or it was shutdow
+                        if addr not in self.clients.keys():
+                            self.clients[addr] = { 'requested_file' : None, 'reader' : None, 'status': 'terminate', 'retries' : constants.SERVER_MAX_RETRIES, 'lock': threading.Lock()}
                             self.clients[addr]['timer'] = threading.Timer(1.0, self.resend, addr)
                             self.clients[addr]['timer'].start()
                             self._send_close(addr)
@@ -218,7 +217,20 @@ class myUDPServer():
                         del self.clients[addr]
                         continue
                     else:
-                        print(data)
+                        logger.error(f"Unknown request received with data {data} from {addr}, setting connection to terminate")
+                        if addr not in self.clients.keys():
+                            self.clients[addr] = { 'requested_file' : None, 'reader' : None, 'status': 'terminate', 'retries' : constants.SERVER_MAX_RETRIES, 'lock': threading.Lock()}
+                            self.clients[addr]['timer'] = threading.Timer(1.0, self.resend, addr)
+                            self.clients[addr]['timer'].start()
+                            self._send_close(addr)
+                            continue
+                        else:
+                            self.clients[addr]['timer'].cancel()
+                            self.clients[addr]['status'] = 'terminate'
+                            self.clients[addr]['retries'] = constants.SERVER_MAX_RETRIES
+                            self.clients[addr]['timer'] = threading.Timer(1.0, self.resend, addr)
+                            self.clients[addr]['timer'].start()
+                            continue
             except socket.timeout:
                 continue
 
@@ -335,13 +347,7 @@ class myUDPServer():
                     self.clients[addr]['timer'].start() # restart timer
                     self._send_close(addr, 1)
                     return
-
-                # nothing more to send to the client
-                if len(self.clients[addr]['window'])==0:
-                    logger.info(f"Nothing more to send to {addr}, declared dead.")
-                    self._declare_dead(addr)
-                    return
-
+                    
                 # if client status is set to terminate
                 if (self.clients[addr]['status'] == 'terminate'):
                     if self.clients[addr]['retries'] < 0: # retries expired
@@ -354,6 +360,13 @@ class myUDPServer():
                     self.clients[addr]['timer'] = threading.Timer(constants.SERVER_TIMER_THREAD_TIMEOUT, self.resend, (addr))
                     self.clients[addr]['timer'].start() # restart timer
                     return
+
+                # nothing more to send to the client
+                if len(self.clients[addr]['window'])==0:
+                    logger.info(f"Nothing more to send to {addr}, declared dead.")
+                    self._declare_dead(addr)
+                    return
+
 
                 # normal client status
                 if self.clients[addr]['retries'] < 0: #retries expired
@@ -368,8 +381,8 @@ class myUDPServer():
             finally:
                 lock.release()
         else:
-            logger.debug("Cancelled timer called.")
-        # if the lock is being used by server receive thread then do nothing
+            logger.debug("Locked by receiving thread")
+        # if the lock is being used by server receive thread for this address then do nothing
 
     def __del__(self):
         '''

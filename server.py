@@ -68,13 +68,12 @@ class Server:
             try:
                 conn, address = self.s.accept()
                 logger.info(f"Connected to {address}")
-                # print(f"Server connected to {address}")
                 x = threading.Thread(target=self.handle, args=(conn, address,))
                 x.start()
                 with self.thread_lock:
                     self.threads.append(x)
             except socket.timeout:
-                logger.info("No connection")
+                logger.info("No connection received, continuing to listen")
                 continue
 
     def is_init_success(self):
@@ -156,6 +155,11 @@ class Server:
                         client_id = data_array[1]
                         client_info = {"id": data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3]}
                         file_vector = data_array[2]
+                        if client_id in self.clients.keys(): # client id already exists, duplicate client
+                            logger.error(f"Client {client_id} already exists, ask to delete new connection")
+                            conn.sendall(b"HB-")
+                            conn.close()
+                            return
                         # Add the new client's information into the clients dictionary
                         self.clients.update({client_id: client_info})
 
@@ -259,7 +263,8 @@ class Server:
                     conn.sendall(b"HB-")
                     conn.close()
                     with self.lock.gen_wlock():
-                        del self.clients[client_id]
+                        if client_id in self.clients.keys():
+                            del self.clients[client_id]
                         for i in range(len(self.files)):
                             # TODO fix this file_vector logic
                             if file_vector[i] == '1':
