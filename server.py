@@ -41,7 +41,7 @@ class Server:
 
         # List of the files within each client
         self.files = [[] for _ in range(50)]
-        # The threads
+        # The active threads
         self.threads = []
         # Contains all the information about a client
         self.clients = {}
@@ -53,7 +53,7 @@ class Server:
 
     def listen(self, queue_size=5):
         """
-        Function to listen on the socket for clients to add or requests to process
+        Function to listen on the socket for clients to add
         :param self: The server instance
         :param queue_size: How long the queue will be
         :return: N/A
@@ -90,19 +90,15 @@ class Server:
         """
         with self.thread_lock:
             to_del = []
-            # print(self.threads)
             for i in range(len(self.threads)):
                 self.threads[i].join(0.0)
                 if not (self.threads[i].is_alive()):
                     to_del.append(i)
-                # print(self.threads[i].is_alive())
-            # print(to_del)
             if len(self.threads) > 0:
                 for i in range(len(self.threads) - 1, -1, -1):
                     if i in to_del:
                         del self.threads[i]
                         logger.info(f"Thread {i} killed")
-                        # print(f"Thread {i} killed")
         self.timed_thread_killer()
 
     def timed_thread_killer(self):
@@ -129,25 +125,21 @@ class Server:
             conn.settimeout(10)
             try:
                 data = conn.recv(4096)  # 4096 is the size of the buffer
-                # print('Server received', repr(data))
                 logger.info(f"Received message from {address}")
                 logger.info(repr(data))
                 if self.init_close:  # user has initiated server close
                     conn.sendall(b"HB-")
-                    conn.close()
+                    conn.close()  # close the connection
                     return
                 data = data.decode('utf-8')
                 # Split the received data and place into an array
                 data_array = data.split(':')
-                # print(data_array)
+
                 # Extra check to make sure the information is the correct size
                 if len(data_array) == 4:
-                    # Activate the writer lock
+                    # Activate the writer lock and populate the dict with the client information
                     with self.lock.gen_wlock():
-                        # print(data_array)
-                        # print("Processed result: {}".format(data))
                         logger.info("Processed result: {}".format(data))
-                        # conn.sendall("-".encode("utf8"))
                         # Remove single quotes from the second and fourth elements
                         data_array[1] = data_array[1].replace("'", "")
                         data_array[3] = data_array[3].replace("'", "")
@@ -155,7 +147,7 @@ class Server:
                         client_id = data_array[1]
                         client_info = {"id": data_array[1], "FILE_VECTOR": data_array[2], "PORT": data_array[3]}
                         file_vector = data_array[2]
-                        if client_id in self.clients.keys(): # client id already exists, duplicate client
+                        if client_id in self.clients.keys():  # client id already exists, duplicate client
                             logger.error(f"Client {client_id} already exists, ask to delete new connection")
                             conn.sendall(b"HB-")
                             conn.close()
@@ -167,20 +159,19 @@ class Server:
                         for i in range(len(self.files)):
                             if data_array[2][i] == '1':
                                 self.files[i].append(data_array[1])
-                        # print(self.files)
+
                         logger.info(self.files)
                         conn.sendall(b"Success!")
                         conn_estd = True
                         break
-                else:
+                else:  # Something went wrong
                     logger.error(f"Malformed request received")
                     conn.sendall(b"ERR:MALFORM")
-            except socket.timeout:
+            except socket.timeout:  # Try again
                 retries -= 1
         if not conn_estd:
-            # print(f"Connection to {address} failed")
             logger.info(f"Connection to {address} failed")
-            conn.close() # close connection
+            conn.close()  # close connection
             return
 
         # Go into a loop to listen for other requests
@@ -192,73 +183,64 @@ class Server:
                 logger.info(f"Received message from {address}")
                 data = data.decode('utf-8')
                 data_array = data.split(':')
-                if "QUIT" in data or len(data) == 0:
+                if "QUIT" in data or len(data) == 0:  # Client wants to disconnect
                     print("Client is requesting to quit")
                     conn.close()
-                    # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     with self.lock.gen_wlock():
                         del self.clients[client_id]
                         for i in range(len(self.files)):
-                            # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         return
-                # Client is trying to find a file
-                elif self.init_close:
+                elif self.init_close:  # self.init_close is true; remove the client and close the connection
                     conn.sendall(b"HB-")
                     conn.close()
                     with self.lock.gen_wlock():
                         del self.clients[client_id]
                         for i in range(len(self.files)):
-                            # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
-                else:
-                    # Make sure the second element is an integer
+                else:  # Client is trying to find a file or client is reporting that the transfer is complete
                     try:
-                        # print(data_array)
                         if data_array[0] == "HB":
                             conn.sendall(b'HB+')
                             retries = 10
                             continue
-                        elif data_array[0] == 'FILE':
+                        elif data_array[0] == 'FILE':  # Client is looking for a file
                             with self.lock.gen_rlock():
                                 i = int(data_array[1])
-                                if i < 0 or i >= 50:
+                                if i < 0 or i >= 50:  # Make sure there are no requests for non-existing files
                                     conn.sendall(b"PORT:-1:-1")
                                     retries = 10
                                     continue
-                                if len(self.files[i]) == 0:
+                                # Make sure there is a client with that file
+                                if len(self.files[i]) == 0:  # No client with that file
                                     conn.sendall(b"PORT:-1:-1")
                                     retries = 10
                                     continue
-                                else:
+                                else:  # There is a client with that file!
                                     port = self.clients[self.files[i][0]]["PORT"]
                                     conn.sendall(bytes(f"PORT:{port}:{self.files[i][0]}", encoding="utf-8"))
                                     retries = 10
                                     continue
-                        elif data_array[0] == "LOG":
+                        elif data_array[0] == "LOG":  # The transfer was successful
                             logger.info(f"Request success for file {data_array[1]} from client id {data_array[2]}")
                             conn.sendall(b'LOG:DONE')
                             retries = 10
                             continue
-                        else:
+                        else:  # bad request
                             logger.error(f"Malformed request received")
                             conn.sendall(b"ERR:MALFORM")
                             retries = 10
                             continue
 
                     except ValueError:
-                        # print("Did not receive a correct request. Try again.")
                         pass
             except socket.timeout:
-                # print('timedout')
                 if self.init_close:  # user has initiated server close
                     conn.sendall(b"HB-")
                     conn.close()
@@ -266,22 +248,18 @@ class Server:
                         if client_id in self.clients.keys():
                             del self.clients[client_id]
                         for i in range(len(self.files)):
-                            # TODO fix this file_vector logic
                             if file_vector[i] == '1':
                                 self.files[i].remove(client_id)
-                        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
                     return
                 retries -= 1
-        logger.error("Retries expired for client {client_id}, shutting off client")
+        logger.error(f"Retries expired for client {client_id}, shutting off client")
         conn.close()
         with self.lock.gen_wlock():
             del self.clients[client_id]
             for i in range(len(self.files)):
-                # TODO fix this file_vector logic
                 if file_vector[i] == '1':
                     self.files[i].remove(client_id)
-        # print("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
         logger.info("Connection " + str(self.IP) + ":" + str(self.port) + " closed")
 
     def server_config(self):
@@ -300,8 +278,6 @@ class Server:
         Closes the connection and threads for the server instance
         :return: N/A
         """
-        # log.debug(f"Client socket closed to {self.clientaddress}")
-        # self.s.shutdown(1)
         self.s.close()
         try:
             self.timed_killer.cancel()
