@@ -9,13 +9,16 @@ import argparse
 import time
 import constants
 from main_serv import MainServerConn
-from client_utils import ClientFile
+
 from p2p import myUDPClient, myUDPServer
-from utils import verify_hash
+
 
 import sys
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
 print(Path(__file__).parent.parent.absolute())
+
+from client_utils import ClientFile
+from utils import verify_hash
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
