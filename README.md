@@ -14,6 +14,12 @@ This project uses **Pipenv** for dependency and virtual environment management, 
 
 1. Make sure **Python** and **pip** are already installed. Then run the following through **pip** in the terminal:  
     `pip install --user pipenv`
+    Make sure pipenv is available on PATH if using the --user option.
+    
+    Alternatively, you can use pipx to create an isolated environment to use pipenv. 
+    `pip install --user pipx`
+    `python3 -m pipx ensurepath` to ensure pipx is on path.
+    `pipx install pipenv`
 
 2. After **Pipenv** has been installed run the following command in terminal to install the dependencies for this project:  
     `make install`
